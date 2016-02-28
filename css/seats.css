@@ -1,0 +1,144 @@
+.seat_arrangement {
+	font:normal 12px 'Open Sans', Tahoma;
+	color:#999;
+	padding:10px;
+	border:#ccc solid thin;
+	border-radius:1px;
+	margin: auto;
+	/*position:absolute;*/
+}
+
+.seat {
+	width: 20px;
+	height: 17px;
+	cursor: pointer;
+	margin: 7px;
+	background-image:url('../images/seat.gif');
+	background-repeat:no-repeat;
+}
+
+.push-seat {
+	margin-top: 15px !important;
+}
+
+.booked_seat {
+	width:20px;
+	height:18px;
+	background-image:url('../images/booked_seat.gif');
+	margin:7px; background-repeat:no-repeat; cursor:default;
+}
+
+.seat:hover{background-image:url('../images/highlighted_seat.gif')}
+
+#right_seats, #left_seats {
+	position:relative;
+	width:180px;
+	padding:4px;
+	overflow:auto;
+}
+
+#right_seats {
+	top:75px;
+}
+
+#left_seats {
+	top:-75px;
+}
+
+.seat_wrap {
+	padding-right:18px;
+	padding-left: 12px;
+	background-color:#fff;
+	border:#ccc solid thin;
+	border-radius:2px;
+	margin-top:24px;
+	margin-left:70px;
+	float:left;
+}
+
+#seat_tips {
+	float:right;
+	margin-right:20px;
+	margin-top:7px;
+}
+
+#seat_tips > ul {
+	list-style-type:none;
+	margin:0px; padding:0px;
+	line-height:21px
+}
+
+#seat_tips > ul > li {
+	line-height:24px
+}
+
+.available_seat {
+	background-image:url(../images/seat.gif);
+}
+
+.selected_seat {
+	background-image:url(../images/selected_seat.gif);
+}
+
+.booked-seat {
+	background-image:url(../images/booked_seat.gif);
+}
+
+.available_seat, .selected_seat, .booked-seat {
+	background-repeat:no-repeat;
+	background-position:0px 5px;
+	padding-left:25px;
+}
+
+.cols {
+	position:relative;
+	float:left;
+	width:20px;
+	margin-right: 5px;
+	bottom:0;
+}
+
+.steering {
+	height:48px;
+	background-image:url(../images/steering.gif);
+	background-repeat:no-repeat;
+	background-position:bottom;
+}
+
+.continue-btn {
+	top: 25px;
+	position: relative;
+	left: 101px;
+}
+
+/* mini-bus style 10, 14, 15 seats */
+.mini-bus {
+	width: 410px;
+	height: 200px;
+}
+
+.mini-bus .steering {
+	height:73px;
+}
+
+.mini-bus .seat-details, .sienna .seat-details {
+	width: 110px;
+	float: left;
+	text-align: left;
+	margin-top: 25px
+}
+
+/* Sienna bus 5 & 6 seats */
+.sienna {
+	width: 420px;
+	height: 200px;
+	overflow: auto;
+}
+
+.sienna .steering {
+	height:62px;
+}
+
+.seat_arrangement .glyphicon-remove {
+	cursor: pointer;
+}
