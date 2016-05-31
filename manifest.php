@@ -1,10 +1,9 @@
 <?php
 require "includes/head.php";
 require "includes/side-bar.php";
-require "classes/route.class.php";
-require "classes/travelparkmap.class.php";
+require "classes/destination.class.php";
 
-$parkMap = new TravelParkMap();
+$destination = new Destination();
 ?>
 <link href="css/datepicker.css" rel="stylesheet" />
 <link href="css/datepicker3.css" rel="stylesheet" />
@@ -39,8 +38,8 @@ $parkMap = new TravelParkMap();
 							<select name="park_map_id" class="form-control">
 								<option value="" >-- Select Destination --</option>
 								<?php
-								foreach($parkMap->getParkMap($_SESSION['travel_id'], $_SESSION['park_id']) AS $dest) {
-									echo "\t<option value='{$dest->park_map_id}'>{$dest->destination_state}</option>\n";
+								foreach($destination->getRoutes() AS $dest) {
+									echo "\t<option value='{$dest->park_map_id}'>{$dest->destination}</option>\n";
 								}
 								?>
 							</select>
@@ -58,8 +57,14 @@ $parkMap = new TravelParkMap();
 							<button type='button' class="btn btn-info btn-block" id='view'>View manifest</button>
 						</div>
 						<div class="col-md-3">
-							<label>&nbsp;</label>
-							<button type='button' class='btn btn-block btn-danger' id='print'><span class='glyphicon glyphicon-print'></span> Print Manifest</button>
+							<div class="col-md-6">
+								<label>&nbsp;</label>
+								<button type='button' class='btn btn-block btn-danger' id='print-manifest' disabled><span class='hidden glypicon glyphicon-print'></span> Print Manifest</button>
+							</div>
+							<div class="col-md-6">
+								<label>&nbsp;</label>
+								<button type='button' class='btn btn-block btn-danger' id='print-waybill' disabled><span class='hidden glyphicon glyphicon-print'></span> Print Waybill</button>
+							</div>
 						</div>
 
 				</form>
@@ -88,6 +93,7 @@ $parkMap = new TravelParkMap();
 		</div>
 		<div>
 			<iframe id='manifest' name='manifest' style='width:100%; display:none' src='manifest.htm'></iframe>
+			<iframe id='waybill' name='waybill' style='width:70%; display:none' src='waybill.htm'></iframe>
 		</div>
 	</section>
 </div>
@@ -109,18 +115,19 @@ $parkMap = new TravelParkMap();
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label>Expenses</label>
-								<input type="text" name="expenses" class="form-control" Placeholder="Expenses" />
+								<label>Feeding</label>
+								<input type="text" name="feeding" class="form-control" Placeholder="Feeding" />
 							</div>
 						</div>
 
 						<div class="col-md-6">
 							<div class="form-group">
-								<label>Load (if any)</label>
-								<input type="text" name="load_fare" class="form-control" placeholder="Load charges" />
+								<label>Scouters Charges</label>
+								<input type="text" name="scouters" class="form-control" Placeholder="Scouters Charges" />
 							</div>
 						</div>
 					</div>
+
 				</div>
 				<input type="hidden" name="boarding_vehicle_id" id="boarding_vehicle_id" />
 

@@ -29,7 +29,7 @@ $report = new Report();
 					<div class="box-header with-border">
 						<h2 style='font-size: 18px' class="box-title"><i class="fa fa-book"></i> &nbsp;Reports</h2>
 						<a href="generate_report.php?date=<?php echo isset($_POST['travel_date']) ? $_POST['travel_date'] : date('Y-m-d'); ?>" class="btn btn-primary pull-right"><i class="fa fa-book"></i> Generate Report Sheet</a>
-					    <a href="generate_report.php?op=upload-report&date=<?php echo isset($_POST['travel_date']) ? $_POST['travel_date'] : date('Y-m-d'); ?>" class="btn btn-info pull-right" style="margin-right: 5px"><i class="fa fa-upload"></i> Upload Report</a>
+					    <a href="generate_report.php?op=upload-report&date=<?php echo isset($_POST['travel_date']) ? $_POST['travel_date'] : date('Y-m-d'); ?>" class="btn btn-info pull-right hidden" style="margin-right: 5px"><i class="fa fa-upload"></i> Upload Report</a>
 					</div>
 
 					<div class="box-body">
@@ -91,7 +91,7 @@ $report = new Report();
 										$total_profit += $profit = $revenue - $rep['expenses'];
 										$html .= "<tr>
 													<td class='text-right'>$n</td>
-													<td>{$rep['route']}</td>
+													<td>{$_SESSION['state_name']} - {$rep['destination']}</td>
 													<td>{$rep['bus_type']} ( $departure_order )</td>
 													<td class='text-right'>{$num_of_tickets}</td>
 													<td class='text-right'>" . number_format($rep['fare']) . "</td>

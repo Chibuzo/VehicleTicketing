@@ -20,8 +20,8 @@ $(document).ready(function() {
 
 		$.post('ajax/manifest.php', {'op':'get-manifest', 'boarding_vehicle_id':boarding_vehicle_id}, function(d) {
 			$('#report').html(d);
-			$('button#print').data('boarding_vehicle_id', boarding_vehicle_id);
-			$('button#print').show();
+			$('button#print-manifest, button#print-waybill').data('boarding_vehicle_id', boarding_vehicle_id);
+			$('button#print-manifest').prop("disabled", false);
 		});
 		$("#boarding_vehicle_id").val(boarding_vehicle_id);
 		getAuditDetails(boarding_vehicle_id);
@@ -42,7 +42,7 @@ $(document).ready(function() {
 	});
 
 	// Print manifest
-	$('#print').click(function() {
+	$('#print-manifest').click(function() {
 		var boarding_vehicle_id = $(this).data('boarding_vehicle_id');
 
 		$.get('ajax/manifest.php', {'op': 'print_manifest', 'boarding_vehicle_id': boarding_vehicle_id}, function(d) {
@@ -51,6 +51,20 @@ $(document).ready(function() {
 			var iframe_body = $("#manifest").contents().find("body");
 			iframe_body.html(d);
 			window.frames['manifest'].print();
+			iframe_body.html("");
+		});
+	});
+
+	// Print waybill
+	$('#print-waybill').click(function() {
+		var boarding_vehicle_id = $(this).data('boarding_vehicle_id');
+
+		$.get('ajax/manifest.php', {'op': 'print-waybill', 'boarding_vehicle_id': boarding_vehicle_id}, function(d) {
+
+			/*** Print manifest ***/
+			var iframe_body = $("#waybill").contents().find("body");
+			iframe_body.html(d);
+			window.frames['waybill'].print();
 			iframe_body.html("");
 		});
 	});
@@ -121,6 +135,7 @@ $(document).ready(function() {
 		$.post('ajax/manifest.php', {'op':'reopen-vehicle', 'boarding_vehicle_id':boarding_vehicle_id}, function(d) {
 			if (d.trim() == "Done") {
 				alert("The vehicle has been reopen");
+				$("#print-waybill").prop("disabled", true);
 				$(this).hide();
 			} else
 				alert(d);
@@ -185,7 +200,12 @@ function getBookedvehiclees(_date) {
 
 function getAuditDetails(boarding_vehicle_id) {
 	$.post('ajax/manifest.php', {"op": "get-audit", "boarding_vehicle_id": boarding_vehicle_id}, function(d) {
-		$("#audit_pane").html(d);
+		if (d.trim()== "false") {
+			$("#audit_pane").html("<div class='audit_pane'>No details found</div>");
+		} else {
+			$("#print-waybill").prop("disabled", false);
+			$("#audit_pane").html(d);
+		}
 	});
 }
 

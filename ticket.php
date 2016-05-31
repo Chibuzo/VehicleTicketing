@@ -22,8 +22,6 @@ $phone2 = isset($phone[1]) ? $phone[1] : '';
 </div>
 <div style='text-align:center'>------------------------------------------</div>
 <div style='font-style:italic; text-align:center; font-size:17px; margin-bottom:15px'>
-    <span style='font-size:14px'>Service provided by</span><br>
-    <b>www.travelhub.com.ng</b>
 </div>
 
 <div id='details'></div>

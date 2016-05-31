@@ -20,7 +20,7 @@ class Printer extends Ticket
 			echo "<div class='line'><label class='ticket'>Ticket:</label> $ticket_no</div>
 				<div class='line'><label class='ticket'>Customer name:</label> $c_name</div>
 				<div class='line'><label class='ticket'>Next of kin no:</label> $next_of_kin_phone</div>
-				<div class='line'><label class='ticket'>Route:</label> $route</div>
+				<div class='line'><label class='ticket'>Route:</label> {$_SESSION['state_name']} - $destination</div>
 				<div class='line'><label class='ticket'>Seat number:</label> $seat_no</div>
 				<div class='line'><label class='ticket'>Bus number:</label>$vehicle_no</div>
 				<div class='line'><label class='ticket'>Departure order:</label>" . parent::ordinal($departure_order) . " " . $vehicle_type . "</div>

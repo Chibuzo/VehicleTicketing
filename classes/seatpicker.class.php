@@ -49,6 +49,9 @@ class SeatPicker extends Ticket {
 			//return $this->getCarSeats();
 			//break;
 			case 10:
+			case 13:
+			case 15:
+			case 16:
 				return $this->getBusSeats();
 				break;
 			case 19:
@@ -61,7 +64,7 @@ class SeatPicker extends Ticket {
 	function getBoardingVehicleDetails()
 	{
 		$_vehicle = new VehicleModel();
-		$vehicle = $_vehicle->findBoardingVehicle($this->park_map_id, $this->vehicle_type_id, $this->travel_id, $this->departure_order, $this->travel_date);
+		$vehicle = $_vehicle->findBoardingVehicle($this->park_map_id, $this->vehicle_type_id, $this->departure_order, $this->travel_date);
 
 		if ($vehicle != false) {
 			$this->boarding_vehicle_id = $vehicle->id;
@@ -236,7 +239,7 @@ class SeatPicker extends Ticket {
 	private function upperSittingDetails($vehicle_type)
 	{
 		return "<div class='seat_arrangement $vehicle_type' data-fare='" . number_format($this->fare) . "' data-park_map_id='{$this->park_map_id}' data-trip_id='{$this->trip_id}'
-		data-boarding_vehicle_id='{$this->boarding_vehicle_id}' data-vehicle_type_id='{$this->vehicle_type_id}' data-travel_date='{$this->travel_date}'>
+		data-departure_order='{$this->departure_order}' data-boarding_vehicle_id='{$this->boarding_vehicle_id}' data-vehicle_type_id='{$this->vehicle_type_id}' data-travel_date='{$this->travel_date}'>
 		<div>Click on an available seat to select it. Click again to de-select it.</div>
 		<div class='seat_wrap'>
 			<div class='cols steering'></div>";

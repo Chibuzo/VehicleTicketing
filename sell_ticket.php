@@ -1,26 +1,26 @@
 <?php
 require "includes/head.php";
 require "includes/side-bar.php";
-require "classes/vehicle.class.php";
-require "classes/travelparkmap.class.php";
+require "classes/vehiclemodel.class.php";
+require "classes/destination.class.php";
 //require "classes/routemodel.class.php";
 
-$vehicle = new Vehicle();
-$parkMap = new TravelParkMap();
+$vehicle = new VehicleModel();
+$destination = new Destination();
 //$route = new RouteModel();
 ?>
 <link rel="stylesheet" type="text/css" href='css/seats.css' />
 <link href="css/datepicker.css" rel="stylesheet" />
 <link href="css/datepicker3.css" rel="stylesheet" />
+
 <style>
 #details { display:nne; }
 #pick_seat {margin-left:30px; height: 230px; margin-top: 8px;}
 #bus_details {display:none}
 iframe#receipt {clear:both; width:280px; display:none; height:300px; border:#ccc solid; }
 label {font: bold 11px Verdana}
-nput.small {padding:1px;}
 select {paddng:0px; heght:23px; width:173px}
-.alert-error { display: none; }
+.alert-error, #div-add-customer { display: none; }
 </style>
 
 <div class="content-wrapper">
@@ -55,7 +55,7 @@ select {paddng:0px; heght:23px; width:173px}
 											<option value="">-- Select Vehicle type --</option>
 											<?php
 												foreach ($vehicle->getAllVehicleTypes() AS $b) {
-													echo "\t<option value='{$b->id}' data-num_of_seat='{$b->num_of_seats}'>{$b->name} ($b->num_of_seats Seats)</option>\n";
+													echo "\t<option value='{$b->id}' data-num_of_seat='{$b->num_of_seats}'>{$b->vehicle_name} ($b->num_of_seats Seats)</option>\n";
 												}
 											?>
 										</select>
@@ -92,8 +92,8 @@ select {paddng:0px; heght:23px; width:173px}
 										<select name="park_map_id" id="park_map_id" class="form-control">
 											<option value="">-- Pick destination --</option>
 											<?php
-												foreach($parkMap->getParkMap($_SESSION['travel_id'], $_SESSION['park_id']) AS $dest) {
-													echo "\t<option value='{$dest->park_map_id}'>{$dest->destination_state}</option>\n";
+												foreach($destination->getRoutes() AS $dest) {
+													echo "\t<option value='{$dest->park_map_id}'>{$dest->destination}</option>\n";
 												}
 											?>
 										</select>
@@ -121,8 +121,7 @@ select {paddng:0px; heght:23px; width:173px}
 								</div>
 							</form>
 							<br />
-							<div id="pick_seat">
-							</div>
+							<div id="pick_seat"></div>
 						</div>
 					</div>
 				</div>
@@ -136,21 +135,31 @@ select {paddng:0px; heght:23px; width:173px}
 					<div class="box-body">
 						<div>
 							<form method="post" id="customer_info" class="">
+								<input type="hidden" name="c_id" id="c_id" value="" />
+								<!--<div class="input-group form-group">
+									<input type="text" name="customer_phone" id="customer-phone" class="form-control" placeholder="Customer's phone number" />
+									<span class="input-group-btn">
+										<button type="submit" class="btn btn-primary" id="find-customer">Find & Print</button>
+									</span>
+								</div>-->
 								<div class="form-group">
-									<input type="text" name="customer_name" class="form-control" placeholder="Customer's name" />
+									<input type="text" name="customer_phone" id="customer-phone" class="form-control" placeholder="Customer's phone number" />
 								</div>
-								<div class="form-group">
-									<input type="text" name="address" class="form-control hidden" placeholder="Customer's address" />
-								</div>
+								<div id="div-add-customer">
+									<div class="form-group">
+										<input type="text" name="customer_name" class="form-control" placeholder="Customer's name" />
+									</div>
+									<div class="form-group">
+										<input type="text" name="address" class="form-control hidden" placeholder="Customer's address" />
+									</div>
 
-								<div class="form-group">
-									<input type="text" name="kin_phone" class="form-control" placeholder="Next of kin's phone number" />
+									<div class="form-group">
+										<input type="text" name="kin_phone" class="form-control" placeholder="Next of kin's phone number" />
+									</div>
 								</div>
-								<!--<input type="hidden" name="c_id" id="c_id" value="" />-->
 								<div class="form-group">
-									<input type="text" name="customer_phone" id="" class="form-control" placeholder="Customer's phone number" />
+									<button type='submit' class='btn btn-primary btn-block'><span class='glyphicon glyphicon-print'></span> Print ticket</button>
 								</div>
-								<p><button type='submit' class='btn btn-primary btn-block'><span class='glyphicon glyphicon-print'></span> Print ticket</button></p>
 								<input type="reset" class="hide clearfix" />
 								<div class="alert alert-error">Please fill in all the required details</div>
 							</form>

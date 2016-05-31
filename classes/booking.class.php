@@ -10,17 +10,16 @@ class Booking extends Ticket {
 	}
 
 
-	function book($boarding_vehicle_id, $seat_no, $payment_opt, $customer_id)
+	function book($boarding_vehicle_id, $seat_no, $customer_id)
 	{
 		$ticket_no = $this->generateRefNo();
 
 		$sql = "INSERT INTO " . self::$db_tbl . "
-		(ticket_no, payment_status, payment_opt, boarding_vehicle_id, seat_no, customer_id)
+		(ticket_no, payment_status, channel, boarding_vehicle_id, seat_no, customer_id)
 		VALUES
-		('$ticket_no', 'Paid', :payment_opt, :boarding_vehicle_id, :seat_no, '$customer_id')";
+		('$ticket_no', 'Paid', 'offline', :boarding_vehicle_id, :seat_no, '$customer_id')";
 
 		$param = array(
-				'payment_opt' => $payment_opt,
 				'boarding_vehicle_id' => $boarding_vehicle_id,
 				'seat_no' => $seat_no
 		);
@@ -35,12 +34,12 @@ class Booking extends Ticket {
 
 	public function getTicketDetails($id)
 	{
-		$sql = "SELECT ticket_no, c_name, next_of_kin_phone, tr.fare, seat_no, vehicle_no, bv.travel_date, route, bv.departure_order, vt.name vehicle_type
+		$sql = "SELECT ticket_no, c_name, next_of_kin_phone, tr.fare, seat_no, vehicle_no, bv.travel_date, destination, bv.departure_order, vt.vehicle_name vehicle_type
 				FROM " . self::$db_tbl . " bd
 				JOIN boarding_vehicle bv ON bd.boarding_vehicle_id = bv.id
 				LEFT JOIN booked_vehicles bbv ON bv.booked_vehicle_id = bbv.id
-				JOIN trips tr ON bv.trip_id = tr.id
-				JOIN routes r ON tr.route_id = r.id
+				JOIN trips tr ON bv.trip_id = tr.trip_id
+				JOIN destination d ON bv.park_map_id = d.park_map_id
 				JOIN customers c ON bd.customer_id = c.id
 				JOIN vehicle_types vt ON tr.vehicle_type_id = vt.id
 				WHERE bd.id = :id";
@@ -54,8 +53,8 @@ class Booking extends Ticket {
 
 	function cancelBooking($ticket_id)
 	{
-		$sql = "SELECT bb.booked_seats, bb.id bb_id, seat_no FROM {self::$db_tbl} bd
-				JOIN boarding_vehicle bb ON bd.boarding_vehicle_id = bb.id
+		$sql = "SELECT bv.booked_seats, bv.id bb_id, seat_no FROM " . self::$db_tbl . " bd
+				JOIN boarding_vehicle bv ON bd.boarding_vehicle_id = bv.id
 				WHERE bd.id = :ticket_id";
 
 		self::$db->query($sql, array('ticket_id' => $ticket_id));

@@ -13,7 +13,7 @@ $total_revenue = $total_expenses = $total_profit = 0;
 foreach ($report->getDailyReport($_GET['date']) AS $rep) {
 	$data = array();
 	$data[] = $n++;
-	$data[] = $rep['route'];
+	$data[] = $_SESSION['state_name'] . " - " . $rep['destination'];
 	$data[] = $rep['bus_type'] . ' ( ' . $departure_order = Report::ordinal($rep['departure_order']) . ' )';
 	$data[] = $num_of_tickets = count(explode(",", $rep['booked_seats']));
 	$data[] = number_format($rep['fare']);
@@ -34,12 +34,12 @@ $ex = new PHPExcel();
 
 $ex->getProperties()
    ->setCreator($_SESSION['username'])
-   ->setTitle('Autostar Report')
-   ->setDescription('Autostar Transport Reports')
+   ->setTitle($_SESSION['travel'])
+   ->setDescription($_SESSION['travel'] . ' Reports')
    ->setSubject('Daily Reports');
 
 $sheet = $ex->getSheet(0);
-$sheet->setTitle("Autostar Report");
+$sheet->setTitle($_SESSION['travel'] . " Report");
 
 $fdate = date('D, d M Y', strtotime($_GET['date']));
 $sheet->setCellValue('A1', 'DAILY REPORT FOR ' . $fdate);

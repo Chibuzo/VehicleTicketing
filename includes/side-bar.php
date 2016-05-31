@@ -41,7 +41,7 @@
 				<li>
 				  <a href="bookbus.php">
 					<i class="fa fa-bus"></i>
-					<span>Book Bus</span>
+					<span>Book Vehicle</span>
 				  </a>
 				</li>
 
@@ -58,7 +58,7 @@
 				  </a>
 				</li>
 
-				<li class="hidden">
+				<li class="hdden">
 				  <a href="report.php">
 					<i class="fa fa-book"></i>
 					<span>Reports</span>

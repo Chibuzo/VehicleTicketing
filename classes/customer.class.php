@@ -2,6 +2,7 @@
 require_once "ticket.class.php";
 
 class Customer extends Ticket {
+	public $customer_name, $phone_no, $next_of_kin_phone, $id;
 
 	public function __construct()
 	{
@@ -9,12 +10,16 @@ class Customer extends Ticket {
 	}
 
 
-	function addNew($param)
+	function addNew(Customer $customer)
 	{
 		$sql = "INSERT INTO customers
-				(c_name, phone_no, next_of_kin_phone)
-				VALUES
-				(:c_name, :phone_no, :next_of_kin_phone)";
+				(c_name, phone_no, next_of_kin_phone) VALUES (:c_name, :phone_no, :next_of_kin_phone)";
+
+		$param = array(
+			'c_name' => $customer->customer_name,
+			'phone_no' => $customer->phone_no,
+			'next_of_kin_phone' => $customer->phone_no
+		);
 
 		if (self::$db->query($sql, $param)) {
 			return self::$db->getLastInsertId();
@@ -60,11 +65,12 @@ class Customer extends Ticket {
 	}
 
 
-	function getCustomer($field, $id)
+	function getCustomer($field, $value)
 	{
-		$sql = "SELECT * FROM customers WHERE {$field} = '$id'";
-		if (self::$db->query($sql)) {
-			return self::$db->fetch();
+		$sql = "SELECT * FROM customers WHERE {$field} = '$value'";
+		self::$db->query($sql, array('value' => $value));
+		if ($customer = self::$db->fetch()) {
+			return $customer;
 		} else {
 			return false;
 		}

@@ -5,21 +5,43 @@ class Ticket
 {
 	//protected $db;
 	protected static $db;
-	protected static $offline_db;
 
 	protected function __construct()
 	{
 		self::$db = new db(DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD);
-		self::$offline_db = new db(OFFLINE_DB_HOST, OFFLINE_DB_NAME, OFFLINE_DB_USERNAME, OFFLINE_DB_PASSWORD);
+	}
+
+
+	public static function addTravelDetails($travel_name, $travel_id, $abbr, $state, $park, $park_id, $online, $offline, $phone_nos)
+	{
+		self::$db = new db(DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD);
+
+		$sql = "INSERT INTO travels (travel_name, abbr, travel_id, state, park, phone_nos, offline_charge, online_charge)
+				VALUES (:travel_name, :abbr, :travel_id, :state, :park, :phone_nos, :offline, :online)";
+
+		$param = array(
+			'travel_name' => $travel_name,
+			'abbr' => $abbr,
+			'travel_id' => $travel_id,
+			'state' => $state,
+			'park' => $park . "-" . $park_id,
+			'phone_nos' => $phone_nos,
+			'offline' => $offline,
+			'online' => $online
+		);
+
+		if (self::$db->query($sql, $param)) {
+			return true;
+		}
 	}
 
 
 	public static function loadTravelDetails()
 	{
-		self::$offline_db = new db(OFFLINE_DB_HOST, OFFLINE_DB_NAME, OFFLINE_DB_USERNAME, OFFLINE_DB_PASSWORD);
+		self::$db = new db(DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD);
 
-		self::$offline_db->query("SELECT * FROM ticket.travels");
-		if ($travel = self::$offline_db->fetch('obj')) {
+		self::$db->query("SELECT * FROM ticket.travels");
+		if ($travel = self::$db->fetch('obj')) {
 			$state = explode("-", $travel->state);
 			$park = explode("-", $travel->park);
 

@@ -12,16 +12,16 @@ class Manifest extends Ticket {
 	public function getManifest($boarding_vehicle_id, $limit = null)
 	{
 		if ($limit != null) {
-			$limit = "LIMIT 0, 5";
+			$limit = "LIMIT 0, 20";
 		}
-		$sql = "SELECT bd.id bd_id, ticket_no, date_booked, c_name, next_of_kin_phone, phone_no, customer_id, seat_no, bv.fare, bv.travel_date, name vehicle_type, num_of_seats, route, username, vi.*
+		$sql = "SELECT bd.id bd_id, ticket_no, date_booked, c_name, next_of_kin_phone, phone_no, customer_id, seat_no, bv.fare, bv.travel_date, vehicle_name vehicle_type, num_of_seats, destination, username, vi.*
 				FROM booking_details bd
 				JOIN boarding_vehicle bv ON bd.boarding_vehicle_id = bv.id
-				JOIN trips tr ON bv.trip_id = tr.id
-				JOIN routes r ON tr.route_id = r.id
+				JOIN trips tr ON bv.trip_id = tr.trip_id
+				JOIN destination d ON tr.park_map_id = d.park_map_id
 				JOIN vehicle_types vt ON tr.vehicle_type_id = vt.id
 				LEFT JOIN booked_vehicles bbv ON bv.booked_vehicle_id = bbv.id
-				LEFT JOIN vehicle_info vi ON bv.booked_vehicle_id = vi.id
+				LEFT JOIN vehicle_info vi ON bbv.vehicle_info_id = vi.id
 				JOIN customers c ON bd.customer_id = c.id
 				LEFT JOIN users u ON bd.user_id = u.id
 				WHERE bd.status = '1' AND bd.boarding_vehicle_id = :boarding_vehicle_id
@@ -30,6 +30,24 @@ class Manifest extends Ticket {
 
 		self::$db->query($sql, array('boarding_vehicle_id' => $boarding_vehicle_id));
 		return self::$db->fetchAll('obj');
+	}
+
+
+	public function getWayBillDetails($boarding_vehicle_id)
+	{
+		$sql = "SELECT driver_name, vi.vehicle_no, bv.fare, booked_seats, departure_time, ma.* FROM boarding_vehicle bv
+				JOIN booked_vehicles bbv ON bv.booked_vehicle_id = bbv.id
+				JOIN vehicle_info vi ON bbv.vehicle_info_id = vi.id
+				JOIN trips t ON bv.trip_id = t.trip_id
+				JOIN manifest_audit ma ON bv.id = ma.boarding_vehicle_id
+				WHERE bv.id = :bv_id";
+
+		self::$db->query($sql, array('bv_id' => $boarding_vehicle_id));
+		if ($details = self::$db->fetch('obj')) {
+			$details->seats = count(explode(",", $details->booked_seats));
+			$details->income = ($details->seats * $details->fare) - ($details->fuel + $details->scouters_charge + $details->drivers_feeding);
+			return $details;
+		}
 	}
 
 
@@ -47,16 +65,17 @@ class Manifest extends Ticket {
 			echo "<div class='audit_pane'><div><b>Balance Sheet</b></div><hr id='line' style='margin:8px 0px' />
 
 					Tickets sold: $seats<br />
-					Transport income: ₦" . number_format($income) . "<br />
-					Load: ₦" . number_format($audit->load_cost) . "<br />
-					Expenses/Driver: ₦" . number_format($audit->drivers_expenses) . "<br />
+					Gross income: ₦" . number_format($income) . "<br />
+					Fuel cost: ₦" . number_format($audit->fuel) . "<br />
+					Driver's feeding: ₦" . number_format($audit->drivers_feeding) . "<br />
+					Scouters: ₦" . number_format($audit->scouters_charge) . "<br>
 					<!--Service charge: ₦<hr style='margin:8px 0px' />-->
-					Balance: ₦" . number_format(($income  + (int)$audit->load_cost) - (int)$audit->drivers_expenses) . "</div>
+					Net Income: ₦" . number_format(($income  + (int)$audit->fuel) - (int)$audit->drivers_feeding) . "</div>
 					<div class='auditpane' style='border:0px'><br />
 						<button id='reopen' class='btn btn-default btn-large btn-block' data-boarding_vehicle_id='$boarding_vehicle_id'>Reopen this vehicle</button>
 					</div>";
 		} else {
-			echo "<div class='audit_pane'>No details found</div>";
+			echo "false";
 		}
 	}
 
@@ -78,7 +97,7 @@ class Manifest extends Ticket {
 		$html = '';
 		if (isset($details[0]->vehicle_no)) {
 			$html .= "<p>
-				Route: {$details[0]->route}<br />
+				Route: {$_SESSION['state_name']} - {$details[0]->destination}<br />
 				Driver's name: {$details[0]->driver_name}<br />
 				Driver's phone number: {$details[0]->drivers_phone}<br />
 				vehicle number: {$details[0]->vehicle_no}<br />
@@ -115,32 +134,32 @@ class Manifest extends Ticket {
 		}
 		$html .= "<tbody></table>";
 		// Get manifest's balance sheet
-		$this->getAudit($boarding_vehicle_id);
+		// $this->getAudit($boarding_vehicle_id);
 
 		$html .= "<div id='signature'><span><hr />Driver's Signature</span><span style='float:right'><hr />Manager's Signature</span></div>";
 		echo $html;
 	}
 
-
-	public function balanceSheet($boarding_vehicle_id, $expenses, $load)
+	// put transaction
+	public function balanceSheet($boarding_vehicle_id, $feeding, $fuel = 2500, $scouters)
 	{
 		self::$db->query("SELECT boarding_vehicle_id FROM manifest_audit WHERE boarding_vehicle_id = :boarding_vehicle_id", array('boarding_vehicle_id' => $boarding_vehicle_id));
 
 		$param = array(
-			'load' => $load,
-			'expenses' => $expenses,
-			'boarding_vehicle_id' => $boarding_vehicle_id
+				'feeding' => $feeding,
+				'fuel' => $fuel,
+				'scouters' => $scouters,
+				'boarding_vehicle_id' => $boarding_vehicle_id
 		);
-
 		if ($result = self::$db->fetch()) {
 			$sql = "UPDATE manifest_audit
-					SET    load_cost = :load, drivers_expenses = :expenses
+					SET    fuel = :fuel, drivers_feeding = :feeding, scouters_charge = :scouters
 					WHERE  boarding_vehicle_id = :boarding_vehicle_id";
 
 			self::$db->query($sql, $param); // ? null : $query_check = false;
 		} else {
-			$sql = "INSERT INTO manifest_audit (load_cost, drivers_expenses, boarding_vehicle_id)
-					VALUES (:load, :expenses, :boarding_vehicle_id)";
+			$sql = "INSERT INTO manifest_audit (drivers_feeding, fuel, scouters_charge, boarding_vehicle_id)
+					VALUES (:feeding, :fuel, :scouters, :boarding_vehicle_id)";
 			self::$db->query($sql, $param);
 		}
 
@@ -152,7 +171,7 @@ class Manifest extends Ticket {
 	public function reopenvehicle($boarding_vehicle_id)
 	{
 		$sql = "SELECT booked_seats, num_of_seats FROM boarding_vehicle bv
-				JOIN trips tr ON bv.trip_id = tr.id
+				JOIN trips tr ON bv.trip_id = tr.trip_id
 				JOIN vehicle_types vt ON tr.vehicle_type_id = vt.id
 				WHERE bv.id = :boarding_vehicle_id";
 

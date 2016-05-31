@@ -11,7 +11,7 @@ $manifest = new Manifest();
 if (isset($_REQUEST['op'])) {
 	if ($_REQUEST['op'] == 'get-boarding-vehicles')
 	{
-		$vehicles = $vehicle->getBoardingVehicles($_POST['travel_date'], $_POST['park_map_id'], $_SESSION['travel_id']);
+		$vehicles = $vehicle->getBoardingVehicles($_POST['travel_date'], $_POST['park_map_id']);
 		$opt = '';
 		if (count($vehicles) > 0) {
 			foreach ($vehicles AS $b) {
@@ -28,7 +28,7 @@ if (isset($_REQUEST['op'])) {
 		if (isset($manifest_details[0]->vehicle_no)) {
 			$html .= "<blockquote><p style='font: 11px Verdana; color:#999; line-height:17px;'>
 				<button type='button id='audit-btn' data-target='#auditModal' data-toggle='modal' class='btn btn-danger pull-right'><i class='fa fa-credit-card'></i> Audit</button>
-				Route: {$manifest_details[0]->route}<br />
+				Route: {$_SESSION['state_name']} - {$manifest_details[0]->destination}<br />
 				Driver's name: {$manifest_details[0]->driver_name}<br />
 				Driver's phone number: {$manifest_details[0]->drivers_phone}<br />
 				vehicle number: {$manifest_details[0]->vehicle_no}<br />
@@ -37,7 +37,7 @@ if (isset($_REQUEST['op'])) {
 			</blockquote></p>";
 		}
 
-		$html .= "<table class='table table-striped table-bordered' style='padding:0px'>
+		$html .= "<table class='table tablestriped table-bordered' style='padding:0px'>
 			<thead>
 				<tr>
 					<th style='width:45px'>Date</th>
@@ -46,7 +46,7 @@ if (isset($_REQUEST['op'])) {
 					<th>Next of Kin</th>
 					<th class='text-right'>Seat</th>
 					<th>Ticket</th>
-					<th class='text-right'>Fare (N)</th>
+					<th class='text-right'>Fare (₦)</th>
 					<th style='text-align:center' colspan='3'>Action</th>
 					<th>Sold by</th>
 				</tr>
@@ -54,7 +54,9 @@ if (isset($_REQUEST['op'])) {
 			<tbody id='tbl-ticket'>";
 
 			foreach ($manifest_details AS $bk) {
-				$html .= "<tr id='{$bk->customer_id}'>
+				$bg = '';
+				//if ($bk->offline == '0') $bg = 'warning';
+				$html .= "<tr id='{$bk->customer_id}' class='$bg'>
 							<td>" . date('d/m/Y', strtotime($bk->date_booked)) . "</td>
 							<td>{$bk->c_name}</td>
 							<td>{$bk->phone_no}</td>
@@ -65,7 +67,8 @@ if (isset($_REQUEST['op'])) {
 							<td class='text-center'><a href='' id='{$bk->bd_id}' class='print-ticket' title='Print ticket' data-toggle='tooltip'><span class='glyphicon glyphicon-print'></span></a></td>
 							<td class='text-center'><a href='' data-toggle='modal' data-target='#customerModal' id='{$bk->bd_id}' class='edit-ticket'><span class='glyphicon glyphicon-pencil'></span></a></td>
 							<td class='text-center'><a href='' id='{$bk->bd_id}' class='cancel-ticket red'><span class='glyphicon glyphicon-remove'></span></a></td>
-							<td>{$bk->username}</td>
+							<!--<td>{$bk->username}</td>-->
+							<td>{$_SESSION['username']}</td>
 						</tr>";
 			}
 			echo $html;
@@ -80,7 +83,7 @@ if (isset($_REQUEST['op'])) {
 	}
 	elseif ($_REQUEST['op'] == 'balance-sheet')
 	{
-		$manifest->balanceSheet($_POST['boarding_vehicle_id'], $_POST['expenses'], $_POST['load_fare']);
+		$manifest->balanceSheet($_POST['boarding_vehicle_id'], $_POST['feeding'], 2500, $_POST['scouters']);
 	}
 	elseif ($_REQUEST['op'] == 'cancel-ticket')
 	{
@@ -103,6 +106,28 @@ if (isset($_REQUEST['op'])) {
 	{
 		echo $manifest->reopenvehicle($_POST['boarding_vehicle_id']);
 	}
+	elseif ($_REQUEST['op'] == 'print-waybill') {
+		$details = $manifest->getWayBillDetails($_GET['boarding_vehicle_id']);
+		printWaybill($details);
+	}
+}
+
+
+function printWaybill($details) {
+	echo "<div class='head'>{$_SESSION['travel']}<br />
+		<span>DRIVER'S WAYBILL</span></div><br><br>";
+
+	$html = "<table style='bordercollapse:collapse; width:100%; text-align: left;' border='0'>
+			<tr><td width='100'>Depot</td><td class='uline' width='200'>{$_SESSION['park_name']}</td><td width='100'>Date</td><td class='uline' wdth='220'>" . date('d/m/Y') . "</td></tr>
+			<tr><td>Route</td><td class='uline'>Nsk</td><td>Fare</td><td class='uline'>₦" . number_format($details->fare) . "</td></tr>
+			<tr><td>Fleet/Reg No</td><td colspan='3' class='uline'>PMT $details->vehicle_no</td></tr>
+			<tr><td>Driver's name</td><td colspan='3' class='uline'>$details->driver_name</td></tr>
+			<tr><td>Passengers</td><td class='uline'>$details->seats</td><td>Scouters charges</td><td class='uline'>₦" . number_format($details->scouters_charge) . "</td></tr>
+			<tr><td>Fuel</td><td class='uline'>₦" . number_format($details->fuel) . "</td><td>Feeding</td><td class='uline'>₦" . number_format($details->drivers_feeding) . "</td></tr>
+			<tr><td>Net/Income</td><td class='uline'>₦" . number_format($details->income) . "</td><td>Time</td><td class='uline'>$details->departure_time</td></tr>
+			<tr><td>Remarks</td><td colspan='3' class='uline'>{$_SESSION['username']}</td></tr>";
+
+	echo $html;
 }
 
 ?>

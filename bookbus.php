@@ -1,17 +1,15 @@
 <?php
 require "includes/head.php";
 require "includes/side-bar.php";
-require "classes/route.class.php";
 require "classes/vehiclemodel.class.php";
-require "classes/travelparkmap.class.php";
+require "classes/destination.class.php";
 
-$parkMap = new TravelParkMap();
+$destination = new Destination();
 $vehicle = new VehicleModel();
 $vehicles = array();
-foreach ($vehicle->getTravelVehicles($_SESSION['travel_id']) AS $v) {
+foreach ($vehicle->getAllRegisteredVehicles() AS $v) {
 	$vehicles[] = $v->vehicle_no;
 }
-//$route = new Route();
 ?>
 <link href="css/datepicker.css" rel="stylesheet" />
 <link href="css/datepicker3.css" rel="stylesheet" />
@@ -72,8 +70,8 @@ iframe#receipt {
 											<option value="">-- Destination --</option>
 											<?php
 												// get destination
-												foreach($parkMap->getParkMap($_SESSION['travel_id'], $_SESSION['park_id']) AS $dest) {
-													echo "\t<option value='{$dest->park_map_id}'>{$dest->destination_state}</option>\n";
+												foreach($destination->getRoutes() AS $dest) {
+													echo "\t<option value='{$dest->park_map_id}'>{$dest->destination}</option>\n";
 												}
 											?>
 										</select>
@@ -156,7 +154,7 @@ iframe#receipt {
 										if (empty($row['seat_status'])) $status = "Not full";
 										else $status = $row['seat_status'];
 										echo "<tr id='{$row['bbv_id']}' data-vehicle_id='{$row['vehicle_id']}' data-boarding-vehicle-id='{$row['boarding_vehicle_id']}' data-departure_order='{$row['departure_order']}' data-route_id='{$row['route_id']}' data-vehicle_type_id='{$row['vehicle_type_id']}'>
-												<td>{$row['route']}</td>
+												<td>{$_SESSION['state_name']} - {$row['destination']}</td>
 												<td>{$row['vehicle_type']}</td>
 												<td>{$row['driver_name']}</td>
 												<td>{$row['drivers_phone']}</td>
@@ -213,7 +211,7 @@ iframe#receipt {
 									<option value="">-- Vehicle type --</option>
 									<?php
 										foreach ($vehicle->getAllvehicleTypes() AS $b) {
-											echo "<option value='{$b->id}'>{$b->name} ($b->num_of_seats Seats)</option>";
+											echo "<option value='{$b->id}'>{$b->vehicle_name} ($b->num_of_seats Seats)</option>";
 										}
 									?>
 								</select>

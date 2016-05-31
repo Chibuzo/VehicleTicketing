@@ -12,7 +12,7 @@ class Seating extends Ticket {
 	function reserveSeat($boarding_vehicle_id, $seat_no) {
 		// get the booked seats
 		$sql = "SELECT booked_seats, num_of_seats FROM boarding_vehicle bv
-				JOIN vehicle_types vt ON bv.vehicle_type_id = vt.id
+				JOIN vehicle_types vt ON bv.vehicle_type_id = vt.vehicle_type_id
 				WHERE bv.id = :id";
 
 		self::$db->query($sql, array('id' => $boarding_vehicle_id));
@@ -24,7 +24,8 @@ class Seating extends Ticket {
 			/*** Make sure no seat number repeats itself, and that the selected seat ($seat_no) has not already been booked ***/
 			$booked_seats = array_unique($booked_seats);
 			if (in_array($seat_no, $booked_seats)) {
-				return "02"; // Error code 02 - Seat number no longer available;
+				throw new Exception ("The selected seat is no longer available", "02");
+				//return "02"; // Error code 02 - Seat number no longer available;
 			}
 
 			# If there is any empty seat/array element, remove it
