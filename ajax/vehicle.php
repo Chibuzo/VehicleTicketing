@@ -1,15 +1,11 @@
 <?php
 session_start();
 require_once("../classes/vehiclemodel.class.php");
-require_once ("../includes/db_handle.php");
+//require_once ("../includes/db_handle.php");
 
 $vehicle = new VehicleModel();
 
-if ($_REQUEST['op'] == 'vehicle-auto-complete')
-{
-	autoComplete($db);
-}
-elseif ($_REQUEST['op'] == 'verify-vehicle')
+if ($_REQUEST['op'] == 'verify-vehicle')
 {
 	if ($vehicle->verifyvehicle($_POST['vehicle_no']) === true) {
 		echo "Found";

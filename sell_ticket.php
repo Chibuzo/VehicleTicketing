@@ -38,30 +38,42 @@ select {paddng:0px; heght:23px; width:173px}
 	<!-- Main content -->
 	<section class="content">
 		<div class="row">
-			<div id='main_bus_search' class="col-md-6">
-				<div class="box box-warning">
-					<div class="box-header with-border">
+			<div id='main_bus_search' class="col-md-7">
+				<div class="box box-warning" style="height:480px">
+					<div class="box-header with-border hidden">
 						<h2 style='font-size: 18px' class="box-title"><i class="fa fa-money"></i> &nbsp;Sell ticket</h2>
 					</div>
 					<div class="box-body">
-						<div>
-							<div class="alert alert-error">
-							</div>
-							<form action="" method="post" id="book">
-								<div class="form-group row">
-									<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-5">
+								<div class="alert alert-error">
+								</div>
+								<form action="" method="post" id="book">
+									<div class="form-group col-md-12">
 										<label>Select Vehicle Type</label>
 										<select name="vehicle_type" class="form-control" id="vehicle_type">
 											<option value="">-- Select Vehicle type --</option>
 											<?php
 												foreach ($vehicle->getAllVehicleTypes() AS $b) {
-													echo "\t<option value='{$b->id}' data-num_of_seat='{$b->num_of_seats}'>{$b->vehicle_name} ($b->num_of_seats Seats)</option>\n";
+													echo "\t<option value='{$b->vehicle_type_id}' data-num_of_seat='{$b->num_of_seats}'>{$b->vehicle_name} ($b->num_of_seats Seats)</option>\n";
 												}
 											?>
 										</select>
 									</div>
 
-									<div class="col-md-6">
+									<div class="form-group col-md-12">
+										<label>To</label>
+										<select name="park_map_id" id="park_map_id" class="form-control">
+											<option value="">-- Pick destination --</option>
+											<?php
+												foreach($destination->getRoutes() AS $dest) {
+													echo "\t<option value='{$dest->park_map_id}'>{$dest->destination} [ $dest->park ]</option>\n";
+												}
+												?>
+										</select>
+									</div>
+
+									<div class="form-group col-md-12">
 										<label>Pick Vehicle</label>
 										<select name="departure_order" class="form-control">
 											<option value="">-- Auto select --</option>
@@ -77,37 +89,13 @@ select {paddng:0px; heght:23px; width:173px}
 											<option value="10">Tenth Vehicle</option>
 										</select>
 									</div>
-								</div>
 
-								<div class="form-group row">
-									<div class="col-md-6">
-										<label>From</label>
-										<select id="origin" name="origin" class="form-control">
-											<option value='<?php echo $_SESSION['state_id'] . "'>" . $_SESSION['state_name']; ?></option>
-										</select>
-									</div>
-
-									<div class="col-md-6">
-										<label>To</label>
-										<select name="park_map_id" id="park_map_id" class="form-control">
-											<option value="">-- Pick destination --</option>
-											<?php
-												foreach($destination->getRoutes() AS $dest) {
-													echo "\t<option value='{$dest->park_map_id}'>{$dest->destination}</option>\n";
-												}
-											?>
-										</select>
-									</div>
-								</div>
-
-								<p id="alert-show"><div id='loading_bus_details' class='alert hide'></div></p>
-
-								<div class="form-group row">
-									<div class="col-md-6">
+									<div class="form-group col-md-12">
 										<label>Date of travel</label>
 										<input name="travel_date" id="t_date" type="text" value="<?php echo date('Y-m-d'); ?>" class="form-control date" />
 									</div>
-									<div class="col-md-6">
+
+									<div class="form-group col-md-12">
 										<label>&nbsp;</label><br />
 										<div class="row">
 											<div class="col-md-6">
@@ -118,16 +106,20 @@ select {paddng:0px; heght:23px; width:173px}
 											</div>
 										</div>
 									</div>
-								</div>
-							</form>
-							<br />
-							<div id="pick_seat"></div>
+
+									<p id="alert-show"><div id='loading_bus_details' class='alert hide'></div></p>
+								</form>
+							</div>
+
+							<div class="col-md-7">
+								<div id="pick_seat"></div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div id="details" class="col-md-4 pull-right">
+			<div class="col-md-4 pull-right">
 				<div class="box box-success">
 					<div class="box-header with-border">
 						<h2 style='font-size: 18px' class="box-title"><i class="fa fa-user"></i> &nbsp;Customer details</h2>

@@ -42,6 +42,17 @@ if (isset($_REQUEST['op'])) {
 			echo "Done";
 		}
 	}
+	elseif ($_POST['op'] == "get-state-parks")
+	{
+		$id = $_POST['state_id'];
+		require_once "../classes/parkmodel.class.php";
+		$park_model = new ParkModel();
+
+		$parks =  $park_model->getParksByState($id);
+
+		echo json_encode($parks);
+		exit;
+	}
 }
 
 ?>

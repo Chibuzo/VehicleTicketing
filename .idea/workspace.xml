@@ -2,32 +2,299 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d762b24d-cbc8-45e1-a083-5e64a5c8aecf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/travelparkmap.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajax/ajax/bus.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajax/ajax/manifest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ajax/customer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/charts.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/creat.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/customer_details.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/generate_report (1).php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/head.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/arrow_down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/arrow_up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/bg_body.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/bg_header.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/cartoon-bus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/chisco_logo.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ekene-logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/fav.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/godisgoodlogo.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/guo-logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ifesinachi_logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/logo.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/mastercard.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/mobile-app.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/mobileapp.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/peace-logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/phone.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/phone.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/print.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/security.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/slide1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/slide2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/slide3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/texture_grain.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/verve.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/young-shall-grow-logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_skyblue/arrow_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_skyblue/arrow_left_hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_skyblue/arrow_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_skyblue/arrow_right_hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_skyblue/bg_days.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_skyblue/bg_main.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_web/arrow_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_web/arrow_left_hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_web/arrow_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_web/arrow_right_hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_web/bg_days.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_dhx_web/bg_main.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_omega/arrow_left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_omega/arrow_left_hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_omega/arrow_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_omega/arrow_right_hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_omega/bg_days.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/imgs/dhtmlxcalendar_omega/bg_main.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/autocomplete.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/includes/helper_fns.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index1.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap-modal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/old_bookbus.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/bootstrap-slider/bootstrap-slider.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/bootstrap-slider/slider.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/chartjs/Chart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/chartjs/Chart.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/colorpicker/bootstrap-colorpicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/colorpicker/bootstrap-colorpicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/colorpicker/bootstrap-colorpicker.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/colorpicker/bootstrap-colorpicker.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/colorpicker/img/alpha-horizontal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/colorpicker/img/alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/colorpicker/img/hue-horizontal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/colorpicker/img/hue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/colorpicker/img/saturation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/datatables/dataTables.bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/datatables/dataTables.bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/datatables/images/sort_asc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/datatables/images/sort_asc_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/datatables/images/sort_both.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/datatables/images/sort_desc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/datatables/images/sort_desc_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/datatables/jquery.dataTables.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/fastclick/fastclick.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/fastclick/fastclick.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/excanvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/excanvas.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.colorhelpers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.colorhelpers.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.canvas.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.canvas.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.categories.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.categories.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.crosshair.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.crosshair.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.errorbars.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.errorbars.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.fillbetween.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.fillbetween.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.image.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.image.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.navigate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.navigate.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.pie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.pie.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.resize.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.resize.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.selection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.selection.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.stack.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.stack.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.symbol.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.symbol.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.threshold.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.threshold.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.time.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/flot/jquery.flot.time.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/fullcalendar/fullcalendar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/fullcalendar/fullcalendar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/fullcalendar/fullcalendar.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/fullcalendar/fullcalendar.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/fullcalendar/fullcalendar.print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/flat.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/flat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/flat@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/flat/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/futurico/futurico.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/futurico/futurico.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/futurico/futurico@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/icheck.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/icheck.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/line.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/line.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/line@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/line/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/minimal.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/minimal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/minimal@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/minimal/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/polaris/polaris.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/polaris/polaris.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/polaris/polaris@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/_all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/aero.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/aero.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/aero@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/blue.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/blue.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/blue@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/green.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/green.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/green@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/grey.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/grey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/grey@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/orange.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/orange.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/orange@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/pink.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/pink.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/pink@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/purple.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/purple.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/purple@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/red.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/red.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/red@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/square.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/square.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/square@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/yellow.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/yellow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/iCheck/square/yellow@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/input-mask/jquery.inputmask.date.extensions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/input-mask/jquery.inputmask.extensions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/input-mask/jquery.inputmask.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/input-mask/jquery.inputmask.numeric.extensions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/input-mask/jquery.inputmask.phone.extensions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/input-mask/jquery.inputmask.regex.extensions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/input-mask/phone-codes/phone-be.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/input-mask/phone-codes/phone-codes.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/input-mask/phone-codes/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/ionslider/ion.rangeSlider.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/ionslider/ion.rangeSlider.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/ionslider/ion.rangeSlider.skinFlat.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/ionslider/ion.rangeSlider.skinNice.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/jvectormap/jquery-jvectormap-1.2.2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/knob/jquery.knob.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/morris/morris.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/morris/morris.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/morris/morris.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/pace/pace.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/sparkline/jquery.sparkline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/plugins/sparkline/jquery.sparkline.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/register_bus.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/routes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tt.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view_online_bookings.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/booked_seat.gif" afterPath="$PROJECT_DIR$/images/booked_seat.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/highlighted_seat.gif" afterPath="$PROJECT_DIR$/images/highlighted_seat.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/seat.gif" afterPath="$PROJECT_DIR$/images/seat.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/selected_seat.gif" afterPath="$PROJECT_DIR$/images/selected_seat.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/manifest.php" afterPath="$PROJECT_DIR$/ajax/manifest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/misc_fns.php" afterPath="$PROJECT_DIR$/ajax/misc_fns.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/setup.php" afterPath="$PROJECT_DIR$/ajax/setup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/synch.php" afterPath="$PROJECT_DIR$/ajax/synch.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/vehicle.php" afterPath="$PROJECT_DIR$/ajax/vehicle.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bookbus.php" afterPath="$PROJECT_DIR$/bookbus.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/booking.class.php" afterPath="$PROJECT_DIR$/classes/booking.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/customer.class.php" afterPath="$PROJECT_DIR$/classes/customer.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/destination.class.php" afterPath="$PROJECT_DIR$/classes/destination.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/manifest.class.php" afterPath="$PROJECT_DIR$/classes/manifest.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/printer.class.php" afterPath="$PROJECT_DIR$/classes/printer.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/report.class.php" afterPath="$PROJECT_DIR$/classes/report.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/seating.class.php" afterPath="$PROJECT_DIR$/classes/seating.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/seatpicker.class.php" afterPath="$PROJECT_DIR$/classes/seatpicker.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ticket.class.php" afterPath="$PROJECT_DIR$/classes/ticket.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/trip.class.php" afterPath="$PROJECT_DIR$/classes/trip.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/vehiclemodel.class.php" afterPath="$PROJECT_DIR$/classes/vehiclemodel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config.php" afterPath="$PROJECT_DIR$/config/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/seats.css" afterPath="$PROJECT_DIR$/css/seats.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate_report.php" afterPath="$PROJECT_DIR$/generate_report.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/footer.html" afterPath="$PROJECT_DIR$/includes/footer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/side-bar.php" afterPath="$PROJECT_DIR$/includes/side-bar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/manifest.js" afterPath="$PROJECT_DIR$/js/manifest.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/book_vehicle.js" afterPath="$PROJECT_DIR$/js/book_vehicle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/sell_ticket.js" afterPath="$PROJECT_DIR$/js/sell_ticket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.htm" afterPath="$PROJECT_DIR$/manifest.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage_fares.php" afterPath="$PROJECT_DIR$/manage_fares.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.php" afterPath="$PROJECT_DIR$/manifest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report.php" afterPath="$PROJECT_DIR$/report.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seat_booking.php" afterPath="$PROJECT_DIR$/seat_booking.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sell_ticket.php" afterPath="$PROJECT_DIR$/sell_ticket.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ticket.php" afterPath="$PROJECT_DIR$/ticket.php" />
     </list>
     <ignored path="terminal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,99 +316,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="synch.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajax/synch.php">
+      <file leaf-file-name="sell_ticket.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sell_ticket.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.741936">
-              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://C:/chat/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://C:/chat/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.161291">
-              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trip.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/trip.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-49.677418">
-              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.2461538">
+              <caret line="41" column="64" selection-start-line="41" selection-start-column="64" selection-end-line="41" selection-end-column="64" />
               <folding>
-                <marker date="1464400734449" expanded="true" signature="424:656" placeholder="INSERT INTO trips..." />
-                <marker date="1464400734449" expanded="true" signature="1441:1617" placeholder="SELECT trip_..trips..." />
-                <marker date="1464400734449" expanded="true" signature="1981:2049" placeholder="UPDATE trips..." />
-                <marker date="1464400734449" expanded="true" signature="2536:2655" placeholder="SELECT id FR..trips..." />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../project/classes/project.class.php">
+      <file leaf-file-name="seats.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/seats.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.6923077">
-              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-              <folding>
-                <marker date="1464727861070" expanded="true" signature="326:439" placeholder="INSERT INTO ${self::$db_tbl}..." />
-                <marker date="1464727861070" expanded="true" signature="1088:1299" placeholder="SELECT p.*, ..projects..." />
-                <marker date="1464727861070" expanded="true" signature="1088:1304" placeholder="SELECT p.*, ..projects..." />
-                <marker date="1464727861070" expanded="true" signature="1330:1331" placeholder="SELECT * FRO..${self::$db_tbl}..." />
-                <marker date="1464727861070" expanded="true" signature="1502:1695" placeholder="SELECT p.*, ..projects..." />
-                <marker date="1464727861070" expanded="true" signature="1502:1716" placeholder="SELECT p.*, ..projects..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectdetails.class.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../project/classes/projectdetails.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34478807">
-              <caret line="194" column="5" selection-start-line="194" selection-start-column="5" selection-end-line="194" selection-end-column="5" />
-              <folding>
-                <marker date="1464730442915" expanded="true" signature="373:535" placeholder="INSERT INTO ${self::$db_tbl}..." />
-                <marker date="1464730442915" expanded="true" signature="1312:1451" placeholder="SELECT activ..${self::$db_tbl}..." />
-                <marker date="1464730442915" expanded="true" signature="1568:1684" placeholder="SELECT activ..${self::$db_tbl}..." />
-                <marker date="1464730442915" expanded="true" signature="2900:2922" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../project/ajax/test.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.064516">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.42073897">
+              <caret line="162" column="14" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../project/includes/project.html">
+      <file leaf-file-name="seatpicker.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/seatpicker.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.35484">
-              <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
-              <folding />
+            <state vertical-scroll-proportion="-7.646154">
+              <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+              <folding>
+                <marker date="1467299993812" expanded="true" signature="8049:8055" placeholder="..." />
+                <marker date="1467299993812" expanded="true" signature="8122:8530" placeholder="..." />
+                <marker date="1467299993812" expanded="false" signature="8435:8467" placeholder="..." />
+                <marker date="1467299993812" expanded="true" signature="8468:8530" placeholder="..." />
+                <marker date="1467299993812" expanded="true" signature="9431:9446" placeholder="..." />
+                <marker date="1467299993812" expanded="true" signature="10911:11022" placeholder="..." />
+                <marker date="1467299993812" expanded="true" signature="11070:11212" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,29 +364,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../travelhub/api/models/setupmodel.class.php" />
-        <option value="$PROJECT_DIR$/config/config.php" />
-        <option value="$PROJECT_DIR$/../travelhub/api/models/db.class.php" />
-        <option value="$PROJECT_DIR$/../travelhub/cp/admin/travels.php" />
-        <option value="$PROJECT_DIR$/../travelhub/api/models/travel.class.php" />
-        <option value="$PROJECT_DIR$/../travelhub/cp/travel/bookings.php" />
-        <option value="$PROJECT_DIR$/../travelhub/cp/state/manage_trips.php" />
-        <option value="$PROJECT_DIR$/../travelhub/api/models/travelvehicle.class.php" />
-        <option value="$PROJECT_DIR$/setup.php" />
-        <option value="$PROJECT_DIR$/classes/ticket.class.php" />
-        <option value="$PROJECT_DIR$/classes/travelparkmap.class.php" />
-        <option value="$PROJECT_DIR$/classes/parkmap.class.php" />
-        <option value="$PROJECT_DIR$/sell_ticket.php" />
-        <option value="$PROJECT_DIR$/ajax/setup.php" />
-        <option value="$PROJECT_DIR$/classes/destination.class.php" />
-        <option value="$PROJECT_DIR$/classes/seating.class.php" />
-        <option value="$PROJECT_DIR$/classes/printer.class.php" />
-        <option value="$PROJECT_DIR$/classes/seatpicker.class.php" />
-        <option value="$PROJECT_DIR$/manifest.php" />
-        <option value="$PROJECT_DIR$/ajax/manifest.php" />
-        <option value="$PROJECT_DIR$/bookbus.php" />
-        <option value="$PROJECT_DIR$/classes/report.class.php" />
-        <option value="$PROJECT_DIR$/report.php" />
         <option value="$PROJECT_DIR$/generate_report.php" />
         <option value="$PROJECT_DIR$/../project/index.php" />
         <option value="$PROJECT_DIR$/../project/home.php" />
@@ -187,24 +374,47 @@
         <option value="$PROJECT_DIR$/../project/lib/project.php" />
         <option value="$PROJECT_DIR$/../project/ajax/project_details.php" />
         <option value="$PROJECT_DIR$/../project/ajax/projects.php" />
-        <option value="$PROJECT_DIR$/ajax/synch.php" />
-        <option value="$PROJECT_DIR$/../travelhub/api/models/trip.class.php" />
-        <option value="$PROJECT_DIR$/js/sell_ticket.js" />
         <option value="$PROJECT_DIR$/../travelhub/api/models/bookingmodel.class.php" />
-        <option value="$PROJECT_DIR$/seat_booking.php" />
-        <option value="$PROJECT_DIR$/classes/booking.class.php" />
         <option value="$PROJECT_DIR$/apicaller.php" />
-        <option value="$PROJECT_DIR$/classes/manifest.class.php" />
-        <option value="$PROJECT_DIR$/classes/vehiclemodel.class.php" />
-        <option value="$PROJECT_DIR$/classes/trip.class.php" />
         <option value="$PROJECT_DIR$/../travelhub/api/controllers/booking.class.php" />
         <option value="C:/chat/index.html" />
         <option value="C:/chat/index.js" />
         <option value="$PROJECT_DIR$/../project/classes/u.class.php" />
-        <option value="$PROJECT_DIR$/../project/ajax/test.php" />
         <option value="$PROJECT_DIR$/../project/includes/project.html" />
         <option value="$PROJECT_DIR$/../project/classes/project.class.php" />
+        <option value="$PROJECT_DIR$/../project/ajax/test.php" />
         <option value="$PROJECT_DIR$/../project/classes/projectdetails.class.php" />
+        <option value="$PROJECT_DIR$/manage_fares.php" />
+        <option value="$PROJECT_DIR$/../travelhub/api/models/setupmodel.class.php" />
+        <option value="$PROJECT_DIR$/../travelhub/includes/push.php" />
+        <option value="$PROJECT_DIR$/../travelhub/api/models/model.class.php" />
+        <option value="$PROJECT_DIR$/../travelhub/ajax/save_booking_details.php" />
+        <option value="$PROJECT_DIR$/../travelhub/cp/travel/travel-vehicles.php" />
+        <option value="$PROJECT_DIR$/../travelhub/api/models/travelvehicle.class.php" />
+        <option value="$PROJECT_DIR$/../travelhub/api/models/trip.class.php" />
+        <option value="$PROJECT_DIR$/../travelhub/api/controllers/setup.class.php" />
+        <option value="$PROJECT_DIR$/includes/footer.html" />
+        <option value="$PROJECT_DIR$/js/sell_ticket.js" />
+        <option value="$PROJECT_DIR$/seat_booking.php" />
+        <option value="$PROJECT_DIR$/classes/booking.class.php" />
+        <option value="$PROJECT_DIR$/js/book_vehicle.js" />
+        <option value="$PROJECT_DIR$/ajax/vehicle.php" />
+        <option value="$PROJECT_DIR$/report.php" />
+        <option value="$PROJECT_DIR$/classes/report.class.php" />
+        <option value="$PROJECT_DIR$/manage_trips.php" />
+        <option value="$PROJECT_DIR$/ajax/synch.php" />
+        <option value="$PROJECT_DIR$/classes/trip.class.php" />
+        <option value="$PROJECT_DIR$/bookbus.php" />
+        <option value="$PROJECT_DIR$/classes/vehiclemodel.class.php" />
+        <option value="$PROJECT_DIR$/ajax/manifest.php" />
+        <option value="$PROJECT_DIR$/manifest.php" />
+        <option value="$PROJECT_DIR$/classes/manifest.class.php" />
+        <option value="$PROJECT_DIR$/js/socket.js" />
+        <option value="$PROJECT_DIR$/listen.html" />
+        <option value="$PROJECT_DIR$/connect.html" />
+        <option value="$PROJECT_DIR$/classes/seatpicker.class.php" />
+        <option value="$PROJECT_DIR$/sell_ticket.php" />
+        <option value="$PROJECT_DIR$/css/seats.css" />
       </list>
     </option>
   </component>
@@ -222,6 +432,25 @@
     <option name="y" value="-9" />
     <option name="width" value="1938" />
     <option name="height" value="1098" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SQL</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -248,6 +477,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -276,14 +507,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ajax" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,10 +581,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1409432" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14898178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -364,6 +593,16 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14898178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -381,329 +620,179 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/manifest.php">
+    <entry file="file://$USER_HOME$/quickstart/vendor/psy/psysh/test/Psy/Test/ShellTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.32258">
-          <caret line="41" column="100" selection-start-line="41" selection-start-column="100" selection-end-line="41" selection-end-column="100" />
+        <state vertical-scroll-proportion="-4.255441">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/manifest.php">
+    <entry file="file://$PROJECT_DIR$/../project/ajax/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.032259">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../project/classes/projectdetails.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7997712">
+          <caret line="230" column="13" selection-start-line="230" selection-start-column="13" selection-end-line="230" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../project/classes/project.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.025171624">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/chat/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43756905">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/terminal/manage_fares.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.58009154">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage_fares.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="58" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/setupmodel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9496567">
+          <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/parkmodel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8112128">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../travelhub/api/controllers/route.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45308924">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/seat.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/vehiclemodel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.95074457">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../travelhub/includes/push.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20160367">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../travelhub/ajax/save_booking_details.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21076746">
+          <caret line="31" column="84" selection-start-line="31" selection-start-column="84" selection-end-line="31" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../autostar/classes/seatpicker.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45017183">
+          <caret line="114" column="67" selection-start-line="114" selection-start-column="49" selection-end-line="114" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../travelhub/cp/travel/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10080183">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../travelhub/cp/travel/includes/head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9495991">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/vehicle.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9490151">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bookbus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5225956">
-          <caret line="156" column="80" selection-start-line="156" selection-start-column="80" selection-end-line="156" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sell_ticket.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.101969875">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/seating.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5365006">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <marker date="1464019246519" expanded="true" signature="221:370" placeholder="SELECT booke..boarding_vehicle..." />
-            <marker date="1464019246519" expanded="true" signature="1593:1722" placeholder="UPDATE board..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/destination.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7137891">
-          <caret line="28" column="95" selection-start-line="28" selection-start-column="95" selection-end-line="28" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/report.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50984937">
-          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding>
-            <marker date="1464031449574" expanded="true" signature="186:739" placeholder="SELECT bb.bo..boarding_vehicle..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ticket.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7419355">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <marker date="1463818889702" expanded="true" signature="457:562" placeholder="INSERT INTO travels..." />
-            <marker date="1463818889702" expanded="true" signature="457:653" placeholder="INSERT INTO travels..." />
-            <marker date="1463818889702" expanded="true" signature="1102:1130" placeholder="SELECT * FRO..travels..." />
-            <marker date="1463818889702" expanded="true" signature="1700:1735" placeholder="SELECT * FRO..${{$tbl}..." />
-            <marker date="1463818889702" expanded="true" signature="2006:2027" placeholder="SELECT * FRO..${{$tbl}..." />
-            <marker date="1463818889702" expanded="true" signature="2172:2216" placeholder="SELECT * FRO..${{$tbl}..." />
-            <marker date="1463818889702" expanded="true" signature="2421:2466" placeholder="SELECT COUNT..${{$tbl_name}..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate_report.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22943221">
-          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.60254925">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/ajax/line_performance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5292096">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/ajax/material.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37800688">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/ajax/material_dispensing.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../project/ajax/material_supply.php">
+    <entry file="file://$PROJECT_DIR$/ajax/setup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/ajax/packaging_machine.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/includes/db_config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15120275">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/classes/db.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025200458">
-          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/classes/projectmanagement.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1290324">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/ajax/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37800688">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/lib/project.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/jsPlumb-master/src/connectors-statemachine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024336284">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/ajax/project_details.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="27.967741">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding>
-            <marker date="1464244969257" expanded="true" signature="2178:2197" placeholder="..." />
-            <marker date="1464244969257" expanded="true" signature="2178:2212" placeholder="..." />
-            <marker date="1464244969257" expanded="true" signature="2178:2241" placeholder="..." />
-            <marker date="1464244969257" expanded="true" signature="2178:2255" placeholder="..." />
-            <marker date="1464244969257" expanded="true" signature="2178:2301" placeholder="..." />
-            <marker date="1464244969257" expanded="true" signature="2178:2344" placeholder="..." />
-            <marker date="1464244969257" expanded="true" signature="2178:2391" placeholder="..." />
-            <marker date="1464244969257" expanded="true" signature="2178:2660" placeholder="..." />
-            <marker date="1464244969257" expanded="true" signature="2454:2647" placeholder="..." />
-            <marker date="1464244969257" expanded="true" signature="2454:2655" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/report.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025200458">
-          <caret line="31" column="197" selection-start-line="31" selection-start-column="197" selection-end-line="31" selection-end-column="197" />
-          <folding>
-            <marker date="1464031497660" expanded="true" signature="3503:3566" placeholder="..." />
-            <marker date="1464031497660" expanded="true" signature="3503:4061" placeholder="..." />
-            <marker date="1464031497660" expanded="true" signature="4106:4158" placeholder="..." />
-            <marker date="1464031497660" expanded="true" signature="4159:4332" placeholder="..." />
-            <marker date="1464031497660" expanded="true" signature="4634:4639" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025200458">
-          <caret line="203" column="30" selection-start-line="203" selection-start-column="30" selection-end-line="203" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/ajax/projects.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.290323">
-          <caret line="85" column="19" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
-          <folding>
-            <marker date="1464379533123" expanded="true" signature="1481:1492" placeholder="..." />
-            <marker date="1464379533123" expanded="true" signature="1481:1990" placeholder="..." />
-            <marker date="1464379533123" expanded="true" signature="1767:1981" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/customer.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1463609386512" expanded="true" signature="247:358" placeholder="INSERT INTO customers..." />
-            <marker date="1463609386512" expanded="true" signature="694:827" placeholder="UPDATE custo..." />
-            <marker date="1463609386512" expanded="true" signature="1126:1174" placeholder="SELECT id FR..customers..." />
-            <marker date="1463609386512" expanded="true" signature="1387:1436" placeholder="SELECT * FRO..customers..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../travelhub/api/controllers/setup.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-0.3631157">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/customer.class.php">
+    <entry file="file://$PROJECT_DIR$/../push/bin/push-server.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="21.193548">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1463654969492" expanded="true" signature="245:356" placeholder="INSERT INTO customers..." />
-            <marker date="1463654969492" expanded="true" signature="695:828" placeholder="UPDATE custo..." />
-            <marker date="1463654969492" expanded="true" signature="1108:1156" placeholder="SELECT id FR..customers..." />
-            <marker date="1463654969492" expanded="true" signature="1369:1418" placeholder="SELECT * FRO..customers..." />
-          </folding>
+        <state vertical-scroll-proportion="0.5544101">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../travelhub/api/models/model.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6552119">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <marker date="1452607114194" expanded="true" signature="317:352" placeholder="SELECT * FRO..${{$tbl}..." />
-            <marker date="1452607114194" expanded="true" signature="568:589" placeholder="SELECT * FRO..${{$tbl}..." />
-            <marker date="1452607114194" expanded="true" signature="819:864" placeholder="SELECT * FRO..${{$tbl}..." />
-            <marker date="1452607114194" expanded="true" signature="1079:1124" placeholder="SELECT COUNT..${{$tbl_name}..." />
-          </folding>
+        <state vertical-scroll-proportion="-12.83871">
+          <caret line="50" column="82" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/sell_ticket.js">
+    <entry file="file://$PROJECT_DIR$/../travelhub/cp/travel/travel-vehicles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.645977">
-          <caret line="137" column="117" selection-start-line="137" selection-start-column="117" selection-end-line="137" selection-end-column="117" />
-          <folding />
+        <state vertical-scroll-proportion="0.74799544">
+          <caret line="163" column="105" selection-start-line="163" selection-start-column="105" selection-end-line="163" selection-end-column="105" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/trip.class.php">
+    <entry file="file://$PROJECT_DIR$/../travelhub/api/controllers/setup.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39862543">
-          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-          <folding>
-            <marker date="1464397864790" expanded="true" signature="439:696" placeholder="INSERT INTO trips..." />
-            <marker date="1464397864790" expanded="true" signature="1426:1595" placeholder="SELECT id tr..trips..." />
-            <marker date="1464397864790" expanded="true" signature="1937:2005" placeholder="UPDATE trips..." />
-            <marker date="1464397864790" expanded="true" signature="2286:2773" placeholder="SELECT tr.id..trips..." />
-            <marker date="1464397864790" expanded="true" signature="2958:3002" placeholder="UPDATE trips..." />
-            <marker date="1464397864790" expanded="true" signature="3251:3573" placeholder="SELECT trips..trips..." />
-            <marker date="1464397864790" expanded="true" signature="3772:4308" placeholder="SELECT t.*, ..trips..." />
-            <marker date="1464397864790" expanded="true" signature="4656:5163" placeholder="SELECT trips..trips..." />
-            <marker date="1464397864790" expanded="true" signature="5418:5890" placeholder="SELECT trips..trips..." />
-            <marker date="1464397864790" expanded="true" signature="6130:6249" placeholder="SELECT id FR..trips..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/seatpicker.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.5161295">
-          <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
-          <folding>
-            <marker date="1464021454156" expanded="true" signature="5157:5163" placeholder="..." />
-            <marker date="1464021454156" expanded="true" signature="5230:5638" placeholder="..." />
-            <marker date="1464021454156" expanded="false" signature="5543:5575" placeholder="..." />
-            <marker date="1464021454156" expanded="true" signature="5576:5638" placeholder="..." />
-            <marker date="1464021454156" expanded="true" signature="6539:6554" placeholder="..." />
-            <marker date="1464021454156" expanded="true" signature="8084:8280" placeholder="..." />
-            <marker date="1464021454156" expanded="true" signature="8090:8110" placeholder="..." />
-            <marker date="1464021454156" expanded="true" signature="8090:8272" placeholder="..." />
-            <marker date="1464021454156" expanded="true" signature="8328:8439" placeholder="..." />
-            <marker date="1464021454156" expanded="true" signature="8487:8629" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.9495991">
+          <caret line="38" column="120" selection-start-line="38" selection-start-column="120" selection-end-line="38" selection-end-column="120" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/printer.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37800688">
+        <state vertical-scroll-proportion="0.0">
           <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
           <folding>
             <marker date="1464019289730" expanded="false" signature="1476:1512" placeholder="..." />
@@ -711,243 +800,336 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/seat_booking.php">
+    <entry file="file://$PROJECT_DIR$/js/sell_ticket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76877236">
-          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.74336284">
+          <caret line="115" column="28" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/vehiclemodel.class.php">
+    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/trip.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.580645">
-          <caret line="99" column="4" selection-start-line="99" selection-start-column="4" selection-end-line="99" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.31729668">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding>
-            <marker date="1456702082726" expanded="true" signature="381:456" placeholder="INSERT INTO vehicle_types..." />
-            <marker date="1456702082726" expanded="true" signature="680:775" placeholder="UPDATE vehic..." />
-            <marker date="1456702082726" expanded="true" signature="1175:1466" placeholder="SELECT id, b..boarding_vehicle..." />
-            <marker date="1456702082726" expanded="true" signature="1967:2187" placeholder="INSERT INTO boarding_vehicle..." />
-            <marker date="1456702082726" expanded="true" signature="2644:2705" placeholder="SELECT * FRO..vehicle_types..." />
-            <marker date="1456702082726" expanded="true" signature="3537:3590" placeholder="UPDATE vehic..." />
-            <marker date="1456702082726" expanded="true" signature="3681:3726" placeholder="DELETE FROM ..." />
+            <marker date="1467132275347" expanded="true" signature="1039:1296" placeholder="INSERT INTO trips..." />
+            <marker date="1467132275347" expanded="true" signature="1766:1935" placeholder="SELECT id tr..trips..." />
+            <marker date="1467132275347" expanded="true" signature="2294:2362" placeholder="UPDATE trips..." />
+            <marker date="1467132275347" expanded="true" signature="2817:3304" placeholder="SELECT tr.id..trips..." />
+            <marker date="1467132275347" expanded="true" signature="3489:3533" placeholder="UPDATE trips..." />
+            <marker date="1467132275347" expanded="true" signature="3782:4104" placeholder="SELECT trips..trips..." />
+            <marker date="1467132275347" expanded="true" signature="4303:4839" placeholder="SELECT t.*, ..trips..." />
+            <marker date="1467132275347" expanded="true" signature="5187:5694" placeholder="SELECT trips..trips..." />
+            <marker date="1467132275347" expanded="true" signature="5949:6421" placeholder="SELECT trips..trips..." />
+            <marker date="1467132275347" expanded="true" signature="6661:6780" placeholder="SELECT id FR..trips..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/manifest.class.php">
+    <entry file="file://$PROJECT_DIR$/classes/destination.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5990837">
-          <caret line="166" column="26" selection-start-line="166" selection-start-column="26" selection-end-line="166" selection-end-column="26" />
+        <state vertical-scroll-proportion="-17.096775">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
           <folding>
-            <marker date="1464400452993" expanded="true" signature="271:1044" placeholder="SELECT bd.id..booking_details..." />
-            <marker date="1464400452993" expanded="true" signature="1248:1376" placeholder="SELECT drive..boarding_vehicle..." />
-            <marker date="1464400452993" expanded="true" signature="1248:1598" placeholder="SELECT drive..boarding_vehicle..." />
-            <marker date="1464400452993" expanded="true" signature="2001:2168" placeholder="SELECT m.*, ..manifest_audit..." />
-            <marker date="1464400452993" expanded="true" signature="2418:2731" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="2418:2732" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="2418:2781" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="2418:2949" placeholder="..." />
-            <marker date="1464400452993" expanded="false" signature="2471:2485" placeholder="..." />
-            <marker date="1464400452993" expanded="false" signature="2986:2996" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="2997:3162" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="3620:3779" placeholder="..." />
-            <marker date="1464400452993" expanded="false" signature="3702:3742" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="3859:3872" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="3859:4192" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="4261:4343" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="4355:4573" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="4367:4561" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="4377:4548" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="4643:4912" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="5111:5122" placeholder="..." />
-            <marker date="1464400452993" expanded="true" signature="5313:5408" placeholder="SELECT board..manifest_audit..." />
-            <marker date="1464400452993" expanded="true" signature="5666:5824" placeholder="UPDATE manif..." />
-            <marker date="1464400452993" expanded="true" signature="5919:6070" placeholder="INSERT INTO manifest_audit..." />
-            <marker date="1464400452993" expanded="true" signature="6169:6232" placeholder="UPDATE board..." />
-            <marker date="1464400452993" expanded="true" signature="6345:6543" placeholder="SELECT booke..boarding_vehicle..." />
-            <marker date="1464400452993" expanded="true" signature="6919:6986" placeholder="UPDATE board..." />
-            <marker date="1464400452993" expanded="true" signature="7106:7181" placeholder="DELETE FROM ..." />
+            <marker date="1466097084242" expanded="true" signature="332:461" placeholder="INSERT INTO destination..." />
+            <marker date="1466097084242" expanded="true" signature="831:959" placeholder="SELECT d.id,..destination..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seat_booking.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-45.903225">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/booking.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.67742">
-          <caret line="40" column="54" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
+        <state vertical-scroll-proportion="4.6620846">
+          <caret line="185" column="5" selection-start-line="185" selection-start-column="5" selection-end-line="185" selection-end-column="5" />
           <folding>
-            <marker date="1464400239245" expanded="true" signature="288:496" placeholder="INSERT INTO ${self::$db_tbl}..." />
-            <marker date="1464400239245" expanded="true" signature="798:1340" placeholder="SELECT ticke..${self::$db_tbl}..." />
-            <marker date="1464400239245" expanded="true" signature="1505:1671" placeholder="SELECT bv.bo..${self::$db_tbl}..." />
-            <marker date="1464400239245" expanded="true" signature="2075:2196" placeholder="UPDATE board..." />
-            <marker date="1464400239245" expanded="true" signature="2279:2321" placeholder="DELETE FROM ..." />
-            <marker date="1464400239245" expanded="true" signature="2869:2977" placeholder="SELECT COUNT..." />
+            <marker date="1467228430225" expanded="true" signature="298:517" placeholder="INSERT INTO ${self::$db_tbl}..." />
+            <marker date="1467228430225" expanded="true" signature="298:540" placeholder="INSERT INTO ${self::$db_tbl}..." />
+            <marker date="1467228430225" expanded="true" signature="909:1058" placeholder="SELECT booke..boarding_vehicle..." />
+            <marker date="1467228430225" expanded="true" signature="2210:2339" placeholder="UPDATE board..." />
+            <marker date="1467228430225" expanded="true" signature="3663:4218" placeholder="SELECT ticke..${self::$db_tbl}..." />
+            <marker date="1467228430225" expanded="true" signature="4383:4549" placeholder="SELECT bv.bo..${self::$db_tbl}..." />
+            <marker date="1467228430225" expanded="true" signature="4953:5074" placeholder="UPDATE board..." />
+            <marker date="1467228430225" expanded="true" signature="5157:5199" placeholder="DELETE FROM ..." />
+            <marker date="1467228430225" expanded="true" signature="5747:5855" placeholder="SELECT COUNT..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/vehiclemodel.class.php">
+    <entry file="file://$PROJECT_DIR$/js/book_vehicle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7961054">
-          <caret line="152" column="136" selection-start-line="152" selection-start-column="136" selection-end-line="152" selection-end-column="136" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/vehicle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.064516">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.548388">
+          <caret line="80" column="61" selection-start-line="80" selection-start-column="61" selection-end-line="80" selection-end-column="61" />
           <folding>
-            <marker date="1464400591688" expanded="true" signature="416:571" placeholder="INSERT INTO vehicle_types..." />
-            <marker date="1464400591688" expanded="true" signature="891:986" placeholder="UPDATE vehic..." />
-            <marker date="1464400591688" expanded="true" signature="1381:1662" placeholder="SELECT id, b..boarding_vehicle..." />
-            <marker date="1464400591688" expanded="true" signature="2232:2429" placeholder="INSERT INTO boarding_vehicle..." />
-            <marker date="1464400591688" expanded="true" signature="3472:3727" placeholder="SELECT bv.id..boarding_vehicle..." />
-            <marker date="1464400591688" expanded="true" signature="4048:4666" placeholder="SELECT bbv.*..booked_vehicles..." />
-            <marker date="1464400591688" expanded="true" signature="4929:5041" placeholder="SELECT bbv.i..booked_vehicles..." />
-            <marker date="1464400591688" expanded="true" signature="5411:5605" placeholder="SELECT vt.id..vehicle_info..." />
-            <marker date="1464400591688" expanded="true" signature="6274:6583" placeholder="SELECT depar..booked_vehicles..." />
-            <marker date="1464400591688" expanded="true" signature="6969:7203" placeholder="INSERT INTO booked_vehicles..." />
-            <marker date="1464400591688" expanded="true" signature="7590:7726" placeholder="SELECT id FR..boarding_vehicle..." />
-            <marker date="1464400591688" expanded="true" signature="7946:8028" placeholder="UPDATE board..." />
-            <marker date="1464400591688" expanded="true" signature="8054:8278" placeholder="INSERT INTO boarding_vehicle..." />
-            <marker date="1464400591688" expanded="true" signature="8669:8727" placeholder="SELECT id FR..vehicle_info..." />
-            <marker date="1464400591688" expanded="true" signature="8918:9059" placeholder="SELECT id AS..vehicle_info..." />
-            <marker date="1464400591688" expanded="true" signature="9231:9391" placeholder="INSERT INTO vehicle_info..." />
-            <marker date="1464400591688" expanded="true" signature="9681:9730" placeholder="SELECT * FRO..vehicle_types..." />
-            <marker date="1464400591688" expanded="true" signature="9868:9881" placeholder="SELECT * FRO..." />
-            <marker date="1464400591688" expanded="true" signature="9868:9894" placeholder="SELECT * FRO..vehicle_info..." />
-            <marker date="1464400591688" expanded="true" signature="9980:10255" placeholder="INSERT INTO vehicle_charter..." />
-            <marker date="1464400591688" expanded="true" signature="10772:10972" placeholder="UPDATE vehic..." />
-            <marker date="1464400591688" expanded="true" signature="11058:11132" placeholder="UPDATE booke..." />
-            <marker date="1464400591688" expanded="true" signature="11296:11342" placeholder="DELETE FROM ..." />
-            <marker date="1464400591688" expanded="true" signature="11424:11493" placeholder="UPDATE board..." />
+            <marker date="1467231723844" expanded="true" signature="3502:4060" placeholder="..." />
+            <marker date="1467231723844" expanded="true" signature="4105:4157" placeholder="..." />
+            <marker date="1467231723844" expanded="true" signature="4158:4331" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/report.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.4838705">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <marker date="1467231747390" expanded="true" signature="186:757" placeholder="SELECT bv.bo..boarding_vehicle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookbus.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39404353">
+          <caret line="139" column="62" selection-start-line="139" selection-start-column="62" selection-end-line="139" selection-end-column="62" />
+          <folding>
+            <marker date="1467233463445" expanded="true" signature="5679:6507" placeholder="..." />
+            <marker date="1467233463445" expanded="false" signature="5980:6009" placeholder="..." />
+            <marker date="1467233463445" expanded="false" signature="6169:6179" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/trip.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-49.677418">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.34478807">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
           <folding>
-            <marker date="1464400734449" expanded="true" signature="424:656" placeholder="INSERT INTO trips..." />
-            <marker date="1464400734449" expanded="true" signature="1441:1617" placeholder="SELECT trip_..trips..." />
-            <marker date="1464400734449" expanded="true" signature="1981:2049" placeholder="UPDATE trips..." />
-            <marker date="1464400734449" expanded="true" signature="2536:2655" placeholder="SELECT id FR..trips..." />
+            <marker date="1467232593362" expanded="true" signature="454:686" placeholder="INSERT INTO trips..." />
+            <marker date="1467232593362" expanded="true" signature="1192:1448" placeholder="SELECT t.id,..trips..." />
+            <marker date="1467232593362" expanded="true" signature="1595:1666" placeholder="SELECT vehic..trips..." />
+            <marker date="1467232593362" expanded="true" signature="2007:2135" placeholder="SELECT trip_..trips..." />
+            <marker date="1467232593362" expanded="true" signature="2007:2169" placeholder="SELECT trip_..trips..." />
+            <marker date="1467232593362" expanded="true" signature="2577:2762" placeholder="SELECT trip_..trips..." />
+            <marker date="1467232593362" expanded="true" signature="3071:3144" placeholder="UPDATE trips..." />
+            <marker date="1467232593362" expanded="true" signature="3631:3750" placeholder="SELECT id FR..trips..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apicaller.php">
+    <entry file="file://$PROJECT_DIR$/classes/vehiclemodel.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7628866">
-          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/chat/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.161291">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/bookingmodel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.046154">
-          <caret line="254" column="0" selection-start-line="254" selection-start-column="0" selection-end-line="254" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.538462">
+          <caret line="330" column="38" selection-start-line="330" selection-start-column="38" selection-end-line="330" selection-end-column="38" />
           <folding>
-            <marker date="1464399480853" expanded="true" signature="234:293" placeholder="SELECT ticke..booking_details..." />
-            <marker date="1464399480853" expanded="true" signature="487:660" placeholder="SELECT booke..boarding_vehicle..." />
-            <marker date="1464399480853" expanded="true" signature="1800:1929" placeholder="UPDATE board..." />
-            <marker date="1464399480853" expanded="true" signature="2321:2504" placeholder="INSERT INTO ${self::$db_tbl}..." />
-            <marker date="1464399480853" expanded="true" signature="3944:4323" placeholder="SELECT trips..trips..." />
-            <marker date="1464399480853" expanded="true" signature="4509:5389" placeholder="SELECT booki..${self::$db_tbl}..." />
-            <marker date="1464399480853" expanded="true" signature="5629:6560" placeholder="SELECT booki..${self::$db_tbl}..." />
-            <marker date="1464399480853" expanded="true" signature="6860:7878" placeholder="SELECT booki..${self::$db_tbl}..." />
-            <marker date="1464399480853" expanded="true" signature="8201:9214" placeholder="SELECT booki..${self::$db_tbl}..." />
-            <marker date="1464399480853" expanded="true" signature="9835:9922" placeholder="SELECT id FR..boarding_vehicle..." />
-            <marker date="1464399480853" expanded="true" signature="9835:9923" placeholder="SELECT id FR..boarding_vehicle..." />
-            <marker date="1464399480853" expanded="true" signature="9835:9924" placeholder="SELECT id FR..boarding_vehicle..." />
-            <marker date="1464399480853" expanded="true" signature="10599:10713" placeholder="SELECT COUNT..${self::$db_tbl}..." />
+            <marker date="1467239341300" expanded="true" signature="416:571" placeholder="INSERT INTO vehicle_types..." />
+            <marker date="1467239341300" expanded="true" signature="891:986" placeholder="UPDATE vehic..." />
+            <marker date="1467239341300" expanded="true" signature="1381:1662" placeholder="SELECT id, b..boarding_vehicle..." />
+            <marker date="1467239341300" expanded="true" signature="2407:2495" placeholder="SELECT id FR..boarding_vehicle..." />
+            <marker date="1467239341300" expanded="true" signature="3314:3511" placeholder="INSERT INTO boarding_vehicle..." />
+            <marker date="1467239341300" expanded="true" signature="3621:3716" placeholder="SELECT seat_..boarding_vehicle..." />
+            <marker date="1467239341300" expanded="true" signature="4149:4362" placeholder="SELECT seat_..boarding_vehicle..." />
+            <marker date="1467239341300" expanded="true" signature="4743:4924" placeholder="SELECT id FR..boarding_vehicle..." />
+            <marker date="1467239341300" expanded="true" signature="5415:5686" placeholder="SELECT bv.id..boarding_vehicle..." />
+            <marker date="1467239341300" expanded="true" signature="6007:6638" placeholder="SELECT bbv.*..booked_vehicles..." />
+            <marker date="1467239341300" expanded="true" signature="6901:7013" placeholder="SELECT bbv.i..booked_vehicles..." />
+            <marker date="1467239341300" expanded="true" signature="7383:7588" placeholder="SELECT vt.ve..vehicle_info..." />
+            <marker date="1467239341300" expanded="true" signature="7999:8308" placeholder="SELECT depar..booked_vehicles..." />
+            <marker date="1467239341300" expanded="true" signature="8950:9184" placeholder="INSERT INTO booked_vehicles..." />
+            <marker date="1467239341300" expanded="true" signature="9571:9707" placeholder="SELECT id FR..boarding_vehicle..." />
+            <marker date="1467239341300" expanded="true" signature="9927:10009" placeholder="UPDATE board..." />
+            <marker date="1467239341300" expanded="true" signature="10035:10272" placeholder="INSERT INTO boarding_vehicle..." />
+            <marker date="1467239341300" expanded="true" signature="10690:10748" placeholder="SELECT id FR..vehicle_info..." />
+            <marker date="1467239341300" expanded="true" signature="10939:11080" placeholder="SELECT id AS..vehicle_info..." />
+            <marker date="1467239341300" expanded="true" signature="11252:11412" placeholder="INSERT INTO vehicle_info..." />
+            <marker date="1467239341300" expanded="true" signature="11702:11751" placeholder="SELECT * FRO..vehicle_types..." />
+            <marker date="1467239341300" expanded="true" signature="11889:11915" placeholder="SELECT * FRO..vehicle_info..." />
+            <marker date="1467239341300" expanded="true" signature="12001:12276" placeholder="INSERT INTO vehicle_charter..." />
+            <marker date="1467239341300" expanded="true" signature="12793:12993" placeholder="UPDATE vehic..." />
+            <marker date="1467239341300" expanded="true" signature="13079:13153" placeholder="UPDATE booke..." />
+            <marker date="1467239341300" expanded="true" signature="13317:13363" placeholder="DELETE FROM ..." />
+            <marker date="1467239341300" expanded="true" signature="13445:13514" placeholder="UPDATE board..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../travelhub/api/controllers/booking.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5796105">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ajax/synch.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.741936">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.67926687">
+          <caret line="118" column="25" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/chat/index.js">
+    <entry file="file://$PROJECT_DIR$/manage_trips.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5658648">
+          <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/head.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../project/classes/u.class.php">
+    <entry file="file://$PROJECT_DIR$/includes/footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.548388">
-          <caret line="181" column="49" selection-start-line="181" selection-start-column="49" selection-end-line="181" selection-end-column="49" />
-          <folding>
-            <marker date="1464604341097" expanded="true" signature="406:568" placeholder="INSERT INTO ${self::$db_tbl}..." />
-            <marker date="1464604341097" expanded="true" signature="1521:1660" placeholder="SELECT activ..${self::$db_tbl}..." />
-            <marker date="1464604341097" expanded="true" signature="1804:1920" placeholder="SELECT activ..${self::$db_tbl}..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../project/ajax/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.064516">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state vertical-scroll-proportion="-6.387097">
+          <caret line="9" column="62" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../project/includes/project.html">
+    <entry file="file://$PROJECT_DIR$/classes/manifest.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.35484">
-          <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+        <state vertical-scroll-proportion="-2.7091775">
+          <caret line="73" column="87" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
+          <folding>
+            <marker date="1467244447487" expanded="true" signature="271:1048" placeholder="SELECT bd.id..booking_details..." />
+            <marker date="1467244447487" expanded="true" signature="1252:1602" placeholder="SELECT drive..boarding_vehicle..." />
+            <marker date="1467244447487" expanded="true" signature="2005:2172" placeholder="SELECT m.*, ..manifest_audit..." />
+            <marker date="1467244447487" expanded="true" signature="2422:2767" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="2422:2918" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="2422:3089" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="2475:2489" placeholder="..." />
+            <marker date="1467244447487" expanded="false" signature="3126:3136" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="3137:3302" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="3760:3919" placeholder="..." />
+            <marker date="1467244447487" expanded="false" signature="3842:3882" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="3999:4332" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="4401:4483" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="4495:4713" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="4507:4701" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="4517:4688" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="4783:5052" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="5251:5262" placeholder="..." />
+            <marker date="1467244447487" expanded="true" signature="5464:5559" placeholder="SELECT board..manifest_audit..." />
+            <marker date="1467244447487" expanded="true" signature="5867:6061" placeholder="UPDATE manif..." />
+            <marker date="1467244447487" expanded="true" signature="6156:6348" placeholder="INSERT INTO manifest_audit..." />
+            <marker date="1467244447487" expanded="true" signature="6447:6510" placeholder="UPDATE board..." />
+            <marker date="1467244447487" expanded="true" signature="6623:6834" placeholder="SELECT booke..boarding_vehicle..." />
+            <marker date="1467244447487" expanded="true" signature="7210:7277" placeholder="UPDATE board..." />
+            <marker date="1467244447487" expanded="true" signature="7397:7472" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8796186">
+          <caret line="146" column="36" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../project/classes/project.class.php">
+    <entry file="file://$PROJECT_DIR$/ajax/manifest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6923077">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.6998854">
+          <caret line="85" column="150" selection-start-line="85" selection-start-column="150" selection-end-line="85" selection-end-column="150" />
           <folding>
-            <marker date="1464727861070" expanded="true" signature="326:439" placeholder="INSERT INTO ${self::$db_tbl}..." />
-            <marker date="1464727861070" expanded="true" signature="1088:1299" placeholder="SELECT p.*, ..projects..." />
-            <marker date="1464727861070" expanded="true" signature="1088:1304" placeholder="SELECT p.*, ..projects..." />
-            <marker date="1464727861070" expanded="true" signature="1330:1331" placeholder="SELECT * FRO..${self::$db_tbl}..." />
-            <marker date="1464727861070" expanded="true" signature="1502:1695" placeholder="SELECT p.*, ..projects..." />
-            <marker date="1464727861070" expanded="true" signature="1502:1716" placeholder="SELECT p.*, ..projects..." />
+            <marker date="1467243466713" expanded="true" signature="812:1514" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="823:872" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="873:1501" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="1595:1606" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="1607:1972" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="1618:1945" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="1627:1933" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="1645:1656" placeholder="..." />
+            <marker date="1467243466713" expanded="false" signature="1882:1899" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="2132:3056" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="4233:4298" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="4335:4389" placeholder="..." />
+            <marker date="1467243466713" expanded="true" signature="4401:5474" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../project/classes/projectdetails.class.php">
+    <entry file="file://$PROJECT_DIR$/js/socket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34478807">
-          <caret line="194" column="5" selection-start-line="194" selection-start-column="5" selection-end-line="194" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/listen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4284078">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/travelvehicle.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.419355">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding>
-            <marker date="1464730442915" expanded="true" signature="373:535" placeholder="INSERT INTO ${self::$db_tbl}..." />
-            <marker date="1464730442915" expanded="true" signature="1312:1451" placeholder="SELECT activ..${self::$db_tbl}..." />
-            <marker date="1464730442915" expanded="true" signature="1568:1684" placeholder="SELECT activ..${self::$db_tbl}..." />
-            <marker date="1464730442915" expanded="true" signature="2900:2922" placeholder="..." />
+            <marker date="1467130254213" expanded="true" signature="322:492" placeholder="INSERT INTO ${self::$tbl}..." />
+            <marker date="1467130254213" expanded="true" signature="1701:2004" placeholder="SELECT trave..${self::$tbl}..." />
+            <marker date="1467130254213" expanded="true" signature="2176:2487" placeholder="INSERT INTO vehicle_charter..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07560138">
+          <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/seatpicker.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.646154">
+          <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
+          <folding>
+            <marker date="1467299993812" expanded="true" signature="8049:8055" placeholder="..." />
+            <marker date="1467299993812" expanded="true" signature="8122:8530" placeholder="..." />
+            <marker date="1467299993812" expanded="false" signature="8435:8467" placeholder="..." />
+            <marker date="1467299993812" expanded="true" signature="8468:8530" placeholder="..." />
+            <marker date="1467299993812" expanded="true" signature="9431:9446" placeholder="..." />
+            <marker date="1467299993812" expanded="true" signature="10911:11022" placeholder="..." />
+            <marker date="1467299993812" expanded="true" signature="11070:11212" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sell_ticket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2461538">
+          <caret line="41" column="64" selection-start-line="41" selection-start-column="64" selection-end-line="41" selection-end-column="64" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/seats.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42073897">
+          <caret line="162" column="14" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

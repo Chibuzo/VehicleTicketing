@@ -19,13 +19,13 @@ class Manifest extends Ticket {
 				JOIN boarding_vehicle bv ON bd.boarding_vehicle_id = bv.id
 				JOIN trips tr ON bv.trip_id = tr.trip_id
 				JOIN destination d ON tr.park_map_id = d.park_map_id
-				JOIN vehicle_types vt ON tr.vehicle_type_id = vt.id
+				JOIN vehicle_types vt ON tr.vehicle_type_id = vt.vehicle_type_id
 				LEFT JOIN booked_vehicles bbv ON bv.booked_vehicle_id = bbv.id
 				LEFT JOIN vehicle_info vi ON bbv.vehicle_info_id = vi.id
 				JOIN customers c ON bd.customer_id = c.id
 				LEFT JOIN users u ON bd.user_id = u.id
 				WHERE bd.status = '1' AND bd.boarding_vehicle_id = :boarding_vehicle_id
-				ORDER BY travel_date DESC
+				ORDER BY seat_no
 				{$limit}";
 
 		self::$db->query($sql, array('boarding_vehicle_id' => $boarding_vehicle_id));
@@ -65,12 +65,13 @@ class Manifest extends Ticket {
 			echo "<div class='audit_pane'><div><b>Balance Sheet</b></div><hr id='line' style='margin:8px 0px' />
 
 					Tickets sold: $seats<br />
-					Gross income: ₦" . number_format($income) . "<br />
-					Fuel cost: ₦" . number_format($audit->fuel) . "<br />
-					Driver's feeding: ₦" . number_format($audit->drivers_feeding) . "<br />
+					Gross income: ₦" . number_format($income) . "<br>
+					Fuel cost: ₦" . number_format($audit->fuel) . "<br>
+					Driver's feeding: ₦" . number_format($audit->drivers_feeding) . "<br>
+					Expenses: ₦" . number_format($audit->expenses) . "<br>
 					Scouters: ₦" . number_format($audit->scouters_charge) . "<br>
 					<!--Service charge: ₦<hr style='margin:8px 0px' />-->
-					Net Income: ₦" . number_format(($income  + (int)$audit->fuel) - (int)$audit->drivers_feeding) . "</div>
+					Net Income: ₦" . number_format(($income  - (int)$audit->load_charge) - (int)$audit->fuel - (int)$audit->drivers_feeding - (int)$audit->expenses - (int)$audit->scouters_charge) . "</div>
 					<div class='auditpane' style='border:0px'><br />
 						<button id='reopen' class='btn btn-default btn-large btn-block' data-boarding_vehicle_id='$boarding_vehicle_id'>Reopen this vehicle</button>
 					</div>";
@@ -141,7 +142,7 @@ class Manifest extends Ticket {
 	}
 
 	// put transaction
-	public function balanceSheet($boarding_vehicle_id, $feeding, $fuel = 2500, $scouters)
+	public function balanceSheet($boarding_vehicle_id, $feeding, $fuel, $scouters, $expenses, $load)
 	{
 		self::$db->query("SELECT boarding_vehicle_id FROM manifest_audit WHERE boarding_vehicle_id = :boarding_vehicle_id", array('boarding_vehicle_id' => $boarding_vehicle_id));
 
@@ -149,17 +150,19 @@ class Manifest extends Ticket {
 				'feeding' => $feeding,
 				'fuel' => $fuel,
 				'scouters' => $scouters,
+				'expenses' => $expenses,
+				'load' => $load,
 				'boarding_vehicle_id' => $boarding_vehicle_id
 		);
 		if ($result = self::$db->fetch()) {
 			$sql = "UPDATE manifest_audit
-					SET    fuel = :fuel, drivers_feeding = :feeding, scouters_charge = :scouters
+					SET    fuel = :fuel, drivers_feeding = :feeding, scouters_charge = :scouters, expenses = :expenses, load = :load
 					WHERE  boarding_vehicle_id = :boarding_vehicle_id";
 
 			self::$db->query($sql, $param); // ? null : $query_check = false;
 		} else {
-			$sql = "INSERT INTO manifest_audit (drivers_feeding, fuel, scouters_charge, boarding_vehicle_id)
-					VALUES (:feeding, :fuel, :scouters, :boarding_vehicle_id)";
+			$sql = "INSERT INTO manifest_audit (drivers_feeding, fuel, scouters_charge, expenses, load_charge, boarding_vehicle_id)
+					VALUES (:feeding, :fuel, :scouters, :expenses, :load, :boarding_vehicle_id)";
 			self::$db->query($sql, $param);
 		}
 
@@ -172,7 +175,7 @@ class Manifest extends Ticket {
 	{
 		$sql = "SELECT booked_seats, num_of_seats FROM boarding_vehicle bv
 				JOIN trips tr ON bv.trip_id = tr.trip_id
-				JOIN vehicle_types vt ON tr.vehicle_type_id = vt.id
+				JOIN vehicle_types vt ON tr.vehicle_type_id = vt.vehicle_type_id
 				WHERE bv.id = :boarding_vehicle_id";
 
 		self::$db->query($sql, array('boarding_vehicle_id' => $boarding_vehicle_id));

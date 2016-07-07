@@ -1,7 +1,6 @@
 <?php
 require "includes/head.php";
 require "includes/side-bar.php";
-
 require_once "classes/report.class.php";
 
 $report = new Report();

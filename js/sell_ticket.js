@@ -54,7 +54,7 @@ $(document).ready(function() {
 
 
 	/*** Store user info and booking details, then print ticket ***/
-	$('#details').on('submit', '#customer_info', function(e) {
+	$('#customer_info').on('submit', function(e) {
 		e.preventDefault();
 		$("button[type='submit']").prop("disabled", true);
 
@@ -100,8 +100,10 @@ $(document).ready(function() {
 					function(d) {
 						if (d.trim() == "01") {
 							alert("Please select a seat to continue");
-						} else if (d.trim() == "02" || d.trim == "2") {
+							$("button[type='submit']").prop("disabled", false);
+						} else if (d.trim() == "2" || d.trim == 2) {
 							alert("Seat " + seat_no + " is no longer available, pick a different seat");
+							$("button[type='submit']").prop("disabled", false);
 						} else if (d.trim() == "03") {
 							alert("This operation failed, please refresh the browser and start again");
 						} else {

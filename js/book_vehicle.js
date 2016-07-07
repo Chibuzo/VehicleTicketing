@@ -10,7 +10,7 @@ $(document).ready(function() {
 					// Display controls for vehicle booking
 					$('#book_vehicle_controls').fadeIn();
 				} else {
-					// Display controls for adding vehicle
+					// Display modal for adding vehicle
 					$('#vehicleModal').modal();
 					$('#vehicleModal input[name=vehicle_no]').val(vehicle_no);
 				}

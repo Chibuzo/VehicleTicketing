@@ -4,6 +4,7 @@ require_once "../classes/ticket.class.php";
 require_once "../classes/vehiclemodel.class.php";
 require_once "../classes/trip.class.php";
 require_once "../classes/destination.class.php";
+require_once "../classes/parkmap.class.php";
 
 $apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', 'http://localhost/travelhub/api/');
 
@@ -40,8 +41,9 @@ try {
 
     $destination = new Destination();
     foreach ($destinations AS $dest) {
-        $destination->addRoutes($dest->park_map_id, $dest->destination_state);
+        $destination->addRoute($dest->park_map_id, $dest->destination_state, $dest->destination);
     }
+
     echo "Done";
 } catch (Exception $e) {
     echo $e->getMessage();

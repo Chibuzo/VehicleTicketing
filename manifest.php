@@ -39,7 +39,7 @@ $destination = new Destination();
 								<option value="" >-- Select Destination --</option>
 								<?php
 								foreach($destination->getRoutes() AS $dest) {
-									echo "\t<option value='{$dest->park_map_id}'>{$dest->destination}</option>\n";
+									echo "\t<option value='{$dest->park_map_id}'>{$dest->destination} [ $dest->park ]</option>\n";
 								}
 								?>
 							</select>
@@ -122,8 +122,31 @@ $destination = new Destination();
 
 						<div class="col-md-6">
 							<div class="form-group">
-								<label>Scouters Charges</label>
-								<input type="text" name="scouters" class="form-control" Placeholder="Scouters Charges" />
+								<label>Fuel</label>
+								<input type="text" name="fuel" class="form-control" Placeholder="Scouters Charges" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Expenses</label>
+								<input type="text" name="expenses" class="form-control" Placeholder="Expenses" />
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Load</label>
+								<input type="text" name="load" class="form-control" Placeholder="Load" />
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Scouters Charge</label>
+								<input type="text" name="scouters" class="form-control" Placeholder="Scouter's Charge" />
 							</div>
 						</div>
 					</div>

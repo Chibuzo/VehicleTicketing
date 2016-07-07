@@ -23,14 +23,14 @@
               </a>
             </li>
 
-            <li>
-              <a href="sell_ticket.php">
+            <li id="sell">
+              <a href="sell_ticket.php#sell">
                 <i class="fa fa-credit-card"></i> <span>Sell ticket</span>
               </a>
             </li>
 
-            <li>
-              <a href="manifest.php">
+            <li id="manifest">
+              <a href="manifest.php#manifest">
                 <i class="fa fa-tasks"></i>
                 <span>Manifest</span>
               </a>
@@ -38,35 +38,41 @@
 
 			<?php if ($_SESSION['user_type'] == 'admin') { ?>
 
-				<li>
-				  <a href="bookbus.php">
+				<li id="bookvehicle">
+				  <a href="bookbus.php#bookvehicle">
 					<i class="fa fa-bus"></i>
 					<span>Book Vehicle</span>
 				  </a>
 				</li>
 
-				<li class="hidden">
-				  <a href="routes.php">
-					<i class="fa fa-cogs"></i> <span>Route & Vehicles</span>
+				<li id="route">
+				  <a href="manage_routes.php#route">
+					<i class="fa fa-cogs"></i> <span>Manage Routes</span>
 				  </a>
 				</li>
 
-				<li class="hidden">
-				  <a href="manage_fares.php">
+                <li id="trip">
+                  <a href="manage_trips.php#trip">
+                    <i class="fa fa-road"></i> <span>Manage Trips</span>
+                  </a>
+                </li>
+
+				<li id="fare">
+				  <a href="manage_fares.php#fare">
 					<i class="fa fa-money"></i>
 					<span>Manage Fares</span>
 				  </a>
 				</li>
 
-				<li class="hdden">
-				  <a href="report.php">
+				<li id="report">
+				  <a href="report.php#report">
 					<i class="fa fa-book"></i>
 					<span>Reports</span>
 				  </a>
 				</li>
 
-				<li>
-				  <a href="users.php">
+				<li id="user">
+				  <a href="users.php#user">
 					<i class="fa fa-group"></i>
 					<span>Manage Users</span>
 				  </a>

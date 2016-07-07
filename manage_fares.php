@@ -1,159 +1,171 @@
 <?php
 require "includes/head.php";
 require "includes/side-bar.php";
-require_once "classes/fare.class.php";
-require_once "classes/bus.class.php";
-require_once "classes/route.class.php";
+require_once "classes/destination.class.php";
+require_once "classes/vehiclemodel.class.php";
+require_once "classes/trip.class.php";
+require_once "classes/utility.class.php";
 
-$fare = new Fare();
+$destination = new Destination();
+$vehicle = new VehicleModel();
+$trip = new Trip();
+$trips = $trip->getTrips();
 
-// Effect price modification
-if (isset($_POST['change_fare'])) {
-	$fare->editFare($_POST);
-}
 ?>
 <div class="content-wrapper">
-  	<section class="content-header">
-	  <h1>
-		Route/Bus fares
-		<small>Control panel</small>
-	  </h1>
-	  <ol class="breadcrumb">
-		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-		<li class="active">Route/Bus fares</li>
-	  </ol>
-	</section>
+    <section class="content-header">
+      <h1>
+        Route/Bus fares
+        <small>Control panel</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Vehicle fares</li>
+      </ol>
+    </section>
 
-	<!-- Main content -->
-	<section class="content">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="box box-warning">
-					<div class="box-header with-border">
-						<h2 style='font-size: 18px' class="box-title"><i class="fa fa-money"></i> &nbsp;Manage Fares</h2>
-					</div>
-					<div class="box-body">
-						<div>
-							<table class='table table-striped table-bordered'>
-								<thead>
-									<tr>
-										<th style="width: 10px">S/no</th>
-										<th>Route</th>
-										<?php
-											$bus = new Bus(); $bus_types = array();
-											foreach ($bus->getAllBusTypes() AS $_bus) {
-												echo "<th class='text-right'>{$_bus->name} ( ₦ )</th>";
-												$bus_types['name'][] = $_bus->name;
-												$bus_types['id'][] = $_bus->id;
-											}
-										?>
-										<th style='text-align:center'>Edit</th>
-									</tr>
-								</thead>
-								<tbody>
-								<?php
-									$route = new Route();
-									$routes = $route->getAllRoutes();
-									$n = 1;
-									foreach ($routes AS $_route) {
-										echo "<tr id='{$_route->id}'><td>$n</td>
-												<td>{$_route->route}</td>";
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-warning">
+                    <div class="box-header with-border">
+                        <h2 style='font-size: 18px' class="box-title"><i class="fa fa-money"></i> &nbsp;Manage Fares</h2>
+                    </div>
+                    <div class="box-body">
+                        <div>
+                            <table class='table table-striped table-bordered'>
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10px">S/no</th>
+                                        <th>Route</th>
+                                        <?php
+                                        $travel_vehicle_types = $vehicle->getAllVehicleTypes($_SESSION['travel_id']);
+                                        $vehicle_types = array('name' => array(), 'id' => array(), 'order' => array(), 'check' => array());
+                                        foreach ($trips as $travel_trip) {
+                                            if (!in_array($travel_trip->departure.">".$travel_trip->vehicle_type_id, $vehicle_types['check'])) {
+                                                printf("<th class='text-right'>%s %s ( ₦ )</th>", Utility::ordinal($travel_trip->departure), $travel_trip->vehicle_name);
+                                                $vehicle_types['name'][] = $travel_trip->vehicle_name;
+                                                $vehicle_types['id'][] = $travel_trip->vehicle_type_id;
+                                                $vehicle_types['order'][] = $travel_trip->departure;
+                                                $vehicle_types['check'][] = $travel_trip->departure.">".$travel_trip->vehicle_type_id;
+                                            }
+                                        }
+                                        ?>
+                                        <th style='text-align:center'>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $park_maps = $destination->getRoutes();
 
-										$fares = $fare->getFareByRouteId($_route->id);
+                                $_travel_trips = array();
+                                foreach ($park_maps as $park_map) {
+                                    $_trips = $trip->getTrips();
+                                    for($i = 0; $i < count($vehicle_types['id']); $i++) {
+                                        $fare = $ffare = "";
+                                        if (count($_trips) > 0) {
+                                            for($j = 0; $j < count($_trips); $j++) {
+                                                if ($_trips[$j]->departure.">".$_trips[$j]->vehicle_type_id == $vehicle_types['check'][$i]) {
+                                                    $ffare = (is_numeric($_trips[$j]->fare) && $_trips[$j]->fare > 0) ? number_format($_trips[$j]->fare) : '';
+                                                    $_travel_trips[$park_map->id][$vehicle_types['check'][$i]]['fare'] = $_trips[$j]->fare;
+                                                    $_travel_trips[$park_map->id][$vehicle_types['check'][$i]]['trip_id'] = $_trips[$j]->id;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
 
-										if (count($fares) > 0) {
-											for ($i = 0; $i < count($bus_types['id']); $i++) {
-												if (empty($fares[$i]->fare)) {
-													echo "<td class='text-right' data-fare='0'>0</td>";
-												} else {
-													$ffare = (is_numeric($fares[$i]->fare) && $fares[$i]->fare > 0) ? number_format($fares[$i]->fare) : '';
-													echo "<td class='text-right' data-fare='{$fares[$i]->fare}'>$ffare</td>";
-												}
-											}
-										} else {
-											for ($l = 0; $l < count($bus_types['id']); $l++) {
-												echo "<td data-fare=''></td>";
-											}
-										}
-										echo "<td class='text-center'>
-													<a href='' class='edit-route-info' data-toggle='modal' data-target='#myModal' data-fare_id=''>
-													<i class='fa fa-pencil' title='Edit fare' data-toggle='tooltip'></i></a>
-												</td>
-											</tr>";
-										$n++;
-									}
-								?>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<!--<div class="box-footer">
+                                $n = 1;
+                                foreach ($park_maps as $park_map) {
+                                    printf("<tr><td>%d</td>", $n);
+                                    printf("<td>%s - %s (%s)</td>", $_SESSION['park_name'], $park_map->destination, $park_map->park);
+                                    for($i = 0; $i < count($vehicle_types['id']); $i++) {
+                                        if (isset($_travel_trips[$park_map->id][$vehicle_types['check'][$i]])) {
+                                            $travel_trip = $_travel_trips[$park_map->id][$vehicle_types['check'][$i]];
+                                            printf("<td class='text-right' data-tripid='%d' data-fare='%s'>%s</td>", $travel_trip['trip_id'], $travel_trip['fare'], number_format($travel_trip['fare']));
+                                        } else {
+                                            echo "<td></td>";
+                                        }
+                                    }
+                                    echo "<td class='text-center'>
+                                                <a href='' class='edit-fare'>
+                                                    <i class='fa fa-pencil' title='Edit fare' data-toggle='tooltip'></i>
+                                                </a>
+                                            </td>
+                                        </tr>";
+                                    echo "</tr>";
+                                    $n++;
+                                }
+                                ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--<div class="box-footer">
 
-					</div>-->
-				</div>
-			</div>
-		</div>
-	</section>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-					&times;
-				</button>
-				<h4 class="modal-title">Change Fare</h4>
-			</div>
-			<form method="post" action="" id="form-fare">
-			  <div class="modal-body">
-				<div id='route' class='small_head'></div>
-				<?php
-					for ($i = 0; $i < count($bus_types['id']); $i = $i + 2) {
-						echo "<div class='form-group'>
-								<div class='row'>
-									<div class='col-md-6'>
-										<label>{$bus_types['name'][$i]} Fare</label>
-										<input type='text' name='{$bus_types['id'][$i]}' value='' class='form-control' />
-									</div>";
-
-									if (isset($bus_types['id'][$i + 1])) {
-										echo "<div class='col-md-6'>
-												<label>" . $bus_types['name'][$i + 1] . " Fare</label>
-												<input type='text' name='" . $bus_types['id'][$i + 1] . "' value='' class='form-control' />
-											</div>";
-									}
-						echo "</div></div>";
-					}
-				?>
-				</div>
-				<input type="hidden" name="route_id" id="route_id" value="" />
-
-				<div class="modal-footer">
-				  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-				  <input type="submit" class="btn btn-primary" name="change_fare" value="Save changes" />
-				</div>
-			</form>
-		</div>
-	</div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 <?php include_once "includes/footer.html"; ?>
 
 <script type="text/javascript">
 $(document).ready(function() {
-	$('.edit-route-info').click(function(e) {
-		e.preventDefault();
-		var $thisTr = $(this).parents('tr');
-		var route_id = $thisTr.attr("id");
-		$("#route_id").val(route_id);
 
-		var fare = 0;
-		$('#form-fare').find("input[type='text']").each(function(i, input) {
-			fare = $thisTr.find("td:nth-child(" + (i + 3) + ")").data("fare");
-			input.value = fare;
-		});
-	});
+    $(document.body).on('click', '.edit-fare', function(e) {
+        e.preventDefault();
+        var $thisTr = $(this).parents('tr');
+        var check = false;
+
+        $($thisTr).find('td').each(function() {
+            var fare = $(this).data('fare');
+            var trip_id = $(this).data('tripid');
+            if (undefined != trip_id) {
+                check = true;
+                $(this).html(
+                    $('<input />')
+                        .data('trip_id', trip_id)
+                        .val(fare)
+                        .addClass('form-control')
+                )
+            }
+        });
+        if (check) {
+            $(this).removeClass("edit-fare").html("<i class='fa fa-save'></i>").addClass('save-fares');
+        }
+    });
+
+    $(document.body).on("click", ".save-fares", function(e) {
+        e.preventDefault();
+        var $thisTr = $(this).parents('tr');
+        var fares = [];
+
+        $($thisTr).find('td').each(function() {
+            $txtBox = $(this).find('input');
+            var fare = $txtBox.val();
+            var trip_id = $txtBox.data('trip_id');
+            if (undefined != trip_id) {
+                var _fare = {'fare': fare, 'trip_id': trip_id};
+                fares.push(_fare);
+            }
+        });
+        $.post("ajax/misc_fns.php", {"op": "update-fare", "trips": fares}, function(d) {
+            if (d.trim() == "Done") {
+                $($thisTr).find('td').each(function() {
+                    $txtBox = $(this).find('input');
+                    var fare = $txtBox.val();
+                    $txtBox.remove();
+                    if (undefined != fare) {
+                        $(this).text(parseInt(fare).toLocaleString('en-US'));
+                    }
+                });
+            }
+        });
+        $(this).removeClass('save-fares').html("<i class='fa fa-pencil'></i>").addClass("edit-fare");
+    });
 });
 </script>

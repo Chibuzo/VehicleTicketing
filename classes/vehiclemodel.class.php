@@ -78,9 +78,48 @@ class VehicleModel extends Ticket {
 	}
 
 
-	public function fixBoardingVehicles($vehicle_type_id, $park_map_id, $travel_date, $departure_order)
+	public function getBoardingVehicleId($trip_id, $departure_order, $travel_date)
 	{
-		$bv = $this->trip->getTripDetails($vehicle_type_id, $park_map_id, $departure_order);
+		if (is_numeric($departure_order) == false) {
+			$query = "AND seat_status = 'Not full'";
+			$param = array(
+					'trip_id' => $trip_id,
+					'travel_date' => $travel_date
+			);
+		} else {
+			$query = "AND departure_order = :departure_order";
+			$param = array(
+					'trip_id' => $trip_id,
+					'departure_order' => $departure_order,
+					'travel_date' => $travel_date
+			);
+		}
+		$sql = "SELECT id FROM boarding_vehicle WHERE trip_id = :trip_id AND travel_date = :travel_date $query";
+
+		self::$db->query($sql, $param);
+		if ($d = self::$db->fetch('obj')) {
+			return $d->id;
+		} else {
+			return false;
+		}
+	}
+
+
+	public function fixBoardingVehicle($vehicle_type_id, $park_map_id, $travel_date, $departure_order)
+	{
+		// let's determine departure order
+		if (empty($departure_order)) {
+			$boarding_vehicle = self::findLastBoardingVehicle($vehicle_type_id, $park_map_id, $travel_date);
+			if ($boarding_vehicle != false) {
+				$new_departure_order = $boarding_vehicle->departure_order + 1;
+			} else {
+				$new_departure_order = 1;
+			}
+		} else {
+			$new_departure_order = $departure_order;
+		}
+
+		$bv = $this->trip->getTripDetails($vehicle_type_id, $park_map_id, $new_departure_order);
 
 		if ($bv == false) {
 			return false; // vehicle type wasn't setup for the selected route
@@ -92,17 +131,8 @@ class VehicleModel extends Ticket {
 		self::$db->prepare($sql);
 		$stmt = self::$db->stmt;
 
-		$boarding_vehicle = $this->findBoardingVehicle($park_map_id, $vehicle_type_id, $departure_order, $travel_date);
-		//die(var_dump($boarding_vehicle));
-		if ($boarding_vehicle != false) {
-			$count = $boarding_vehicle->departure_order + 1;
-		} elseif ($departure_order > 0) {
-			$count = $departure_order;
-		} else {
-			$count = 1;
-		}
-		for ($i = 1; $i <= $count; $i++) {
-			if ($this->findBoardingVehicle($park_map_id, $vehicle_type_id, $i, $travel_date) != false) continue;
+		for ($i = 1; $i <= $new_departure_order; $i++) {
+			if ($this->findVehicle($vehicle_type_id, $park_map_id, $travel_date, $i) != false) continue;
 			$param = array(
 				'trip_id' => $bv->trip_id,
 				'park_map_id' => $park_map_id,
@@ -118,6 +148,50 @@ class VehicleModel extends Ticket {
 	}
 
 
+	public function findLastBoardingVehicle($vehicle_type_id, $park_map_id, $travel_date)
+	{
+		$sql = "SELECT seat_status, departure_order FROM boarding_vehicle
+				WHERE park_map_id = :park_map_id AND vehicle_type_id = :vehicle_type_id
+				AND travel_date = :travel_date
+				ORDER BY departure_order DESC LIMIT 0, 1";
+
+		$param = array(
+				'park_map_id' => $park_map_id,
+				'vehicle_type_id' => $vehicle_type_id,
+				'travel_date' => $travel_date
+		);
+
+		self::$db->query($sql, $param);
+		if ($vehicle = self::$db->fetch('obj')) {
+			return $vehicle;
+		} else {
+			return false;
+		}
+	}
+
+
+	public function findVehicle($vehicle_type_id, $park_map_id, $travel_date, $departure_order)
+	{
+		$sql = "SELECT id FROM boarding_vehicle
+				WHERE park_map_id = :park_map_id AND vehicle_type_id = :vehicle_type_id
+				AND travel_date = :travel_date AND departure_order = :departure_order";
+
+		$param = array(
+			'park_map_id' => $park_map_id,
+			'vehicle_type_id' => $vehicle_type_id,
+			'travel_date' => $travel_date,
+			'departure_order' => $departure_order
+		);
+
+		self::$db->query($sql, $param);
+		if ($result = self::$db->fetch('obj')) {
+			return $result->id;
+		} else {
+			return false;
+		}
+	}
+
+
 	/**
 	 * for manifest page
 	 * @param $travel_date
@@ -126,8 +200,8 @@ class VehicleModel extends Ticket {
 	 */
 	public function getBoardingVehicles($travel_date, $park_map_id)
 	{
-		$sql = "SELECT bv.id, CONCAT(vehicle_name, ' ', departure_order) vehicle_type FROM boarding_vehicle bv
-				LEFT JOIN vehicle_types vt ON bv.vehicle_type_id = vt.id
+		$sql = "SELECT bv.id, CONCAT(vehicle_name, ' ', departure_order) AS vehicle_type FROM boarding_vehicle bv
+				LEFT JOIN vehicle_types vt ON bv.vehicle_type_id = vt.vehicle_type_id
 				WHERE travel_date = :travel_date AND bv.park_map_id = :park_map_id
 				ORDER BY departure_order";
 
@@ -151,7 +225,7 @@ class VehicleModel extends Ticket {
 				FROM booked_vehicles bbv
 				JOIN boarding_vehicle bv ON bbv.id = bv.booked_vehicle_id AND bbv.park_map_id = bv.park_map_id
 				JOIN trips tr ON bbv.park_map_id = tr.park_map_id AND bbv.vehicle_type_id = tr.vehicle_type_id AND bv.trip_id = tr.trip_id
-				JOIN vehicle_types vt ON bbv.vehicle_type_id = vt.id
+				JOIN vehicle_types vt ON bbv.vehicle_type_id = vt.vehicle_type_id
 				JOIN vehicle_info vi ON bbv.vehicle_no = vi.vehicle_no
 				JOIN destination d ON tr.park_map_id = d.park_map_id
 				WHERE bbv.travel_date = :travel_date";
@@ -182,20 +256,14 @@ class VehicleModel extends Ticket {
 		$travel_date = date('Y-m-d', strtotime($travel_date));
 
 		/*** Get the vehicle details ***/
-		$sql = "SELECT vt.id vehicle_type_id, num_of_seats, vehicle_name vehicle_type, vi.id vi_id FROM vehicle_info vi
-				JOIN vehicle_types vt ON vi.vehicle_type_id = vt.id
+		$sql = "SELECT vt.vehicle_type_id , num_of_seats, vehicle_name vehicle_type, vi.id vi_id FROM vehicle_info vi
+				JOIN vehicle_types vt ON vi.vehicle_type_id = vt.vehicle_type_id
 				WHERE vehicle_no = :vehicle_no";
 
 		self::$db->query($sql, array('vehicle_no' => $_vehicle_no));
 		$vehicle = self::$db->fetch('obj');
 		if ($vehicle == false) {
 			throw new Exception ("vehicle details wasn't found.");
-		}
-		# Get trip details
-		$trip = $this->trip->getTripDetails($vehicle->vehicle_type_id, $park_map_id, $departure_order);
-
-		if ($trip == false) {
-			throw new Exception("The selected vehicle is not setup for this route. Please contact the park manager.");
 		}
 
 		// Determine vehicle departure order
@@ -220,6 +288,12 @@ class VehicleModel extends Ticket {
 			} else {
 				$vehicle_order = 1;
 			}
+		}
+		# Get trip details
+		$trip = $this->trip->getTripDetails($vehicle->vehicle_type_id, $park_map_id, $vehicle_order);
+
+		if ($trip == false) {
+			throw new Exception("The selected vehicle is not setup for this route. Please contact the park manager.");
 		}
 
 		/*** Book the vehicle ***/
@@ -246,14 +320,15 @@ class VehicleModel extends Ticket {
 			// update boarding vehicle with booked vehicle id
 			self::$db->query("UPDATE boarding_vehicle SET booked_vehicle_id = '$bbv_id' WHERE id = '$result->id'");
 		} else {
-			$sql = "INSERT INTO boarding_vehicle (trip_id, park_map_id, booked_vehicle_id, vehicle_type_id, departure_order, travel_date)
-					VALUES (:trip_id, :park_map_id, :booked_vehicle_id, :vehicle_type_id, :departure_order, :travel_date)";
+			$sql = "INSERT INTO boarding_vehicle (trip_id, park_map_id, booked_vehicle_id, vehicle_type_id, fare, departure_order, travel_date)
+					VALUES (:trip_id, :park_map_id, :booked_vehicle_id, :vehicle_type_id, :fare, :departure_order, :travel_date)";
 
 			$param = array(
 				'trip_id' => $trip->trip_id,
 				'park_map_id' => $park_map_id,
 				'booked_vehicle_id' => $bbv_id,
 				'vehicle_type_id' => $vehicle->vehicle_type_id,
+				'fare' => $trip->fare,
 				'departure_order' => $vehicle_order,
 				'travel_date' => $travel_date
 			);

@@ -2,42 +2,39 @@
 	display: block;
 	font:normal 12px 'Open Sans', Tahoma;
 	color:#999;
-	padding:10px;
+	padding:20px;
 	border:#ccc solid thin;
 	border-radius:1px;
 	margin: 15px auto;
+	overflow: hidden;
 	/*position:absolute;*/
 }
 
 .seat {
-	width: 20px;
-	height: 17px;
+	float: left;
+	width: 16px;
+	height: 19px;
 	cursor: pointer;
-	margin: 7px;
+	margin-left: 6px;
 	background-image:url('../images/seat.gif');
 	background-repeat:no-repeat;
 }
 
-.push-seat {
-	margin-top: 15px !important;
+.pull-right {
+	margin-right: 6px;
 }
 
 .booked_seat {
-	width:20px;
-	height:18px;
+	float: left;
+	width:16px;
+	height:19px;
 	background-image:url('../images/booked_seat.gif');
-	margin:7px; background-repeat:no-repeat; cursor:default;
+	margin-left: 8px; background-repeat:no-repeat; cursor:default;
 }
 
 .seat:hover{background-image:url('../images/highlighted_seat.gif')}
 
-#right_seats, #left_seats {
-	position:relative;
-	width:180px;
-	padding:4px;
-	overflow:auto;
-}
-
+/*
 #right_seats {
 	top:75px;
 }
@@ -45,16 +42,17 @@
 #left_seats {
 	top:-75px;
 }
+*/
 
 .seat_wrap {
-	padding-right:18px;
-	padding-left: 12px;
+	padding: 5px;
 	background-color:#fff;
 	border:#ccc solid thin;
 	border-radius:2px;
 	margin-top:24px;
-	margin-left:70px;
-	float:left;
+	margin: auto;
+	width: 106px;
+	overflow: hidden;
 }
 
 #seat_tips {
@@ -73,37 +71,35 @@
 	line-height:24px
 }
 
-.available_seat {
-	background-image:url(../images/seat.gif);
+.seat-row {
+	clear: both;
+	width: 110px;
+	height: 30px;
+	margin: auto;
 }
 
-.selected_seat {
-	background-image:url(../images/selected_seat.gif);
+.front-row {
+	float: right;
+	width: 50px;
+	margin-bottom: 11px;
+	/*margin-right: 11px;*/
 }
 
-.booked-seat {
-	background-image:url(../images/booked_seat.gif);
-}
-
-.available_seat, .selected_seat, .booked-seat {
-	background-repeat:no-repeat;
-	background-position:0px 5px;
-	padding-left:25px;
-}
-
-.cols {
-	position:relative;
+.seat-row .th-hide {
 	float:left;
-	width:20px;
-	margin-right: 5px;
-	bottom:0;
+	visibility: hidden;
+	width: 20px;
+	height: 17px;
+	margin: 7px;
 }
 
 .steering {
-	height:48px;
+	height:28px;
 	background-image:url(../images/steering.gif);
 	background-repeat:no-repeat;
 	background-position:bottom;
+	background-position-x: 4px;
+	margin-bottom: 5px;
 }
 
 .continue-btn {
@@ -114,19 +110,19 @@
 
 /* mini-bus style 10, 14, 15 seats */
 .mini-bus {
-	width: 410px;
-	height: 200px;
+	padding-top: 50px;
 }
 
-.mini-bus .steering {
-	height:73px;
-}
 
 .mini-bus .seat-details, .sienna .seat-details {
 	width: 110px;
 	float: left;
 	text-align: left;
 	margin-top: 25px
+}
+
+.nissian-urvan .seat-row {
+	width: 80px!important;
 }
 
 /* Sienna bus 5 & 6 seats */
@@ -158,8 +154,35 @@
 	margin-top: 1px;
 }
 
-.seat_arrangement .glyphicon-remove {
-	cursor: pointer;
+.luxury .seat {
+	margin-left: 8px;
+}
+
+.luxury .seat_wrap {
+	padding: 0;
+	width: 125px;
+}
+
+.luxury .cols {
+	padding-bottom: 4px;
+	overflow: hidden;
+}
+
+.luxury .steering {
+	background-position-x: 10px;
+}
+
+.luxury #seat_details {
+	position: absolute;
+	top: 38px;
+	left: 55px;
+}
+
+#right_seats, #left_seats {
+	float: left;
+	position:relative;
+	padding:5px;
+	overflow:auto;
 }
 
 

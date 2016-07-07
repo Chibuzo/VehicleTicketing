@@ -2,7 +2,6 @@
 session_start();
 
 require_once "classes/seatpicker.class.php";
-require_once "classes/seating.class.php";
 require_once "classes/trip.class.php";
 require_once "classes/booking.class.php";
 require_once "classes/vehiclemodel.class.php";
@@ -39,16 +38,15 @@ if (isset($_REQUEST['op'])) {
 	{
 		extract($_POST);
 
-		$seating = new Seating();
+		$booking = new Booking();
 		try {
-			$seat_no = $seating->reserveSeat($boarding_vehicle_id, $seat_no);
+			$seat_no = $booking->reserveSeat($boarding_vehicle_id, $seat_no);
 		} catch (Exception $e) {
 			echo $e->getCode();
 			return false; // seat no longer available
 		}
 
-		$booking = new Booking();
-		$ticket_id = $booking->book($boarding_vehicle_id, $seat_no, $customer_id);
+		$ticket_id = $booking->book($boarding_vehicle_id, $seat_no, 'offline', $customer_id);
 		if (is_numeric($ticket_id)) {
 			require_once "classes/printer.class.php";
 			$printer = new Printer();
@@ -65,7 +63,6 @@ if (isset($_REQUEST['op'])) {
 			$printer->printTicket($_POST['ticket_id']);
 		}
 	}
-	elseif ($_REQUEST['op'] == 'cancel-ticket')        cancelTicket();
-	//elseif ($_REQUEST['op'] == 'get-customer-details') echo json_encode(getCustomersDetails($_GET['bd_id']));
+	elseif ($_REQUEST['op'] == 'cancel-ticket') cancelTicket();
 }
 ?>

@@ -3,7 +3,6 @@ require_once "ticket.class.php";
 require_once "vehiclemodel.class.php";
 
 class SeatPicker extends Ticket {
-	public $travel_id;
 	public $vehicle_type_id;
 	public $fare;
 	public $trip_id;
@@ -40,20 +39,19 @@ class SeatPicker extends Ticket {
 			return $status; // vehicle type wasn't setup for the selected route
 		}
 
-		switch ($this->num_of_seats) {
+		switch ($this->vehicle_type_id) {
 			case 3:
 			case 5:
-				return $this->getSiennaSeats();
+				return self::getLuxurySeats();
 				break;
-			//case 3:
-			//return $this->getCarSeats();
-			//break;
+			case 8: // toyota hiace
+				return self::getToyotaHiaceSeats();
+				break;
 			case 10:
 			case 13:
-			case 15:
-			case 16:
-				return $this->getBusSeats();
+				return self::getNissianUrvanSeats();
 				break;
+			case 15:
 			case 19:
 				return $this->getCoaterSeats();
 				break;
@@ -89,16 +87,16 @@ class SeatPicker extends Ticket {
 	public function insertVehicleForBoarding()
 	{
 		$vehicle = new VehicleModel();
-		return $vehicle->fixBoardingVehicles($this->vehicle_type_id, $this->park_map_id, $this->travel_date, $this->departure_order, $this->travel_id);
+		return $vehicle->fixBoardingVehicle($this->vehicle_type_id, $this->park_map_id, $this->travel_date, $this->departure_order, $this->travel_id);
 	}
 
 
 	/**
-	 *  Toyota hiace or Nissian urvan with seat number 10
+	 *  Toyota hiace with seat number 10
 	 *  one seats at the front
 	 *  then three seats on other rows
 	 */
-	function getBusSeats()
+	function getToyotaHiaceSeats()
 	{
 		$booked_seats = $this->booked_seats;
 		$seat_arrangement = $this->upperSittingDetails('mini-bus');
@@ -109,26 +107,121 @@ class SeatPicker extends Ticket {
 
 			$seat = $i;
 			if (in_array($seat, $booked_seats)) $class = "class='booked_seat'";
-			/*** exchange arrays to match seating arrangement for second row ***/
+			if ($counter == 0) $seat_arrangement .= $i <= 2 ? "<div class='front-row'>" : "<div class='seat-row'>";
 
-			//if ($counter == 0 && $this->num_of_seats > 14 && $i != 12) $seat_arrangement .= "<div class='cols'><div style='width:20px; height:18px; margin:6px;'></div>";
-			if ($counter == 0) $seat_arrangement .= "<div class='cols'>";
-			$seat_arrangement .= "\t<div {$class} data-hidden='no' title='Seat {$seat}' id='{$seat}'></div>";
-			++$counter;
+			$seat_arrangement .= "\t<div {$class} data-hidden='no'  title='Seat {$seat}' id='{$seat}'></div>";
+			$counter++;
 
-			if ($i == 1) { // For one seat at the front
+			if ($i == 2) { // For one seat at the front
 				$seat_arrangement .= "</div>"; // Close cols for the seat at the front
 				$counter = 0;
 			}
 
-			if ($counter == 3) {
-				//if ($i == 10) { $counter = 1; continue; }
+			if ($i == 5) {
+				$seat_arrangement .= "\t<div class='th-hide'></div>";
+				$counter++;
+			} elseif ($i == 8) {
+				$seat_arrangement .= "\t<div class='th-hide'></div>";
+				$counter++;
+			} elseif ($i == 11) {
+				$seat_arrangement .= "\t<div class='th-hide'></div>";
+				$counter++;
+			}
+			//if ($i == 2) continue;
+
+			if ($counter == 4) {
 				$counter = 0;
 				$seat_arrangement .= "</div>"; // Close cols
 			}
 		}
 		if ($counter == 1) $seat_arrangement .= "</div>";
 		$seat_arrangement .= "\n</div>\n";
+
+		return $seat_arrangement .= $this->lowerSittingDetails();
+	}
+
+
+	function getNissianUrvanSeats()
+	{
+		$booked_seats = $this->booked_seats;
+		$seat_arrangement = $this->upperSittingDetails('mini-bus nissian-urvan');
+
+		$counter = 0;
+		for ($i = 1; $i <= $this->num_of_seats; $i++) {
+			$class = "class='seat'";
+
+			$seat = $i;
+			if (in_array($seat, $booked_seats)) $class = "class='booked_seat'";
+			if ($counter == 0) $seat_arrangement .= $i <= 2 ? "<div class='front-row'>" : "<div class='seat-row'>";
+
+			$seat_arrangement .= "\t<div {$class} data-hidden='no'  title='Seat {$seat}' id='{$seat}'></div>";
+			$counter++;
+
+			if ($i == 2) { // For one seat at the front
+				$seat_arrangement .= "</div>"; // Close cols for the seat at the front
+				$counter = 0;
+			}
+
+			if ($counter == 3) {
+				$counter = 0;
+				$seat_arrangement .= "</div>"; // Close cols
+			}
+		}
+		if ($counter == 3) $seat_arrangement .= "</div>";
+		$seat_arrangement .= "\n</div>\n";
+
+		return $seat_arrangement .= $this->lowerSittingDetails();
+	}
+
+
+	public function getLuxurySeats()
+	{
+		$booked_seats = $this->booked_seats;
+		$seat_arrangement = $this->upperSittingDetails('luxury');
+
+		$counter = $counter2 = 0;
+		$seat_arrangement .= "<div id='right_seats'>";
+		for ($i = 1; $i <= $this->num_of_seats; $i++) {
+			$class = "class='seat'";
+
+			if ($counter == 0) $seat_arrangement .= "<div class='cols'>";
+			if ($counter < 2) {
+				$seat = $i;
+				/*** exchange arrays to match seating arrangement ***/
+				/*if ($i % 2 == 1) $seat = $i + 1;
+				else $seat = $i - 1;*/
+				if (in_array($seat, $this->booked_seats)) $class = "class='booked_seat'";
+				$seat_arrangement .= "\t<div {$class} data-hidden='no' title='Seat {$seat}' id='{$seat}'></div>";
+				++$counter;
+				if ($counter == 2) $seat_arrangement .= "</div>"; // Close cols
+				if ($i != $this->num_of_seats) { continue; }
+			} else {
+				if ($counter2 < 2) $down_seats[] = $i;
+				++$counter2;
+				if ($counter2 == 2) $counter2 = $counter = 0;
+				if ($i != $this->num_of_seats) { continue; }
+			}
+
+			$counter = 0;
+			$seat_arrangement .= "\n</div>\n<div id='left_seats'>\n";
+
+			foreach ($down_seats AS $seat) {
+				$class = "class='seat'";
+
+				//if ($this->num_of_seats == 59 && $seat == 60) $seat = 59;		// Fixes a bug that makes the last seat 60 instead of 59 due to the rearrangement
+				if ($counter == 0) $seat_arrangement .= "<div class='cols'>";
+				if (in_array($seat, $this->booked_seats)) $class = "class='booked_seat'";
+				$seat_arrangement .= "\t<div {$class} data-hidden='no' title='Seat {$seat}' id='{$seat}'></div>";
+				++$counter;
+				if ($counter == 2) {
+					// Close cols
+					$seat_arrangement .= "</div>";
+					$counter = 0;
+				}
+			}
+			if ($counter == 1) $seat_arrangement .= "</div>";
+			$seat_arrangement .= "\n</div>\n</div>";
+		}
 
 		return $seat_arrangement .= $this->lowerSittingDetails();
 	}
@@ -240,20 +333,14 @@ class SeatPicker extends Ticket {
 	{
 		return "<div class='seat_arrangement $vehicle_type' data-fare='" . number_format($this->fare) . "' data-park_map_id='{$this->park_map_id}' data-trip_id='{$this->trip_id}'
 		data-departure_order='{$this->departure_order}' data-boarding_vehicle_id='{$this->boarding_vehicle_id}' data-vehicle_type_id='{$this->vehicle_type_id}' data-travel_date='{$this->travel_date}'>
-		<div>Click on an available seat to select it. Click again to de-select it.</div>
 		<div class='seat_wrap'>
-			<div class='cols steering'></div>";
+			<div class='steering'></div>";
 	}
 
 
 	private function lowerSittingDetails()
 	{
-		return "\n<div id='seat_tips'>\n<ul>\n
-		\t<p><li class='available_seat'>Available Seat</li></p>\n
-		\t<p><li class='selected_seat'>Selected Seat</li></p>\n
-		\t<p><li class='booked-seat'>Booked Seat</li></p>\n
-		</ul>\n</div>
-		<span id='seat_details' class='seat-details'>
+		return "<span id='seat_details' class='seat-details'>
 			Seat number: <span class='picked_seat'></span><br />
 			Fare: <span class='show_fare red'></span>
 		</span>

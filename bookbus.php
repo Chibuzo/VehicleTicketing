@@ -71,7 +71,7 @@ iframe#receipt {
 											<?php
 												// get destination
 												foreach($destination->getRoutes() AS $dest) {
-													echo "\t<option value='{$dest->park_map_id}'>{$dest->destination}</option>\n";
+													echo "\t<option value='{$dest->park_map_id}'>{$dest->destination} [ $dest->park ]</option>\n";
 												}
 											?>
 										</select>
@@ -137,7 +137,7 @@ iframe#receipt {
 											<th>vehicle type</th>
 											<th>Driver's name</th>
 											<th style="width:100px">Driver's no</th>
-											<th style="width:80px">vehicle no</th>
+											<th style="width:90px">vehicle no</th>
 											<th style="width:70px">Status</th>
 											<th style='text-align:center' colspan="3">Option</th>
 										</tr>
@@ -211,7 +211,7 @@ iframe#receipt {
 									<option value="">-- Vehicle type --</option>
 									<?php
 										foreach ($vehicle->getAllvehicleTypes() AS $b) {
-											echo "<option value='{$b->id}'>{$b->vehicle_name} ($b->num_of_seats Seats)</option>";
+											echo "<option value='{$b->vehicle_type_id}'>{$b->vehicle_name} ($b->num_of_seats Seats)</option>";
 										}
 									?>
 								</select>

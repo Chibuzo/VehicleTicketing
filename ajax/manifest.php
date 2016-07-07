@@ -40,15 +40,15 @@ if (isset($_REQUEST['op'])) {
 		$html .= "<table class='table tablestriped table-bordered' style='padding:0px'>
 			<thead>
 				<tr>
-					<th style='width:45px'>Date</th>
+					<th style='width:100px'>Date Booked</th>
 					<th>Name</th>
 					<th>Phone no</th>
 					<th>Next of Kin</th>
 					<th class='text-right'>Seat</th>
 					<th>Ticket</th>
 					<th class='text-right'>Fare (₦)</th>
-					<th style='text-align:center' colspan='3'>Action</th>
 					<th>Sold by</th>
+					<th style='text-align:center' colspan='3'>Action</th>
 				</tr>
 			</thead>
 			<tbody id='tbl-ticket'>";
@@ -64,11 +64,11 @@ if (isset($_REQUEST['op'])) {
 							<td class='text-right'>{$bk->seat_no}</td>
 							<td>{$bk->ticket_no}</td>
 							<td class='text-right'>" . number_format($bk->fare) . "</td>
+							<td>{$bk->username}</td>
 							<td class='text-center'><a href='' id='{$bk->bd_id}' class='print-ticket' title='Print ticket' data-toggle='tooltip'><span class='glyphicon glyphicon-print'></span></a></td>
 							<td class='text-center'><a href='' data-toggle='modal' data-target='#customerModal' id='{$bk->bd_id}' class='edit-ticket'><span class='glyphicon glyphicon-pencil'></span></a></td>
 							<td class='text-center'><a href='' id='{$bk->bd_id}' class='cancel-ticket red'><span class='glyphicon glyphicon-remove'></span></a></td>
-							<!--<td>{$bk->username}</td>-->
-							<td>{$_SESSION['username']}</td>
+							<!--<td>{$_SESSION['username']}</td>-->
 						</tr>";
 			}
 			echo $html;
@@ -83,7 +83,7 @@ if (isset($_REQUEST['op'])) {
 	}
 	elseif ($_REQUEST['op'] == 'balance-sheet')
 	{
-		$manifest->balanceSheet($_POST['boarding_vehicle_id'], $_POST['feeding'], 2500, $_POST['scouters']);
+		$manifest->balanceSheet($_POST['boarding_vehicle_id'], $_POST['feeding'], $_POST['fuel'], $_POST['scouters'], $_POST['expenses'], $_POST['load']);
 	}
 	elseif ($_REQUEST['op'] == 'cancel-ticket')
 	{
