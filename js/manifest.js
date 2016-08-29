@@ -19,7 +19,7 @@ $(document).ready(function() {
 		}
 
 		$.post('ajax/manifest.php', {'op':'get-manifest', 'boarding_vehicle_id':boarding_vehicle_id}, function(d) {
-			$('#report').html(d);
+			$('#manifest-div').html(d);
 			$('button#print-manifest, button#print-waybill').data('boarding_vehicle_id', boarding_vehicle_id);
 			$('button#print-manifest').prop("disabled", false);
 		});
@@ -28,7 +28,7 @@ $(document).ready(function() {
 	});
 
 	/*** Cancel sold ticket ***/
-	$('#report').on('click', '.cancel-ticket', function(e) {
+	$('#manifest-div').on('click', '.cancel-ticket', function(e) {
 		e.preventDefault();
 		var $this = $(this);
 		var ticket_id = $this.attr('id');
@@ -38,6 +38,7 @@ $(document).ready(function() {
 					$this.parents("tr").fadeOut('fast');
 				}
 			});
+			$.post('ajax/synch.php', {'op': 'cancel-ticket', 'ticket_id': ticket_id});
 		}
 	});
 
@@ -48,7 +49,7 @@ $(document).ready(function() {
 		$.get('ajax/manifest.php', {'op': 'print_manifest', 'boarding_vehicle_id': boarding_vehicle_id}, function(d) {
 
 			/*** Print manifest ***/
-			var iframe_body = $("#manifest").contents().find("body");
+			var iframe_body = $("#manifest-frame").contents().find("body");
 			iframe_body.html(d);
 			window.frames['manifest'].print();
 			iframe_body.html("");
@@ -111,10 +112,11 @@ $(document).ready(function() {
 		$.post('ajax/manifest.php', $(this).serialize() + '&op=balance-sheet', function(d) {
 			$('#auditModal .alert-success').html("Action successful...").show().fadeOut(6000);
 		});
+		$.post('ajax/synch.php', $(this).serialize() + '&op=synch-manifest-account');
 	});
 
 	// Reprint ticket
-	$('#report').on('click', '.print-ticket', function(e) {
+	$('#manifest-div').on('click', '.print-ticket', function(e) {
 		e.preventDefault()
 		var ticket_id = $(this).attr('id');
 
@@ -135,6 +137,8 @@ $(document).ready(function() {
 		$.post('ajax/manifest.php', {'op':'reopen-vehicle', 'boarding_vehicle_id':boarding_vehicle_id}, function(d) {
 			if (d.trim() == "Done") {
 				alert("The vehicle has been reopen");
+				// open online
+				$.post('ajax/synch.php', {'op': 'reopen-vehicle', 'boarding_vehicle_id': boarding_vehicle_id});
 				$("#print-waybill").prop("disabled", true);
 				$(this).hide();
 			} else
@@ -143,7 +147,7 @@ $(document).ready(function() {
 	});
 
 /*** Edit customer information ***/
-	$('#report').on('click', '.edit-ticket', function(e) {
+	$('#manifest-div').on('click', '.edit-ticket', function(e) {
 		e.preventDefault();
 		var $parentTr = $(this).parents("tr");
 		var customer_id = $parentTr.attr("id");

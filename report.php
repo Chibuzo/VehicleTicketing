@@ -66,6 +66,7 @@ $report = new Report();
 								<thead>
 									<tr>
 										<th style="width: 10px">S/no</th>
+										<th>Vehicle #</th>
 										<th>Route</th>
 										<th>Vehicle Type</th>
 										<th>Tickets sold</th>
@@ -90,6 +91,7 @@ $report = new Report();
 										$total_profit += $profit = $revenue - $rep['expenses'];
 										$html .= "<tr>
 													<td class='text-right'>$n</td>
+													<td>{$rep['vehicle_no']}</td>
 													<td>{$_SESSION['state_name']} - {$rep['destination']}</td>
 													<td>{$rep['bus_type']} ( $departure_order )</td>
 													<td class='text-right'>{$num_of_tickets}</td>
@@ -99,7 +101,7 @@ $report = new Report();
 													<td class='text-right'>" . number_format($profit) . "</td>
 												</tr>";
 									}
-									$html .= "<tr style='font-size:16px; font-weight: bold; text-align: right'><td colspan='5'>Totals:</td>
+									$html .= "<tr style='font-size:16px; font-weight: bold; text-align: right'><td colspan='6'>Totals:</td>
 													<td>".number_format($total_revenue)."</td><td>".number_format($total_expenses)."</td><td>".number_format($total_profit)."</td></tr>";
 									echo $html;
 								?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../classes/route.class.php";
 $route = new Route();
 
@@ -11,29 +12,29 @@ if (isset($_REQUEST['op'])) {
 		}
 		echo $html;
 	}
-	elseif ($_POST['op'] == 'delete-vehicle_type') {
+	elseif ($_REQUEST['op'] == 'delete-vehicle_type') {
 		require_once "../classes/bus.class.php";
 		$bus = new Bus();
-		if ($bus->removeVehicle($_POST['id']) === true) {
+		if ($bus->removeVehicle($REQUEST['id']) === true) {
 			echo "Done";
 		}
 	}
-	elseif ($_POST['op'] == "remove-route") {
+	elseif ($_REQUEST['op'] == "remove-route") {
 		require_once "../classes/route.class.php";
 		$route = new Route();
-		if ($route->removeRoute($_POST['id']) === true) {
+		if ($route->removeRoute($REQUEST['id']) === true) {
 			echo "Done";
 		}
 	}
-	elseif ($_POST['op'] == 'update-route')
+	elseif ($_REQUEST['op'] == 'update-route')
 	{
 		require_once "../classes/route.class.php";
 		$route = new Route();
-		if ($route->editRoute($_POST['origin'], $_POST['destination'], $_POST['id']) === true) {
+		if ($route->editRoute($REQUEST['origin'], $REQUEST['destination'], $REQUEST['id']) === true) {
 			echo "Done";
 		}
 	}
-	elseif ($_POST['op'] == 'update-bus')
+	elseif ($_REQUEST['op'] == 'update-bus')
 	{
 		require_once "../classes/bus.class.php";
 		$bus = new Bus();
@@ -42,7 +43,7 @@ if (isset($_REQUEST['op'])) {
 			echo "Done";
 		}
 	}
-	elseif ($_POST['op'] == "get-state-parks")
+	elseif ($_REQUEST['op'] == "get-state-parks")
 	{
 		$id = $_POST['state_id'];
 		require_once "../classes/parkmodel.class.php";
@@ -51,7 +52,13 @@ if (isset($_REQUEST['op'])) {
 		$parks =  $park_model->getParksByState($id);
 
 		echo json_encode($parks);
-		exit;
+	}
+	elseif ($_REQUEST['op'] == 'get-terminal-details')
+	{
+		require_once "../classes/ticket.class.php";
+		$details = Ticket::loadTravelDetails();
+		$park = implode("-", explode(" ", $_SESSION['park_name']));
+		echo '{"abbr": "' . $_SESSION['abbr'] . '", "park": "' . $park . '"}';
 	}
 }
 

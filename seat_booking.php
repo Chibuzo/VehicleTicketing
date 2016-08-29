@@ -11,7 +11,7 @@ if (isset($_REQUEST['op'])) {
 	if ($_REQUEST['op'] == 'get_seating')
 	{
 		// get seatpicker
-		$seatpicker = new SeatPicker($_POST['park_map_id'], $_POST['travel_date'], $_POST['num_of_seat'], $_POST['vehicle_type'], $_SESSION['travel_id'], $_POST['departure_order']);
+		$seatpicker = new SeatPicker($_POST['park_map_id'], $_POST['travel_date'], $_POST['num_of_seat'], $_POST['vehicle_type'], $_POST['departure_order']);
 		echo $seatpicker->getSeatChart();
 	}
 	elseif ($_REQUEST['op'] == 'verify-customer')

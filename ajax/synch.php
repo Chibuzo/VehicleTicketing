@@ -1,27 +1,27 @@
 <?php
 session_start();
 require_once '../apicaller.php';
+require_once '../classes/Synch.class.php';
+
+$synch = new Synch();
 
 if (isset($_REQUEST['op'])) {
-    $apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', 'http://localhost/travelhub/api/');
+    $apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', 'http://travelhub.ng/demo/api/');
+    $status = NULL;
     if ($_REQUEST['op'] == 'update-seat')
     {
-        try {
-            $status = $apicaller->sendRequest(array(
-                'controller'        => 'booking',
-                'action'            => 'save_booking',
-                'trip_id'           => $_POST['trip_id'],
-                'travel_date'       => $_POST['travel_date'],
-                'seat_no'           => $_POST['seat_no'],
-                'departure_order'   => $_POST['departure_order'],
-                'customer_name'     => $_POST['customer_name'],
-                'customer_phone'    => $_POST['customer_phone'],
-                'next_of_kin_phone' => $_POST['next_of_kin_phone'],
-                'channel'           => 'offline'
-            ));
-        } catch (Exception $e) {
-            echo $e->getCode();
+        $status = $synch->postBooking($apicaller, $_POST['trip_id'], $_POST['travel_date'], $_POST['seat_no'], $_POST['departure_order'], $_POST['customer_name'], $_POST['customer_phone'], $_POST['next_of_kin_phone']);
+        if ($status != "Done" || $status == 0) {
+            $synch->logFailedSynch($_POST['trip_id'], $_POST['travel_date'], $_POST['seat_no'], $_POST['departure_order'], $_POST['customer_name'], $_POST['customer_phone'], $_POST['next_of_kin_phone']);
         }
+        // Check for failed synch
+        if ($_SESSION['booking_synch'] == 'Outdated') {
+            $synch->postFailedSynch($apicaller);
+        }
+    }
+    elseif ($_REQUEST['op'] == 'fix-failed-synch')
+    {
+        $synch->postFailedSynch($apicaller);
     }
     elseif ($_REQUEST['op'] == 'online-synch') // receive online booking through socket and save
     {
@@ -130,5 +130,26 @@ if (isset($_REQUEST['op'])) {
                 $vehicle->addVehicleType($data['vehicle_name'], '', $data['num_of_seats'], $data['vehicle_type_id']);
                 break;
         }
+    }
+    elseif ($_REQUEST['op'] == 'cancel-ticket')
+    {
+        $synch->cancelTicket($apicaller, $_POST['ticket_id']);
+    }
+    elseif ($_REQUEST['op'] == 'synch-manifest-account')
+    {
+        // get vehicle details
+        require_once '../classes/vehiclemodel.class.php';
+        $vehicle = new VehicleModel();
+        $d = $vehicle->getBoardingVehicleDetailsById($_POST['boarding_vehicle_id']);
+        extract($_POST);
+        $synch->synchManifestBalance($apicaller, $d->trip_id, $d->travel_date, $d->departure_order, $feeding, $fuel, $scouters, $expenses, $load);
+    }
+    elseif ($_REQUEST['op'] == 'reopen-vehicle')
+    {
+        // get vehicle details
+        require_once '../classes/vehiclemodel.class.php';
+        $vehicle = new VehicleModel();
+        $d = $vehicle->getBoardingVehicleDetailsById($_POST['boarding_vehicle_id']);
+        $synch->reopenVehicle($apicaller, $d->trip_id, $d->travel_date, $d->departure_order);
     }
 }

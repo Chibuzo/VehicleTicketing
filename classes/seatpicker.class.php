@@ -17,11 +17,10 @@ class SeatPicker extends Ticket {
 
 	private $tbl = 'boarding_vehicle';
 
-	function __construct($park_map_id, $travel_date, $num_of_seats, $vehicle_type_id, $travel_id, $departure_order = 0)
+	function __construct($park_map_id, $travel_date, $num_of_seats, $vehicle_type_id, $departure_order = 0)
 	{
 		parent::__construct();
 
-		$this->travel_id = $travel_id;
 		$this->travel_date = $travel_date;
 		$this->num_of_seats = $num_of_seats;
 		$this->vehicle_type_id = $vehicle_type_id;
@@ -45,13 +44,15 @@ class SeatPicker extends Ticket {
 				return self::getLuxurySeats();
 				break;
 			case 8: // toyota hiace
-				return self::getToyotaHiaceSeats();
+				return self::getToyotaHiaceSeatsA();
 				break;
 			case 10:
 			case 13:
 				return self::getNissianUrvanSeats();
 				break;
 			case 15:
+				return self::getToyotaHiaceSeatsB();
+				break;
 			case 19:
 				return $this->getCoaterSeats();
 				break;
@@ -70,6 +71,7 @@ class SeatPicker extends Ticket {
 			$this->trip_id = $vehicle->trip_id;
 			$this->booked_seats = explode(',', $vehicle->booked_seats);
 			$this->seat_status =  $vehicle->seat_status;
+			$this->departure_order = $vehicle->departure_order; // reassign because auto select comes empty
 		} else {
 			$result = $this->insertVehicleForBoarding();
 			if ($result == false) {
@@ -80,6 +82,7 @@ class SeatPicker extends Ticket {
 			$this->trip_id = $result->trip_id;
 			$this->booked_seats = array();
 			$this->seat_status = 'Not full';
+			$this->departure_order = $result->departure; // reassign because auto select comes empty
 		}
 	}
 
@@ -87,7 +90,7 @@ class SeatPicker extends Ticket {
 	public function insertVehicleForBoarding()
 	{
 		$vehicle = new VehicleModel();
-		return $vehicle->fixBoardingVehicle($this->vehicle_type_id, $this->park_map_id, $this->travel_date, $this->departure_order, $this->travel_id);
+		return $vehicle->fixBoardingVehicle($this->vehicle_type_id, $this->park_map_id, $this->travel_date, $this->departure_order, $_SESSION['travel_id']);
 	}
 
 
@@ -96,7 +99,7 @@ class SeatPicker extends Ticket {
 	 *  one seats at the front
 	 *  then three seats on other rows
 	 */
-	function getToyotaHiaceSeats()
+	function getToyotaHiaceSeatsA()
 	{
 		$booked_seats = $this->booked_seats;
 		$seat_arrangement = $this->upperSittingDetails('mini-bus');
@@ -130,6 +133,54 @@ class SeatPicker extends Ticket {
 			//if ($i == 2) continue;
 
 			if ($counter == 4) {
+				$counter = 0;
+				$seat_arrangement .= "</div>"; // Close cols
+			}
+		}
+		if ($counter == 1) $seat_arrangement .= "</div>";
+		$seat_arrangement .= "\n</div>\n";
+
+		return $seat_arrangement .= $this->lowerSittingDetails();
+	}
+
+
+	function getToyotaHiaceSeatsB()
+	{
+		$booked_seats = $this->booked_seats;
+		$seat_arrangement = $this->upperSittingDetails('mini-bus');
+
+		$counter = 0;
+		for ($i = 1; $i <= $this->num_of_seats; $i++) {
+			$class = "class='seat'";
+
+			$seat = $i;
+			if (in_array($seat, $booked_seats)) $class = "class='booked_seat'";
+			if ($counter == 0) $seat_arrangement .= $i <= 1 ? "<div class='front-row'>" : "<div class='seat-row'>";
+
+			$seat_arrangement .= "\t<div {$class} data-hidden='no'  title='Seat {$seat}' id='{$seat}'></div>";
+			$counter++;
+
+			if ($this->num_of_seats == 15 && $i == 2) { // For one seat at the front
+				$seat_arrangement .= "</div>"; // Close cols for the seat at the front
+				$counter = 0;
+				$row1 = 5; $row2 = 7; $row3 = 10;
+			} else {
+				$row1 = 4; $row2 = 6; $row3 = 9;
+			}
+
+			if ($i == $row1) {
+				$seat_arrangement .= "\t<div class='th-hide'></div>";
+				$counter++;
+			} elseif ($i == $row2) {
+				$seat_arrangement .= "\t<div class='th-hide'></div>";
+				$counter++;
+			} elseif ($i == $row3) {
+				$seat_arrangement .= "\t<div class='th-hide'></div>";
+				$counter++;
+			}
+			//if ($i == 2) continue;
+
+			if ($i === 1 || $counter === 4) {
 				$counter = 0;
 				$seat_arrangement .= "</div>"; // Close cols
 			}
@@ -176,7 +227,7 @@ class SeatPicker extends Ticket {
 
 	public function getLuxurySeats()
 	{
-		$booked_seats = $this->booked_seats;
+		//$booked_seats = $this->booked_seats;
 		$seat_arrangement = $this->upperSittingDetails('luxury');
 
 		$counter = $counter2 = 0;
@@ -187,9 +238,6 @@ class SeatPicker extends Ticket {
 			if ($counter == 0) $seat_arrangement .= "<div class='cols'>";
 			if ($counter < 2) {
 				$seat = $i;
-				/*** exchange arrays to match seating arrangement ***/
-				/*if ($i % 2 == 1) $seat = $i + 1;
-				else $seat = $i - 1;*/
 				if (in_array($seat, $this->booked_seats)) $class = "class='booked_seat'";
 				$seat_arrangement .= "\t<div {$class} data-hidden='no' title='Seat {$seat}' id='{$seat}'></div>";
 				++$counter;
@@ -208,7 +256,6 @@ class SeatPicker extends Ticket {
 			foreach ($down_seats AS $seat) {
 				$class = "class='seat'";
 
-				//if ($this->num_of_seats == 59 && $seat == 60) $seat = 59;		// Fixes a bug that makes the last seat 60 instead of 59 due to the rearrangement
 				if ($counter == 0) $seat_arrangement .= "<div class='cols'>";
 				if (in_array($seat, $this->booked_seats)) $class = "class='booked_seat'";
 				$seat_arrangement .= "\t<div {$class} data-hidden='no' title='Seat {$seat}' id='{$seat}'></div>";
@@ -256,12 +303,10 @@ class SeatPicker extends Ticket {
 			}
 
 			if ($counter == 2) {
-				//if ($i == 10) { $counter = 1; continue; }
 				$counter = 0;
 				$seat_arrangement .= "</div>"; // Close cols
 			}
 		}
-		//if ($counter == 1) $seat_arrangement .= "</div>";
 		$seat_arrangement .= "\n</div>\n";
 
 		return $seat_arrangement .= $this->lowerSittingDetails();

@@ -24,7 +24,7 @@ require_once "includes/db_handle.php";
           <div class="form-group">
             <div class="row">
               <div class="col-md-12">
-                <select name="state" class="form-control" required>
+                <select name="state" id="state" class="form-control" required>
                   <option value="" selected>-- State of Operation --</option>
                   <?php
                   $db->query("SELECT * FROM states ORDER BY state_name");
@@ -44,7 +44,7 @@ require_once "includes/db_handle.php";
                 <input type="text" name="travel_id" class="form-control" placeholder="Travel ID" required />
               </div>
               <div class="col-md-6">
-                <input type="text" name="park_id" class="form-control" placeholder="Park ID" required />
+                <select name="park_id" id="park_id" class="form-control" required></select>
               </div>
             </div>
           </div>
@@ -92,5 +92,18 @@ $(document).ready(function() {
       }
     });
   });
+
+
+    $('#state').on('change', function() {
+        var id = $(this).val().split('-')[1];
+        $.post("ajax/misc_fns.php", {"op": "get-state-parks", "state_id": id}, function(d) {
+            var parks = JSON.parse(d);
+            var _select = $("#park_id");
+            _select.html('<option value="">-- Park --</option>');
+            $.each(parks, function(i, val) {
+                _select.append($('<option />', { value: val.id, text: val.park }));
+            });
+        });
+    });
 });
 </script>

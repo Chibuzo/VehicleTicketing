@@ -120,6 +120,7 @@ $(document).ready(function() {
 							$('#pick_seat').html('');
 							$('.picked_seat').text('');
 							$("button[type='submit']").prop("disabled", false);
+							//pushBooking();
 						}
 					}
 				);

@@ -167,9 +167,13 @@ select {paddng:0px; heght:23px; width:173px}
 </div>
 
 <?php include_once "includes/footer.html"; ?>
+<script type="text/javascript" src="js/socket.js"></script>
 <script type="text/javascript" src="js/sell_ticket.js"></script>
 <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 <script>
+	// popup for websocket connection
+	//var win = window.open("http://localhost/terminal/listen.html", "TravelHub", "toolbar=no, titlebar=no, location=no, directories=no, status=no, menubar=no, width=400, height=300");
+
 $(document).ready(function() {
 	$('.date').datepicker({
 		format: 'yyyy-mm-dd',

@@ -75,7 +75,7 @@ $destination = new Destination();
 			<div class="col-md-9">
 				<div class="box box-warning">
 					<div class="box-body">
-						<div id="report" >
+						<div id="manifest-div" >
 						</div>
 					</div>
 				</div>
@@ -92,7 +92,7 @@ $destination = new Destination();
 			<iframe id='receipt' name='receipt' src='ticket.php'></iframe>
 		</div>
 		<div>
-			<iframe id='manifest' name='manifest' style='width:100%; display:none' src='manifest.htm'></iframe>
+			<iframe id='manifest-frame' name='manifest' style='width:100%; display:none' src='manifest.htm'></iframe>
 			<iframe id='waybill' name='waybill' style='width:70%; display:none' src='waybill.htm'></iframe>
 		</div>
 	</section>

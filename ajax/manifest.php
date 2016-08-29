@@ -27,7 +27,7 @@ if (isset($_REQUEST['op'])) {
 		$html = '';
 		if (isset($manifest_details[0]->vehicle_no)) {
 			$html .= "<blockquote><p style='font: 11px Verdana; color:#999; line-height:17px;'>
-				<button type='button id='audit-btn' data-target='#auditModal' data-toggle='modal' class='btn btn-danger pull-right'><i class='fa fa-credit-card'></i> Audit</button>
+				<button type='button id='audit-btn' data-target='#auditModal' data-toggle='modal' class='btn btn-danger pull-right'><i class='fa fa-credit-card'></i> Expenses</button>
 				Route: {$_SESSION['state_name']} - {$manifest_details[0]->destination}<br />
 				Driver's name: {$manifest_details[0]->driver_name}<br />
 				Driver's phone number: {$manifest_details[0]->drivers_phone}<br />
@@ -55,7 +55,7 @@ if (isset($_REQUEST['op'])) {
 
 			foreach ($manifest_details AS $bk) {
 				$bg = '';
-				//if ($bk->offline == '0') $bg = 'warning';
+				if ($bk->channel != 'offline') $bg = 'warning';
 				$html .= "<tr id='{$bk->customer_id}' class='$bg'>
 							<td>" . date('d/m/Y', strtotime($bk->date_booked)) . "</td>
 							<td>{$bk->c_name}</td>

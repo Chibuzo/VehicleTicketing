@@ -1,13 +1,15 @@
 .seat_arrangement {
 	display: block;
-	font:normal 12px 'Open Sans', Tahoma;
-	color:#999;
-	padding:20px;
-	border:#ccc solid thin;
-	border-radius:1px;
-	margin: 15px auto;
+	font: normal 13px 'Open Sans', Tahoma;
+	color: #999;
+	padding: 20px;
+	border-top: #ccc solid thin;
 	overflow: hidden;
-	/*position:absolute;*/
+	background: #fff;
+}
+
+.picked_seat {
+	font-weight: bold;
 }
 
 .seat {
@@ -26,50 +28,49 @@
 
 .booked_seat {
 	float: left;
-	width:16px;
-	height:19px;
+	width: 16px;
+	height: 18px;
 	background-image:url('../images/booked_seat.gif');
-	margin-left: 8px; background-repeat:no-repeat; cursor:default;
+	margin-left: 8px;
+	background-repeat:no-repeat;
+	cursor:default;
 }
 
 .seat:hover{background-image:url('../images/highlighted_seat.gif')}
 
-/*
-#right_seats {
-	top:75px;
-}
-
-#left_seats {
-	top:-75px;
-}
-*/
-
 .seat_wrap {
+	float: right;
 	padding: 5px;
 	background-color:#fff;
 	border:#ccc solid thin;
 	border-radius:2px;
-	margin-top:24px;
 	margin: auto;
+	margin-top: 20px;
 	width: 106px;
 	overflow: hidden;
 }
 
-#seat_tips {
-	float:right;
-	margin-right:20px;
-	margin-top:7px;
-}
-
-#seat_tips > ul {
+.seat-tips > ul {
 	list-style-type:none;
-	margin:0px; padding:0px;
+	margin:0px;
+	padding:0px;
 	line-height:21px
 }
 
-#seat_tips > ul > li {
-	line-height:24px
+.seat-tips > ul > li {
+	line-height:29px
 }
+
+.available_seat, .selected_seat, .booked-seat, .steering-wheel {
+	background-repeat:no-repeat;
+	background-position:0px 3px;
+	padding-left:25px;
+}
+
+.selected_seat {background-image:url(../images/selected_seat.gif);}
+.available_seat {background-image:url(../images/seat.gif);}
+.booked-seat {background-image:url(../images/booked_seat.gif);}
+.steering-wheel { background-image:url(../images/steering.gif); }
 
 .seat-row {
 	clear: both;
@@ -85,12 +86,6 @@
 	/*margin-right: 11px;*/
 }
 
-.front-row .seat, .front-row .booked_seat {
-	float: right;
-	margin-right: 6px;
-	margin-left: 0;
-}
-
 .seat-row .th-hide {
 	float:left;
 	visibility: hidden;
@@ -100,31 +95,38 @@
 }
 
 .steering {
-	height:28px;
+	height: 20px;
 	background-image:url(../images/steering.gif);
+	/*width: 20px;*/
 	background-repeat:no-repeat;
 	background-position:bottom;
-	background-position-x: 4px;
-	margin-bottom: 5px;
+	background-position: 4px 1px;
+	margin-bottom: 10px;
 }
 
 .continue-btn {
-	top: 25px;
 	position: relative;
-	left: 101px;
+}
+
+.seat-details {
+	margin-top: -11%;
 }
 
 /* mini-bus style 10, 14, 15 seats */
 .mini-bus {
-	padding-top: 50px;
+
+}
+
+.mini-bus .seat-tips, .nissian-urvan .seat-tips {
+	margin-top: 30px;
+	margin-left: 100px;
 }
 
 
-.mini-bus .seat-details, .sienna .seat-details {
-	width: 110px;
-	float: left;
-	text-align: left;
-	margin-top: 25px
+.mini-bus .seat-details, .sienna .seat-details, .nissian-urvan .seat-details {
+	position: relative;
+	top: 22px;
+	left: 105px;
 }
 
 .nissian-urvan .seat-row {
@@ -166,6 +168,7 @@
 
 .luxury .seat_wrap {
 	padding: 0;
+	padding-top: 6px;
 	width: 125px;
 }
 
@@ -175,13 +178,23 @@
 }
 
 .luxury .steering {
-	background-position-x: 10px;
+	background-position: 10px 0;
 }
 
-.luxury #seat_details {
-	position: absolute;
-	top: 38px;
-	left: 55px;
+.luxury .seat-tips {
+	position: relative;
+	left: 140px;
+	margin-top: 110px;
+}
+
+.luxury .seat-details {
+	position: relative;
+	top: 70px;
+	left: 145px;
+}
+
+.luxury .continue-btn {
+	top: 120px;
 }
 
 #right_seats, #left_seats {
@@ -192,7 +205,8 @@
 }
 
 
-@media screen and (min-width: 320px) and (max-width: 600px) {
+/* mobile devices */
+@media screen and (min-width: 300px) and (max-width: 600px) {
 
 	.seat_arrangement {
 		color: #666;
@@ -204,23 +218,19 @@
 
 	.seat-tips ul {
 		list-style-type: none;
+		position: relative;
 		margin-left: -50px;
+		margin-top: 50px;
 	}
 
 	.seat-tips ul li {
-		float: left;
 		margin-left: 15px;
-		line-height: 21px;
+		line-height: 29px;
 	}
 
 	.seat_wrap {
-		margin-top: 12px;
-	}
-
-	.continue-btn {
-		top: 10px;
-		position: relative;
-		left: 0px;
+		margin-top: 20px;
+		float: right;
 	}
 
 	.seat_arrangement .glyphicon-remove {
@@ -236,15 +246,34 @@
 		margin-top: 23px;
 	}
 
-	.mini-bus .seat-details, .sienna .seat-details {
-		clear: both;
-		width: 110px;
+	.mini-bus .seat-details, .sienna .seat-details, .nissian-urvan .seat-details {
+		position: relative;
+		top: 77px;
+		left: -181px;
 		float: left;
-		text-align: left;
-		margin-top: 10px
 	}
 
 	.mini-bus .continue-btn {
-		margin-right: 60px;
+		margin-top: 46px;
+	}
+
+	.mini-bus .seat-tips, .nissian-urvan .seat-tips {
+		margin-top: 10px;
+		margin-left: 40px;
+	}
+
+	.luxury .continue-btn {
+		top: 165px;
+	}
+
+	.luxury .seat-tips {
+		margin-top: 70px;
+		margin-left: -90px;
+	}
+
+	.luxury .seat-details {
+		float: left;
+		top: 50px;
+		left: 20px;
 	}
 }

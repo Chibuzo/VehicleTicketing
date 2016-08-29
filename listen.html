@@ -5,6 +5,9 @@
     <script type="text/javascript" src="js/socket.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            // fetch details and establish websocket connection
+            fetchTerminalDetails();
+
             $("#connect").on('click', function() {
                 location.reload(true);
             });

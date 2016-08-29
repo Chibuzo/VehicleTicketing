@@ -14,7 +14,7 @@ class Manifest extends Ticket {
 		if ($limit != null) {
 			$limit = "LIMIT 0, 20";
 		}
-		$sql = "SELECT bd.id bd_id, ticket_no, date_booked, c_name, next_of_kin_phone, phone_no, customer_id, seat_no, bv.fare, bv.travel_date, vehicle_name vehicle_type, num_of_seats, destination, username, vi.*
+		$sql = "SELECT bd.id bd_id, ticket_no, channel, date_booked, c_name, next_of_kin_phone, phone_no, customer_id, seat_no, bv.fare, bv.travel_date, vehicle_name vehicle_type, num_of_seats, destination, username, vi.*
 				FROM booking_details bd
 				JOIN boarding_vehicle bv ON bd.boarding_vehicle_id = bv.id
 				JOIN trips tr ON bv.trip_id = tr.trip_id
@@ -62,19 +62,25 @@ class Manifest extends Ticket {
 			$seats = count(explode(",", $audit->booked_seats));
 			$income = $seats * $audit->fare;
 
-			echo "<div class='audit_pane'><div><b>Balance Sheet</b></div><hr id='line' style='margin:8px 0px' />
+			echo "<div class='audit_pane panel panel-default'>
+					<div class='panel-heading'>
+						<h3 class='panel-title'>Vehicle Finances</h3>
+					</div>
 
-					Tickets sold: $seats<br />
-					Gross income: ₦" . number_format($income) . "<br>
-					Fuel cost: ₦" . number_format($audit->fuel) . "<br>
-					Driver's feeding: ₦" . number_format($audit->drivers_feeding) . "<br>
-					Expenses: ₦" . number_format($audit->expenses) . "<br>
-					Scouters: ₦" . number_format($audit->scouters_charge) . "<br>
-					<!--Service charge: ₦<hr style='margin:8px 0px' />-->
-					Net Income: ₦" . number_format(($income  - (int)$audit->load_charge) - (int)$audit->fuel - (int)$audit->drivers_feeding - (int)$audit->expenses - (int)$audit->scouters_charge) . "</div>
-					<div class='auditpane' style='border:0px'><br />
-						<button id='reopen' class='btn btn-default btn-large btn-block' data-boarding_vehicle_id='$boarding_vehicle_id'>Reopen this vehicle</button>
-					</div>";
+					<div class='panel-body'>
+						Tickets sold: <div class='pull-right'> $seats</div><br />
+						Gross income: <div class='pull-right'>₦" . number_format($income) . "</div><br>
+						Fuel cost: <div class='pull-right'>₦" . number_format($audit->fuel) . "</div><br>
+						Driver's feeding: <div class='pull-right'>₦" . number_format($audit->drivers_feeding) . "</div><br>
+						Expenses: <div class='pull-right'>₦" . number_format($audit->expenses) . "</div><br>
+						Scouters: <div class='pull-right'>₦" . number_format($audit->scouters_charge) . "</div><br>
+						<!--Service charge: ₦<hr style='margin:8px 0px' />-->
+						Net Income: <div class='pull-right'>₦" . number_format(($income  - (int)$audit->load_charge) - (int)$audit->fuel - (int)$audit->drivers_feeding - (int)$audit->expenses - (int)$audit->scouters_charge) . "</div></div>
+						<div class='auditpane' style='border:0px'><br />
+							<button id='reopen' class='btn btn-default btn-large btn-block' data-boarding_vehicle_id='$boarding_vehicle_id'>Reopen this vehicle</button>
+						</div>
+					</div>
+				</div>";
 		} else {
 			echo "false";
 		}

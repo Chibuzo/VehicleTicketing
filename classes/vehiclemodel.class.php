@@ -219,6 +219,14 @@ class VehicleModel extends Ticket {
 	}
 
 
+	public function getBoardingVehicleDetailsById($boarding_vehicle_id)
+	{
+		$sql = "SELECT trip_id, departure_order, travel_date FROM boarding_vehicle WHERE id = :id";
+		self::$db->query($sql, array('id' => $boarding_vehicle_id));
+		return self::$db->fetch('obj');
+	}
+
+
 	public function getBookedVehicles($travel_date)
 	{
 		$sql = "SELECT bbv.*, bbv.id bbv_id, seat_status, vehicle_name vehicle_type, destination, vi.*, vi.id vehicle_id, vi.id vehicle_id, bv.id boarding_vehicle_id

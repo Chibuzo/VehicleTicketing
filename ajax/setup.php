@@ -6,7 +6,7 @@ require_once "../classes/trip.class.php";
 require_once "../classes/destination.class.php";
 require_once "../classes/parkmap.class.php";
 
-$apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', 'http://localhost/travelhub/api/');
+$apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', 'http://travelhub.ng/demo/api/');
 
 try {
     $setup_data = $apicaller->sendRequest(array(
@@ -22,7 +22,7 @@ try {
     $phone = $_POST['phone1'] . ", " . $_POST['phone2'];
 
     // let's be useful
-    $travel = $setup_data->travel;
+    $travel         = $setup_data->travel;
     $vehicles       = $setup_data->data->vehicles;
     $trips          = $setup_data->data->trips;
     $destinations   = $setup_data->data->destinations;
@@ -43,7 +43,6 @@ try {
     foreach ($destinations AS $dest) {
         $destination->addRoute($dest->park_map_id, $dest->destination_state, $dest->destination);
     }
-
     echo "Done";
 } catch (Exception $e) {
     echo $e->getMessage();
