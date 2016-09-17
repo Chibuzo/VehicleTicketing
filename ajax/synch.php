@@ -11,6 +11,7 @@ if (isset($_REQUEST['op'])) {
     if ($_REQUEST['op'] == 'update-seat')
     {
         $status = $synch->postBooking($apicaller, $_POST['trip_id'], $_POST['travel_date'], $_POST['seat_no'], $_POST['departure_order'], $_POST['customer_name'], $_POST['customer_phone'], $_POST['next_of_kin_phone']);
+        //var_dump($status);
         if ($status != "Done" || $status == 0) {
             $synch->logFailedSynch($_POST['trip_id'], $_POST['travel_date'], $_POST['seat_no'], $_POST['departure_order'], $_POST['customer_name'], $_POST['customer_phone'], $_POST['next_of_kin_phone']);
         }
@@ -21,7 +22,8 @@ if (isset($_REQUEST['op'])) {
     }
     elseif ($_REQUEST['op'] == 'fix-failed-synch')
     {
-        $synch->postFailedSynch($apicaller);
+        $synch->getFailedSynch($apicaller, $_POST['terminal_sub_id']); // pull online failed synch
+        $synch->postFailedSynch($apicaller); // post offline failed synch
     }
     elseif ($_REQUEST['op'] == 'online-synch') // receive online booking through socket and save
     {
@@ -30,21 +32,9 @@ if (isset($_REQUEST['op'])) {
         require_once '../classes/customer.class.php';
 
         $data = json_decode($_POST['data'], true);
-        // handle customer
-        $customer = new Customer();
-        $_customer = $customer->getCustomer('phone_no', $data['customer_phone']);
-        $customer_id = $_customer['id'];
-        if ($_customer == false) {
-            $customer->customer_name     = $data['customer_name'];
-            $customer->phone_no          = $data['customer_phone'];
-            $customer->next_of_kin_phone = $data['next_of_kin_phone'];
-            $customer_id                 = $customer->addNew($customer);
-        }
-        try {
-            $booking = new Booking();
-            $booking->saveOnlineBooking($data['trip_id'], $data['travel_date'], $data['departure_order'], $data['seat_no'], $customer_id, $data['channel']);
-        } catch (Exception $e) {
-            echo $e->getMessage();
+        $status = $synch->handleOnlineBooking($data);
+        if ($status != true) {
+            // wahala dey
         }
     }
     elseif ($_REQUEST['op'] == 'add-park-map')

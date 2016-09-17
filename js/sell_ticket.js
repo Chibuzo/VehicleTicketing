@@ -120,7 +120,6 @@ $(document).ready(function() {
 							$('#pick_seat').html('');
 							$('.picked_seat').text('');
 							$("button[type='submit']").prop("disabled", false);
-							//pushBooking();
 						}
 					}
 				);
@@ -143,7 +142,6 @@ function postBookingOnline(trip_id, travel_date, seat_no, departure_order, custo
 		{'op': 'update-seat', 'trip_id': trip_id, 'seat_no': seat_no, 'departure_order': departure_order, 'travel_date': travel_date,
 		'customer_name': customer_name, 'customer_phone': phone, 'next_of_kin_phone': next_of_kin_phone},
 		function(d) {
-
 		}
 	);
 }

@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d762b24d-cbc8-45e1-a083-5e64a5c8aecf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/manifest.php" afterPath="$PROJECT_DIR$/ajax/manifest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/misc_fns.php" afterPath="$PROJECT_DIR$/ajax/misc_fns.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/setup.php" afterPath="$PROJECT_DIR$/ajax/setup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/synch.php" afterPath="$PROJECT_DIR$/ajax/synch.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apicaller.php" afterPath="$PROJECT_DIR$/apicaller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/manifest.class.php" afterPath="$PROJECT_DIR$/classes/manifest.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/report.class.php" afterPath="$PROJECT_DIR$/classes/report.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/seatpicker.class.php" afterPath="$PROJECT_DIR$/classes/seatpicker.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/vehiclemodel.class.php" afterPath="$PROJECT_DIR$/classes/vehiclemodel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/seats.css" afterPath="$PROJECT_DIR$/css/seats.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/ticket.sql" afterPath="$PROJECT_DIR$/db/ticket.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/manifest.js" afterPath="$PROJECT_DIR$/js/manifest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/sell_ticket.js" afterPath="$PROJECT_DIR$/js/sell_ticket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/socket.js" afterPath="$PROJECT_DIR$/js/socket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listen.html" afterPath="$PROJECT_DIR$/listen.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.php" afterPath="$PROJECT_DIR$/manifest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report.php" afterPath="$PROJECT_DIR$/report.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seat_booking.php" afterPath="$PROJECT_DIR$/seat_booking.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sell_ticket.php" afterPath="$PROJECT_DIR$/sell_ticket.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.php" afterPath="$PROJECT_DIR$/setup.php" />
-    </list>
+    <list default="true" id="d762b24d-cbc8-45e1-a083-5e64a5c8aecf" name="Default" comment="" />
     <ignored path="terminal.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -44,16 +22,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="report.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../travelhub/api/controllers/report.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.32258">
-              <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="reportmodel.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../travelhub/api/models/reportmodel.class.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -136,17 +104,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../travelhub/cp/travel/dashboard.php">
+      <file leaf-file-name="bookingmodel.class.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../travelhub/api/models/bookingmodel.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53534186">
-              <caret line="21" column="107" selection-start-line="21" selection-start-column="107" selection-end-line="21" selection-end-column="107" />
+            <state vertical-scroll-proportion="0.4185766">
+              <caret line="188" column="77" selection-start-line="188" selection-start-column="77" selection-end-line="188" selection-end-column="77" />
               <folding>
-                <marker date="1472447778631" expanded="true" signature="347:383" placeholder="SELECT COUNT..bus_charter..." />
-                <marker date="1472447778631" expanded="true" signature="482:674" placeholder="SELECT COUNT..booking_details..." />
-                <marker date="1472447778631" expanded="true" signature="768:856" placeholder="SELECT COUNT..travel_park_map..." />
-                <marker date="1472447778631" expanded="true" signature="950:1026" placeholder="SELECT COUNT..travel_vehicle_types..." />
-                <marker date="1472447778631" expanded="true" signature="4930:5217" placeholder="..." />
+                <marker date="1472467333055" expanded="true" signature="234:293" placeholder="SELECT ticke..booking_details..." />
+                <marker date="1472467333055" expanded="true" signature="505:678" placeholder="SELECT booke..boarding_vehicle..." />
+                <marker date="1472467333055" expanded="true" signature="2236:2365" placeholder="UPDATE board..." />
+                <marker date="1472467333055" expanded="true" signature="2757:2940" placeholder="INSERT INTO ${self::$db_tbl}..." />
+                <marker date="1472467333055" expanded="true" signature="4311:4717" placeholder="SELECT trips..trips..." />
+                <marker date="1472467333055" expanded="true" signature="4903:5783" placeholder="SELECT booki..${self::$db_tbl}..." />
+                <marker date="1472467333055" expanded="true" signature="6023:6996" placeholder="SELECT booki..${self::$db_tbl}..." />
+                <marker date="1472467333055" expanded="true" signature="7296:8314" placeholder="SELECT booki..${self::$db_tbl}..." />
+                <marker date="1472467333055" expanded="true" signature="8637:9650" placeholder="SELECT booki..${self::$db_tbl}..." />
+                <marker date="1472467333055" expanded="true" signature="10293:10412" placeholder="SELECT id, d..boarding_vehicle..." />
+                <marker date="1472467333055" expanded="true" signature="10653:10935" placeholder="SELECT bv.bo..${self::$db_tbl}..." />
+                <marker date="1472467333055" expanded="true" signature="11463:11584" placeholder="UPDATE board..." />
+                <marker date="1472467333055" expanded="true" signature="11667:11709" placeholder="DELETE FROM ..." />
+                <marker date="1472467333055" expanded="true" signature="12115:12351" placeholder="INSERT INTO booking_synch..." />
+                <marker date="1472467333055" expanded="true" signature="12948:13062" placeholder="SELECT COUNT..${self::$db_tbl}..." />
               </folding>
             </state>
           </provider>
@@ -273,7 +251,6 @@
         <option value="$PROJECT_DIR$/css/seats.css" />
         <option value="$PROJECT_DIR$/classes/report.class.php" />
         <option value="$PROJECT_DIR$/classes/vehiclemodel.class.php" />
-        <option value="$PROJECT_DIR$/../travelhub/api/models/bookingmodel.class.php" />
         <option value="$PROJECT_DIR$/apicaller.php" />
         <option value="$PROJECT_DIR$/report.php" />
         <option value="$PROJECT_DIR$/js/manifest.js" />
@@ -287,6 +264,7 @@
         <option value="$PROJECT_DIR$/ajax/manifest.php" />
         <option value="$PROJECT_DIR$/classes/manifest.class.php" />
         <option value="$PROJECT_DIR$/../travelhub/cp/travel/dashboard.php" />
+        <option value="$PROJECT_DIR$/../travelhub/api/models/bookingmodel.class.php" />
       </list>
     </option>
   </component>
@@ -452,7 +430,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1932" height="1088" extended-state="0" />
+    <frame x="-8" y="0" width="1932" height="1088" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15107527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -832,30 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/bookingmodel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15643105">
-          <caret line="251" column="5" selection-start-line="251" selection-start-column="5" selection-end-line="251" selection-end-column="5" />
-          <folding>
-            <marker date="1472395313352" expanded="true" signature="234:293" placeholder="SELECT ticke..booking_details..." />
-            <marker date="1472395313352" expanded="true" signature="505:678" placeholder="SELECT booke..boarding_vehicle..." />
-            <marker date="1472395313352" expanded="true" signature="2236:2365" placeholder="UPDATE board..." />
-            <marker date="1472395313352" expanded="true" signature="2757:2940" placeholder="INSERT INTO ${self::$db_tbl}..." />
-            <marker date="1472395313352" expanded="true" signature="4311:4717" placeholder="SELECT trips..trips..." />
-            <marker date="1472395313352" expanded="true" signature="4903:5783" placeholder="SELECT booki..${self::$db_tbl}..." />
-            <marker date="1472395313352" expanded="true" signature="6023:6954" placeholder="SELECT booki..${self::$db_tbl}..." />
-            <marker date="1472395313352" expanded="true" signature="7254:8272" placeholder="SELECT booki..${self::$db_tbl}..." />
-            <marker date="1472395313352" expanded="true" signature="8595:9608" placeholder="SELECT booki..${self::$db_tbl}..." />
-            <marker date="1472395313352" expanded="true" signature="10251:10370" placeholder="SELECT id, d..boarding_vehicle..." />
-            <marker date="1472395313352" expanded="true" signature="10611:10893" placeholder="SELECT bv.bo..${self::$db_tbl}..." />
-            <marker date="1472395313352" expanded="true" signature="11421:11542" placeholder="UPDATE board..." />
-            <marker date="1472395313352" expanded="true" signature="11625:11667" placeholder="DELETE FROM ..." />
-            <marker date="1472395313352" expanded="true" signature="12073:12309" placeholder="INSERT INTO booking_synch..." />
-            <marker date="1472395313352" expanded="true" signature="12906:13020" placeholder="SELECT COUNT..${self::$db_tbl}..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ajax/synch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.870968">
@@ -959,41 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/manifest.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.353847">
-          <caret line="79" column="85" selection-start-line="79" selection-start-column="85" selection-end-line="79" selection-end-column="85" />
-          <folding>
-            <marker date="1472446912262" expanded="true" signature="271:1057" placeholder="SELECT bd.id..booking_details..." />
-            <marker date="1472446912262" expanded="true" signature="1261:1611" placeholder="SELECT drive..boarding_vehicle..." />
-            <marker date="1472446912262" expanded="true" signature="2014:2181" placeholder="SELECT m.*, ..manifest_audit..." />
-            <marker date="1472446912262" expanded="true" signature="2451:3003" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="2451:3217" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="2451:3394" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="2451:3622" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="2484:2548" placeholder="..." />
-            <marker date="1472446912262" expanded="false" signature="3432:3442" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="3443:3610" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="4091:4250" placeholder="..." />
-            <marker date="1472446912262" expanded="false" signature="4173:4213" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="4330:4663" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="4732:4814" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="4826:5044" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="4838:5032" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="4848:5019" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="5114:5383" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="5582:5593" placeholder="..." />
-            <marker date="1472446912262" expanded="true" signature="5795:5890" placeholder="SELECT board..manifest_audit..." />
-            <marker date="1472446912262" expanded="true" signature="6198:6392" placeholder="UPDATE manif..." />
-            <marker date="1472446912262" expanded="true" signature="6487:6679" placeholder="INSERT INTO manifest_audit..." />
-            <marker date="1472446912262" expanded="true" signature="6778:6841" placeholder="UPDATE board..." />
-            <marker date="1472446912262" expanded="true" signature="6954:7165" placeholder="SELECT booke..boarding_vehicle..." />
-            <marker date="1472446912262" expanded="true" signature="7541:7608" placeholder="UPDATE board..." />
-            <marker date="1472446912262" expanded="true" signature="7728:7803" placeholder="DELETE FROM ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../travelhub/api/models/reportmodel.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-93.67742">
@@ -1054,7 +973,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../travelhub/cp/travel/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53534186">
+        <state vertical-scroll-proportion="0.20625724">
           <caret line="21" column="107" selection-start-line="21" selection-start-column="107" selection-end-line="21" selection-end-column="107" />
           <folding>
             <marker date="1472447778631" expanded="true" signature="347:383" placeholder="SELECT COUNT..bus_charter..." />
@@ -1062,6 +981,65 @@
             <marker date="1472447778631" expanded="true" signature="768:856" placeholder="SELECT COUNT..travel_park_map..." />
             <marker date="1472447778631" expanded="true" signature="950:1026" placeholder="SELECT COUNT..travel_vehicle_types..." />
             <marker date="1472447778631" expanded="true" signature="4930:5217" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/manifest.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.353847">
+          <caret line="79" column="85" selection-start-line="79" selection-start-column="85" selection-end-line="79" selection-end-column="85" />
+          <folding>
+            <marker date="1472446912262" expanded="true" signature="271:1057" placeholder="SELECT bd.id..booking_details..." />
+            <marker date="1472446912262" expanded="true" signature="1261:1611" placeholder="SELECT drive..boarding_vehicle..." />
+            <marker date="1472446912262" expanded="true" signature="2014:2181" placeholder="SELECT m.*, ..manifest_audit..." />
+            <marker date="1472446912262" expanded="true" signature="2451:3003" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="2451:3217" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="2451:3394" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="2451:3622" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="2484:2548" placeholder="..." />
+            <marker date="1472446912262" expanded="false" signature="3432:3442" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="3443:3610" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="4091:4250" placeholder="..." />
+            <marker date="1472446912262" expanded="false" signature="4173:4213" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="4330:4663" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="4732:4814" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="4826:5044" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="4838:5032" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="4848:5019" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="5114:5383" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="5582:5593" placeholder="..." />
+            <marker date="1472446912262" expanded="true" signature="5795:5890" placeholder="SELECT board..manifest_audit..." />
+            <marker date="1472446912262" expanded="true" signature="6198:6392" placeholder="UPDATE manif..." />
+            <marker date="1472446912262" expanded="true" signature="6487:6679" placeholder="INSERT INTO manifest_audit..." />
+            <marker date="1472446912262" expanded="true" signature="6778:6841" placeholder="UPDATE board..." />
+            <marker date="1472446912262" expanded="true" signature="6954:7165" placeholder="SELECT booke..boarding_vehicle..." />
+            <marker date="1472446912262" expanded="true" signature="7541:7608" placeholder="UPDATE board..." />
+            <marker date="1472446912262" expanded="true" signature="7728:7803" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../travelhub/api/models/bookingmodel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4185766">
+          <caret line="188" column="77" selection-start-line="188" selection-start-column="77" selection-end-line="188" selection-end-column="77" />
+          <folding>
+            <marker date="1472467333055" expanded="true" signature="234:293" placeholder="SELECT ticke..booking_details..." />
+            <marker date="1472467333055" expanded="true" signature="505:678" placeholder="SELECT booke..boarding_vehicle..." />
+            <marker date="1472467333055" expanded="true" signature="2236:2365" placeholder="UPDATE board..." />
+            <marker date="1472467333055" expanded="true" signature="2757:2940" placeholder="INSERT INTO ${self::$db_tbl}..." />
+            <marker date="1472467333055" expanded="true" signature="4311:4717" placeholder="SELECT trips..trips..." />
+            <marker date="1472467333055" expanded="true" signature="4903:5783" placeholder="SELECT booki..${self::$db_tbl}..." />
+            <marker date="1472467333055" expanded="true" signature="6023:6996" placeholder="SELECT booki..${self::$db_tbl}..." />
+            <marker date="1472467333055" expanded="true" signature="7296:8314" placeholder="SELECT booki..${self::$db_tbl}..." />
+            <marker date="1472467333055" expanded="true" signature="8637:9650" placeholder="SELECT booki..${self::$db_tbl}..." />
+            <marker date="1472467333055" expanded="true" signature="10293:10412" placeholder="SELECT id, d..boarding_vehicle..." />
+            <marker date="1472467333055" expanded="true" signature="10653:10935" placeholder="SELECT bv.bo..${self::$db_tbl}..." />
+            <marker date="1472467333055" expanded="true" signature="11463:11584" placeholder="UPDATE board..." />
+            <marker date="1472467333055" expanded="true" signature="11667:11709" placeholder="DELETE FROM ..." />
+            <marker date="1472467333055" expanded="true" signature="12115:12351" placeholder="INSERT INTO booking_synch..." />
+            <marker date="1472467333055" expanded="true" signature="12948:13062" placeholder="SELECT COUNT..${self::$db_tbl}..." />
           </folding>
         </state>
       </provider>

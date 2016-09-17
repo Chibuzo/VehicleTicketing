@@ -68,12 +68,48 @@ class Synch extends Ticket
             } catch (Exception $e) {
                 return $e->getMessage();
             }
+            var_dump($result);
             if ($result == 'Done') {
                 $_SESSION['booking_synch'] == 'Updated';
                 self::$db->query("DELETE FROM booking_synch");
             }
         } else {
             return false;
+        }
+    }
+
+
+    public function handleOnlineBooking($data)
+    {
+        // handle customer
+        $customer = new Customer();
+        $_customer = $customer->getCustomer('phone_no', $data['customer_phone']);
+        $customer_id = $_customer['id'];
+        if ($_customer == false) {
+            $customer->customer_name     = $data['customer_name'];
+            $customer->phone_no          = $data['customer_phone'];
+            $customer->next_of_kin_phone = $data['next_of_kin_phone'];
+            $customer_id                 = $customer->addNew($customer);
+        }
+        try {
+            $booking = new Booking();
+            $booking->saveOnlineBooking($data['trip_id'], $data['travel_date'], $data['departure_order'], $data['seat_no'], $customer_id, $data['channel']);
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+
+    public function getFailedSynch($apicaller, $terminal_sub_id)
+    {
+        try {
+            $apicaller->sendRequest(array(
+                'controller' => 'booking',
+                'action' => 'get_failed_booking_push',
+                'terminal_sub_id' => $terminal_sub_id
+            ));
+        } catch (Exception $e) {
+            return $e->getMessage();
         }
     }
 

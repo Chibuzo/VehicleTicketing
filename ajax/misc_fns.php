@@ -56,7 +56,7 @@ if (isset($_REQUEST['op'])) {
 	elseif ($_REQUEST['op'] == 'get-terminal-details')
 	{
 		require_once "../classes/ticket.class.php";
-		$details = Ticket::loadTravelDetails();
+		$details = implode("-", explode(" ", Ticket::loadTravelDetails()));
 		$park = implode("-", explode(" ", $_SESSION['park_name']));
 		echo '{"abbr": "' . $_SESSION['abbr'] . '", "park": "' . $park . '"}';
 	}
