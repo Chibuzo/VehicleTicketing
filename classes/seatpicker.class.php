@@ -39,7 +39,10 @@ class SeatPicker extends Ticket {
 		}
 
 		switch ($this->vehicle_type_id) {
+			case 1:
 			case 3:
+				return self::getSiennaSeats();
+				break;
 			case 5:
 				return self::getLuxurySeats();
 				break;
@@ -293,7 +296,8 @@ class SeatPicker extends Ticket {
 			if (in_array($seat, $booked_seats)) $class .= " booked_seat";
 			else $class .= " seat";
 
-			if ($counter == 0) $seat_arrangement .= "<div class='cols'>";
+//			if ($counter == 0) $seat_arrangement .= "<div class='cols'>";
+			if ($counter == 0) $seat_arrangement .= $i <= 1 ? "<div class='front-row'>" : "<div class='seat-row'>";
 			$seat_arrangement .= "\t<div class='{$class}' data-hidden='no' title='Seat {$seat}' id='{$seat}'></div>";
 			++$counter;
 

@@ -124,9 +124,6 @@ iframe#receipt {
 										<input type="submit" class="btn btn-primary" name="submit" value="Display" />
 									</span>
 								</div>
-
-								<!-- Clean table -->
-								<button class="btn btn-danger btn-large hidden" id="clean-db" style="float:right"><i class="icon-exclamation-sign icon-white"></i> Clean Database</button>
 							</form>
 
 							<div id="report">

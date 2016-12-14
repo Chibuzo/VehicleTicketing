@@ -6,7 +6,7 @@ require_once '../classes/Synch.class.php';
 $synch = new Synch();
 
 if (isset($_REQUEST['op'])) {
-    $apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', 'http://travelhub.ng/demo/api/');
+    $apicaller = new ApiCaller('APP001', '28e336ac6c9423d946ba02d19c6a2632', 'https://travelhub.ng/demo/api/');
     $status = NULL;
     if ($_REQUEST['op'] == 'update-seat')
     {

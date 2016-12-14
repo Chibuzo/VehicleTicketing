@@ -133,17 +133,15 @@
 
 /* Sienna bus 5 & 6 seats */
 .sienna {
-	width: 420px;
-	height: 200px;
-	overflow: hidden;
+
 }
 
 .sienna .steering {
-	height:62px;
+	height:50px;
 }
 
 .sienna .push-seat {
-	margin-top: 20px !important;
+	margin-left: 35px !important;
 }
 
 .sienna .seat_wrap {

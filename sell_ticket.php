@@ -14,7 +14,6 @@ $destination = new Destination();
 <link href="css/datepicker3.css" rel="stylesheet" />
 
 <style>
-#details { display:nne; }
 #pick_seat {margin-left:30px; height: 230px; margin-top: 8px;}
 #bus_details {display:none}
 iframe#receipt {clear:both; width:280px; display:none; height:300px; border:#ccc solid; }
@@ -171,9 +170,6 @@ select {paddng:0px; heght:23px; width:173px}
 <script type="text/javascript" src="js/sell_ticket.js"></script>
 <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 <script>
-	// popup for websocket connection
-	//var win = window.open("http://localhost/terminal/listen.html", "TravelHub", "toolbar=no, titlebar=no, location=no, directories=no, status=no, menubar=no, width=400, height=300");
-
 $(document).ready(function() {
 	$('.date').datepicker({
 		format: 'yyyy-mm-dd',
